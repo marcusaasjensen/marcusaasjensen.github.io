@@ -7,7 +7,7 @@ tags = ["Cloud", "LLM", "SAPUI5", "JavaScript"]
 links = [{ name = "SAP Labs France", url = "https://www.sap.com" }]
 
 [[experience]]
-name = "Frontend Developer Intern"
+name = "Frontend Engineer Intern"
 desc = "Development of a fully customizable dashboard for operation monitoring as a Proof of Concept."
 start_date = "May 2024"
 end_date = "Aug 2024"

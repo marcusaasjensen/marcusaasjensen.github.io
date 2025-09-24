@@ -60,9 +60,9 @@ social_image = "icons/github.svg"
 # The custom background color in dark mode.
 # bg_dark_color = ""
 
-# Enable header blur.
-header_blur = true
+header_blur = false
 
+# Enable header blur.
 # The custom header color, only available when `header_blur` is false.
 # header_color = ""
 
@@ -72,7 +72,7 @@ header_blur = true
 # The profile on home page.
 [extra.profile]
 name = "Hi! I'm Marcus"
-bio = "Game Developer & Software Engineer"
+bio = "Video Game Developer & Software Engineer"
 # The URL of avatar.
 avatar_url = "icons/avatar.svg"
 # Invert color in dark mode.

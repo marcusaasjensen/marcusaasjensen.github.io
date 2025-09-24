@@ -17,6 +17,19 @@
       {% if paginator is undefined or paginator.current_index == 1 %}
       {% include "partials/profile.html" %}
       {% endif %}
+      <p>
+        I am a french software engineer making games on the side to tell stories.
+        This is my personal website where I share my projects, experiences,
+        and insights into the world of technology and game development.
+        I mostly work with Unity and C# to create tools and video games.
+      </p>
+      <div class="relative w-full">
+      <img 
+        src="{{ get_url(path='images/banner.png') }}" 
+        alt="Site banner"
+        class="w-full h-48 object-cover"
+      />
+      </div>
       {% endblock main %}
     </main>
     
