@@ -14,11 +14,11 @@ Here are all the kita theme options:
 # The Kita theme style config.
 [extra]
 # Enable KaTex math formula support globally.
-math = false
+math = true
 # Enable mermaid support globally.
-mermaid = false
+mermaid = true
 # Enable comment support globally.
-comment = false
+comment = true
 
 [extra.style]
 # The custom background color.
@@ -28,7 +28,7 @@ comment = false
 # bg_dark_color = ""
 
 # Enable header blur.
-# header_blur = true
+header_blur = true
 
 # The custom header color, only available when `header_blur` is false.
 # header_color = ""
@@ -53,10 +53,6 @@ url = "https://github.com/st1020/kita"
 [[extra.profile.social]]
 name = "twitter"
 url = "https://github.com/st1020/kita"
-
-[[extra.profile.social]]
-name = "rss"
-url = "$BASE_URL/atom.xml"
 
 # The top menu.
 [[extra.menu]]

@@ -1,54 +1,17 @@
 [[project]]
-name = "lorem"
-desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, nisi saepe dolor unde iusto dolore nam, vero optio consequuntur repudiandae et! Atque libero expedita laudantium cupiditate, sit explicabo sequi ipsa!"
-tags = ["nisi", "saepe"]
+name = "Save Yourself"
+desc = "Save Yourself is a 2D atmospheric puzzle-platformer where you place save points to undo mistakes. With a calm, bittersweet soundtrack and an atmosphere of cold colors, it creates a world that feels safe—maybe too safe. Made by myself for a one week long Game Jam,  the original music, the visual design and the code were all crafted from scratch. Built around the theme \"Nothing Can Go Wrong\", the game challenges you to think ahead and question the comfort of a world where mistakes don’t matter."
+tags = ["puzzlegame", "platformer", "gamejam"]
 links = [
-    { name = "github", url = "https://example.com" },
-    { name = "docs", url = "https://example.com" },
+    { name = "itchio", url = "https://marcusjensen.itch.io/save-yourself" },
+    { name = "article", url = "https://kirbylife.co.uk/2025/04/14/case-study-my-playtest-process-for-save-yourself-puzzle-platformer/" },
 ]
 
 [[project]]
-name = "ipsum"
-desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, nisi saepe dolor unde iusto dolore nam, vero optio consequuntur repudiandae et! Atque libero expedita laudantium cupiditate, sit explicabo sequi ipsa!"
-tags = ["lorem", "ipsum"]
+name = "Uncanny"
+desc = "Uncanny is an action game where the player must survive by dodging and dashing through uncanny boss attacks. The game is set in a funny and uncanny atmosphere, where the player can play with the music. As the game progresses, the monsters become more challenging to dodge, and the player must use quick reflexes and timing to survive."
+tags = ["bullethell", "rhythm", "gamedev"]
 links = [
-    { name = "homepage", url = "https://example.com" },
-    { name = "source", url = "https://example.com" },
-    { name = "docs", url = "https://example.com" },
-]
-
-[[project]]
-name = "dolor sit"
-desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, nisi saepe dolor unde iusto dolore nam, vero optio consequuntur repudiandae et! Atque libero expedita laudantium cupiditate, sit explicabo sequi ipsa!"
-tags = ["amet", "ipsum", "vero", "optio"]
-links = [{ name = "github", url = "https://example.com" }]
-
-[[project]]
-name = "amet"
-desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, nisi saepe dolor unde iusto dolore nam, vero optio consequuntur repudiandae et! Atque libero expedita laudantium cupiditate, sit explicabo sequi ipsa!"
-tags = ["lorem", "ipsum"]
-links = [
-    { name = "website", url = "https://example.com" },
-    { name = "github", url = "https://example.com" },
-    { name = "docs", url = "https://example.com" },
-    { name = "wiki", url = "https://example.com" },
-]
-
-[[project]]
-name = "lorem-ipsum"
-desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, nisi saepe dolor unde iusto dolore nam, vero optio consequuntur repudiandae et! Atque libero expedita laudantium cupiditate, sit explicabo sequi ipsa!"
-tags = ["dolor", "lorem", "ipsum", "amet"]
-links = [
-    { name = "github", url = "https://example.com" },
-    { name = "docs", url = "https://example.com" },
-]
-
-[[project]]
-name = "praesentium"
-desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, nisi saepe dolor unde iusto dolore nam, vero optio consequuntur repudiandae et! Atque libero expedita laudantium cupiditate, sit explicabo sequi ipsa!"
-tags = ["lorem", "ipsum"]
-links = [
-    { name = "homepage", url = "https://example.com" },
-    { name = "github", url = "https://example.com" },
-    { name = "docs", url = "https://example.com" },
+    { name = "itchio", url = "https://marcusjensen.itch.io/uncanny" },
+    { name = "github", url = "https://github.com/marcusaasjensen/uncanny-game-project" },
 ]

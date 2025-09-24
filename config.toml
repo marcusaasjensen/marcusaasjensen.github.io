@@ -3,7 +3,7 @@ base_url = "https://marcusaasjensen.com"
 
 # The site title and description; used in feeds by default.
 title = "Marcus Aas Jensen"
-description = "Marcus Aas Jensen's personal website"
+description = "Marcus Aas Jensen's Personal Website"
 
 # The default site author.
 author = "Marcus Aas Jensen"
@@ -71,8 +71,8 @@ header_blur = true
 
 # The profile on home page.
 [extra.profile]
-name = "Marcus Aas Jensen"
-bio = "Software engineer & game developer"
+name = "Hi! I'm Marcus"
+bio = "Game Developer & Software Engineer"
 # The URL of avatar.
 avatar_url = "icons/avatar.svg"
 # Invert color in dark mode.
@@ -106,15 +106,15 @@ url = "https://www.youtube.com/@marcusjensendev"
 
 # The top menu.
 [[extra.menu]]
-name = "Projects"
+name = "📂 Projects"
 url = "$BASE_URL/projects"
 
-[[extra.menu]]
-name = "Blog"
-url = "$BASE_URL/blog"
+# [[extra.menu]]
+# name = "Blog"
+# url = "$BASE_URL/blog"
 
 [[extra.menu]]
-name = "About"
+name = "ℹ️ About Me"
 url = "$BASE_URL/about"
 # [[extra.menu]]
 # name = "Archive"

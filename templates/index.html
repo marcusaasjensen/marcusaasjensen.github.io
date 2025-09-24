@@ -14,17 +14,16 @@
       {% block main %}
 
       <!-- Profile -->
-      {% if paginator is undefined or paginator.current_index == 1 %}<!---->
-      {% include "partials/profile.html" %}<!---->
-      {% endif %}<!---->
-
-      {% include "partials/page_list.html" %}<!---->
+      {% if paginator is undefined or paginator.current_index == 1 %}
+      {% include "partials/profile.html" %}
+      {% endif %}
       {% endblock main %}
     </main>
-
+    
     {% include "partials/footer.html" %}
-
+    
     <!-- Body End inject -->
     {% include "injects/body_end.html" ignore missing %}
   </body>
-</html>
+  </html>
+  
