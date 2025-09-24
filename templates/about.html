@@ -9,13 +9,25 @@
 
 <h1 class="mb-16">{{ page.title }}</h1>
 
-I'm Marcus Aas Jensen, a passionate game developer and software engineer. Welcome to my personal website where I share my projects, experiences, and insights into the world of technology and game development.
+<p>
+I'm Marcus Aas Jensen, a passionate game developer and software engineer.
+Welcome to my personal website where I share my projects, experiences,
+and insights into the world of technology and game development.
+</p>
 
-<h2>Experience</h2>
+<h2>💻 Experience</h2>
 {% for experience in data.experience %}
 <div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
-  <h3 class="my-2 text-xl font-bold text-black dark:text-white">{{ experience.name }}</h3>
+  <!-- Title + Date Row -->
+  <div class="flex justify-between items-center">
+    <h3 class="my-2 text-xl font-bold text-black dark:text-white">{{ experience.name }}</h3>
+    <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
+      {{ experience.start_date }}{% if experience.end_date %} – {{ experience.end_date }}{% endif %}
+    </div>
+  </div>
+  
   <p>{{ experience.desc }}</p>
+  
   <div class="my-2 flex flex-wrap items-center justify-between">
     <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
       {% for tag in experience.tags %}
@@ -36,11 +48,20 @@ I'm Marcus Aas Jensen, a passionate game developer and software engineer. Welcom
   </div>
 </div>
 {% endfor %}
-<h2>Education</h2>
+
+<h2>🎓 Education</h2>
 {% for education in data.education %}
 <div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
-  <h3 class="my-2 text-xl font-bold text-black dark:text-white">{{ education.name }}</h3>
+  <!-- Title + Date Row -->
+  <div class="flex justify-between items-center">
+    <h3 class="my-2 text-xl font-bold text-black dark:text-white">{{ education.name }}</h3>
+    <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
+      {{ education.start_date }}{% if education.end_date %} – {{ education.end_date }}{% endif %}
+    </div>
+  </div>
+  
   <p>{{ education.desc }}</p>
+  
   <div class="my-2 flex flex-wrap items-center justify-between">
     <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
       {% for tag in education.tags %}

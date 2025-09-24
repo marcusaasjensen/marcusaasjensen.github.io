@@ -1,19 +1,25 @@
 [[experience]]
 name = "Cloud UI Engineer Intern"
 desc = "Implementation of an internal grafana-like solution suitable for Cloud and Joule AI to allow generation of informative dashboards from prompts."
-tags = ["Cloud", "LLM", "SAP UI 5", "JavaScript"]
+start_date = "Mar 2025"
+end_date = "Aug 2025"
+tags = ["Cloud", "LLM", "SAPUI5", "JavaScript"]
 links = [{ name = "SAP Labs France", url = "https://www.sap.com" }]
 
 [[experience]]
 name = "Frontend Developer Intern"
 desc = "Development of a fully customizable dashboard for operation monitoring as a Proof of Concept."
+start_date = "May 2024"
+end_date = "Aug 2024"
 tags = ["Angular", "TypeScript", "HTML", "CSS"]
 links = [{ name = "Amadeus", url = "https://amadeus.com" }]
 
 [[experience]]
 name = "Mobile Developer Intern"
 desc = "Frontend development of an emergency messaging app built with React Native in JavaScript for iOS and Android."
-tags = ["React Native", "JavaScript", "Mobile"]
+start_date = "May 2022"
+end_date = "Jul 2022"
+tags = ["ReactNative", "JavaScript", "Mobile"]
 links = [
     { name = "Da Nang International Institute of Technology (DNIIT)", url = "https://www.udn.vn/" },
 ]
@@ -21,6 +27,8 @@ links = [
 [[education]]
 name = "Computer Science Engineering Degree"
 desc = "Specialization in Software Engineering and User Interfactions."
+start_date = "Sept 2022"
+end_date = "Sept 2025"
 tags = []
 links = [
     { name = "Polytech Nice Sophia", url = "https://www.polytech.unice.fr/" },
@@ -29,6 +37,8 @@ links = [
 [[education]]
 name = "Semester Abroad in Canada 🍁"
 desc = "Courses in Game Development, Unreal Engine, C++ and Mathematics."
+start_date = "Jan 2022"
+end_date = "Apr 2025"
 tags = []
 links = [
     { name = "Université du Québec à Chicoutimi (UQAC)", url = "https://www.uqac.ca/" },
@@ -37,6 +47,8 @@ links = [
 [[education]]
 name = "Associate Degree in Computer Science"
 desc = "Fundamentals of computer science, programming, algorithms and web development."
+start_date = "Sept 2020"
+end_date = "Jul 2022"
 tags = []
 links = [
     { name = "IUT Nice Côte d'Azur (Fabron)", url = "https://iut.univ-cotedazur.fr/" },
