@@ -85,6 +85,10 @@ name = "linkedin"
 url = "https://linkedin.com/in/marcus-aas-jensen"
 
 [[extra.profile.social]]
+name = "email"
+url = "aasjensen@hotmail.com"
+
+[[extra.profile.social]]
 name = "github"
 url = "https://github.com/marcusaasjensen"
 
@@ -106,11 +110,11 @@ url = "https://www.youtube.com/@marcusjensendev"
 
 # The top menu.
 [[extra.menu]]
-name = "📂 Projects"
-url = "$BASE_URL/projects"
+name = "📂 Portfolio"
+url = "$BASE_URL/portfolio"
 
 # [[extra.menu]]
-# name = "Blog"
+# name = "✍️ Blog"
 # url = "$BASE_URL/blog"
 
 [[extra.menu]]
