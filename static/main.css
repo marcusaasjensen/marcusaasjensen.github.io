@@ -1818,3 +1818,43 @@ article {
     }
   }
 }
+
+:root {
+  /* Couleur hint personnalisable - changez cette valeur */
+  --hint-color: #3bf6b5; /* Bleu par défaut, changeable */
+  --hint-color-rgb: 59, 130, 246; /* Version RGB pour transparence */
+}
+
+.card-hover {
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Ombre iOS réaliste en mode normal */
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  border: 2px solid var(--hint-color);
+  box-shadow: 
+    0 0 0 1px var(--hint-color),
+    0 10px 25px -5px rgba(var(--hint-color-rgb), 0.2),
+    0 6px 10px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-hover:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+.dark .card-hover {
+  box-shadow: 
+    0 1px 3px rgba(255, 255, 255, 0.05),
+    0 1px 2px rgba(255, 255, 255, 0.03);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 
+    0 0 0 1px var(--hint-color),
+    0 10px 25px -5px rgba(var(--hint-color-rgb), 0.3),
+    0 6px 10px -3px rgba(255, 255, 255, 0.08);
+}

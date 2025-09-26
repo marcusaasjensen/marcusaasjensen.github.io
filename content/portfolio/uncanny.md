@@ -1,61 +1,52 @@
 +++
-title = "Uncanny"
+title = "🎶 Uncanny — Action Rhythm Boss Game"
 date = "2023-04-18"
-description = "An action rhythm game where you dodge and dash through uncanny boss attacks. Developed in one week for a game jam."
+description = "A fever-dream action rhythm game where you dodge and dash through uncanny boss attacks."
 [taxonomies]
-tags = ["action", "rhythm", "bullet hell", "indie", "short"]
+tags = ["action", "rhythm", "bullet hell", "indie","atmospheric"]
 [extra]
 cover.image = "images/uncanny-cover.png"
-cover.alt = "Uncanny game cover"
+cover.alt = "Uncanny cover art"
 +++
 
-**Uncanny** is a fast-paced action rhythm game where you must dodge and dash through uncanny boss attacks. Drawing inspiration from *Just Shapes & Beats* and *Cuphead*, it offers a unique blend of rhythm-based gameplay and bullet hell mechanics.
+✨ **Uncanny** is a fast-paced **action rhythm game** where you dodge and dash through surreal boss attacks.  
+Blending rhythm-based mechanics with bullet-hell chaos, it draws inspiration from *Just Shapes & Beats* and *Cuphead* to create a hypnotic, dreamlike challenge.
 
-Developed in just one week for a game jam, the game features two main levels, each culminating in a special boss fight. With original music, animation, and art, *Uncanny* is a passion project that showcases the developer's dedication to creating engaging and atmospheric experiences.
-
-### Platforms
-
-- [Play in browser](https://marcusjensen.itch.io/uncanny)
-- [Download for Windows](https://marcusjensen.itch.io/uncanny/download/Uncanny_WIN64)
-- [Download for Linux](https://marcusjensen.itch.io/uncanny/download/Uncanny_Linux)
-
-### Links
-
-- [Game page on itch.io](https://marcusjensen.itch.io/uncanny)
-- [Follow Marcus Jensen on Twitter](https://twitter.com/marcusjensendev)
-- [Follow Marcus Jensen on Instagram](https://www.instagram.com/marcusjensendev/)
-- [Follow Marcus Jensen on YouTube](https://www.youtube.com/@marcusjensendev)
-
-### About the Developer
-
-Developed by Marcus Jensen, a game creator passionate about emotional storytelling and exploring deep themes through interactive gameplay.
+<iframe frameborder="0" src="https://itch.io/embed/2023586?dark=true" width="552" height="167"><a href="https://marcusjensen.itch.io/uncanny">Uncanny by Marcus Jensen</a></iframe>
 
 ---
 
-### Testimonials
-
-> "love the characters in it. Feels like a fever dream"  
-> — Tarodev on Discord
-
----
-
-### Development
-
-The game was made using Unity for the engine, Audacity for audio editing, Krita for artwork, and FL Studio for music composition. All game assets were created from scratch, except for a few sound effects sourced from freesound.com.
+## 🏆 Highlights
+- 🎯 Achieved **~100 downloads on itch.io**. 
+- 🔥 Combines **rhythm gameplay + boss fights** in a unique fever-dream style.  
+- 🎶 Features **original music, animation, and art**, all created from scratch.
 
 ---
 
-### Gallery
+## 💡 What Players Are Saying
+> Love the characters in it. Feels like a fever dream.  
 
-![Gameplay of Uncanny](/images/uncanny-gameplay.png)
-*Screenshot of Uncanny gameplay*
-
----
-
-### Acknowledgements
-
-Thanks to everyone who played and gave feedback during the game jam. Your input was invaluable for improving the game.
+— *[Tarodev](https://www.youtube.com/c/Tarodev), Discord*
 
 ---
 
-For more information and to follow the development of Uncanny, visit the [game page on itch.io](https://marcusjensen.itch.io/uncanny).
+## 📸 Gallery
+*Screenshot from Uncanny*
+
+![Gameplay Screenshot 1](/images/uncanny-gameplay.png)
+
+---
+
+## 🛠️ Development
+Built with:
+- 🎮 **Unity** for the gameplay in C#
+- 🎧 **FL Studio** for the music
+- 🎨 **Krita** for the artwork
+- 🔊 **Audacity** for sound editing
+All assets were created from scratch (except a few sound effects from [freesound.org](https://freesound.org)).
+
+---
+
+## 🙏 Acknowledgements
+Huge thanks to everyone who played, streamed, and shared feedback during the jam—  
+your input was invaluable in shaping **Uncanny** into the hypnotic boss-fight experience it is today. 💜

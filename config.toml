@@ -86,7 +86,7 @@ url = "https://linkedin.com/in/marcus-aas-jensen"
 
 [[extra.profile.social]]
 name = "email"
-url = "aasjensen@hotmail.com"
+url = "mailto:aasjensen@hotmail.com"
 
 [[extra.profile.social]]
 name = "github"

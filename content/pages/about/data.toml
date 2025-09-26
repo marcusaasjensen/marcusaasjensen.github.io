@@ -38,7 +38,7 @@ links = [
 name = "Semester Abroad in Canada 🍁"
 desc = "Courses in Game Development, Unreal Engine, C++ and Mathematics."
 start_date = "Jan 2022"
-end_date = "Apr 2025"
+end_date = "Apr 2022"
 tags = []
 links = [
     { name = "Université du Québec à Chicoutimi (UQAC)", url = "https://www.uqac.ca/" },
