@@ -8,6 +8,7 @@ tags = ["3D renderer", "C++", "graphics", "software renderer", "open source"]
 [extra]
 cover.image = "images/3d-renderer-cover.png"
 cover.alt = "3D Renderer project cover"
+category = "Technical"
 +++
 
 ✨ **3D Renderer** is a CPU-based 3D renderer written in C++20, supporting simple primitive shapes and built entirely from scratch. It offers both perspective and orthographic projections and supports simple `.obj` imports.

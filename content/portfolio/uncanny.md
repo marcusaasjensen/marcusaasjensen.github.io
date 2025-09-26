@@ -2,12 +2,13 @@
 title = "🎶 Uncanny — Action Rhythm Boss Game"
 date = "2023-04-18"
 weight = 1
-description = "A fever-dream action rhythm game where you dodge and dash through uncanny boss attacks."
+description = "A fever-dream action rhythm game where you dodge and dash through boss attacks."
 [taxonomies]
 tags = ["action", "rhythm", "bullet hell", "indie","atmospheric"]
 [extra]
 cover.image = "images/uncanny-cover.png"
 cover.alt = "Uncanny cover art"
+category = "Games"
 +++
 
 ✨ **Uncanny** is a fast-paced **action rhythm game** where you dodge and dash through surreal boss attacks.  

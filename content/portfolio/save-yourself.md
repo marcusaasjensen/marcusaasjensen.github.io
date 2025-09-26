@@ -8,6 +8,7 @@ tags = ["platformer", "puzzle", "game jam", "indie", "atmospheric"]
 [extra]
 cover.image = "images/save-yourself-cover.png"
 cover.alt = "Save Yourself cover"
+category = "Games"
 +++
 
 ✨ **Save Yourself** is a 2D atmospheric platformer where you create your own save points to undo mistakes.  
