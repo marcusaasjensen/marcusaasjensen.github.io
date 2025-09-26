@@ -1,0 +1,509 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    🎮 Save Yourself — Brackeys Game Jam 2025.1 Submission - Marcus Aas Jensen
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  
+  <!-- Author -->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  <meta name="description" content="An atmospheric platformer where you place save points to undo your mistakes." />
+  <meta name="author" content="Marcus Aas Jensen" />
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="🎮 Save Yourself — Brackeys Game Jam 2025.1 Submission" />
+  <meta property="og:site_name" content="Marcus Aas Jensen" />
+  <meta property="og:description" content="An atmospheric platformer where you place save points to undo your mistakes." />
+  <meta property="og:url" content="https:&#x2F;&#x2F;marcusaasjensen.com&#x2F;portfolio&#x2F;save-yourself&#x2F;" />
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <meta property="og:image" content="https://marcusaasjensen.com/images/save-yourself-cover.png" />
+  
+  <!---->
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://marcusaasjensen.com/main.css" />
+  <style>
+    :root {
+      --bg: #f4f4f5;
+      --bg-dark: #18181b;
+      --header: #e4e4e7;
+      --header-dark: #27272a;
+    }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://marcusaasjensen.com/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () =>
+    renderMathInElement(document.body, {
+      // customised options
+      // • auto-render specific keys, e.g.:
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+      // • rendering keys, e.g.:
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  <!---->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+  <script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+  const initMermaid = (isDark) => {
+    mermaid.initialize({
+      theme: isDark ? "dark" : "default",
+      startOnLoad: false,
+    });
+    mermaid.run();
+  };
+
+  // Add data-mermaid-code attribute on all mermaid block.
+  document.querySelectorAll(".mermaid").forEach((element) => {
+    element.setAttribute("data-mermaid-code", element.innerHTML);
+  });
+
+  // Re-render mermaid when theme changed.
+  document.body.addEventListener("set-theme", (e) => {
+    document.querySelectorAll(".mermaid").forEach((element) => {
+      const mermaidCode = element.getAttribute("data-mermaid-code");
+      if (mermaidCode != null) {
+        element.removeAttribute("data-processed");
+        element.innerHTML = mermaidCode;
+      }
+    });
+    initMermaid(e.detail === "dark");
+  });
+
+  // The es module script will load defer, so the localStorage should already be set by script in header.
+  // If this script is loaded first, the script in header will dispatch an event to re-render mermaid, it's works too.
+  initMermaid(localStorage.getItem("dark") === "true");
+</script>
+
+  <!---->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://marcusaasjensen.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://marcusaasjensen.com/apple-touch-icon.png" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="https://marcusaasjensen.com/atom.xml"
+  />
+   
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;marcusaasjensen.com&#x2F;portfolio&#x2F;save-yourself&#x2F;" />
+
+  <!-- Head inject -->
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://marcusaasjensen.com">Marcus Aas Jensen</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:[background-position:right] dark:invert"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://marcusaasjensen.com/portfolio"
+            >📂 Portfolio</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://marcusaasjensen.com/about"
+            >ℹ️ About Me</a
+          >
+        </li>
+        
+      </ul>
+      <!-- Header Nav inject -->
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <!-- Body Start inject -->
+    
+
+    <main
+      class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg relative mx-auto min-h-[calc(100vh-9rem)] max-w-3xl px-4 pt-24 pb-16 break-words lg:pt-32"
+    >
+      
+<article>
+  <!-- Page Start inject -->
+  
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">🎮 Save Yourself — Brackeys Game Jam 2025.1 Submission</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2025-03-22</time>
+  <span class="mx-1">&middot;</span>
+  <span>2min</span>
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>Marcus Aas Jensen</span>
+  
+  <!-- Page Info inject -->
+  
+</div>
+
+  </header>
+
+  <!---->
+  <figure class="mt-0 mb-12">
+    <img
+      class="h-auto w-full rounded-lg"
+      src="https://marcusaasjensen.com/images/save-yourself-cover.png"
+      alt="Save Yourself cover"
+    />
+  </figure>
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://marcusaasjensen.com/portfolio/save-yourself/#trophy-game-jam-highlights"
+            >🏆 Game Jam Highlights</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://marcusaasjensen.com/portfolio/save-yourself/#bulb-what-players-are-saying"
+            >💡 What Players Are Saying</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://marcusaasjensen.com/portfolio/save-yourself/#camera-flash-gallery"
+            >📸 Gallery</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://marcusaasjensen.com/portfolio/save-yourself/#tools-development"
+            >🛠️ Development</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://marcusaasjensen.com/portfolio/save-yourself/#pray-acknowledgements"
+            >🙏 Acknowledgements</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><p>✨ <strong>Save Yourself</strong> is a 2D atmospheric platformer where you create your own save points to undo mistakes.<br />
+With a calm, melancholic soundtrack and cool-color aesthetic, it creates a world that feels safe—maybe <em>too</em> safe.</p>
+<iframe frameborder="0" src="https://itch.io/embed/3347010?dark=true" width="552" height="167"><a href="https://marcusjensen.itch.io/save-yourself">Save Yourself by Marcus Jensen</a></iframe>
+<hr />
+<h2 id="trophy-game-jam-highlights">🏆 Game Jam Highlights</h2>
+<ul>
+<li>🕹 <strong>Developed solo in just 7 days</strong> for <a href="https://itch.io/jam/brackeys-10">Brackeys Game Jam 2025.1</a>.</li>
+<li>⭐ <strong>Ranked 35th out of ~2,200 games</strong> (Top <strong>1.6%</strong>)</li>
+<li>👍 Overall rating of <strong>4/5</strong> (<strong>80+</strong> reviews).</li>
+<li>🌍 Played <strong>400+ times</strong> across Web, Windows, and Linux.</li>
+<li>📰 Featured in a <strong>PlaytestCloud case study</strong> on player feedback (<a href="https://kirbylife.co.uk">kirbylife.co.uk</a>).</li>
+</ul>
+<hr />
+<h2 id="bulb-what-players-are-saying">💡 What Players Are Saying</h2>
+<blockquote>
+<p>A very clever puzzle game. The idea is brilliant and execution is smooth. I love the simple visual style.</p>
+</blockquote>
+<blockquote>
+<p>The concept is brilliant, the visuals are really cute and engaging. Really impressed that a single person could make a game like this in just one week!</p>
+</blockquote>
+<p>— <em>Players on itch.io</em></p>
+<hr />
+<h2 id="camera-flash-gallery">📸 Gallery</h2>
+<p><em>Screenshots from the Brackeys Game Jam build</em></p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><img src="/images/save-yourself-gameplay1.png" alt="Gameplay Screenshot 1" /></td><td><img src="/images/save-yourself-gameplay2.png" alt="Gameplay Screenshot 2" /></td></tr>
+</tbody></table>
+<hr />
+<h2 id="tools-development">🛠️ Development</h2>
+<p>Built with:</p>
+<ul>
+<li>🎮 <strong>Unity</strong> for the gameplay in C#</li>
+<li>🎧 <strong>FL Studio</strong> for the music</li>
+<li>🎨 <strong>Krita</strong> for the artwork</li>
+<li>🔊 <strong>Audacity</strong> for sound editing
+All assets were created from scratch (except a few sound effects from <a href="https://freesound.org">freesound.org</a>).</li>
+</ul>
+<hr />
+<h2 id="pray-acknowledgements">🙏 Acknowledgements</h2>
+<p>Thank you to <strong>Max Kirby</strong> for generously running a full <strong>player evaluation and case study</strong><br />
+(including the <a href="https://kirbylife.co.uk">article on kirbylife.co.uk</a>) <strong>free of charge and in close collaboration with me</strong>. Your insights were invaluable in understanding how players experienced <strong>Save Yourself</strong>. 💡💚</p>
+<p>Huge thanks as well to everyone who played, rated, and shared feedback during the jam. Your support turned a one-week solo project into a community favorite. 💪</p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mr-1.5 mb-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://marcusaasjensen.com/tags/platformer/"
+      >platformer</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://marcusaasjensen.com/tags/puzzle/"
+      >puzzle</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://marcusaasjensen.com/tags/game-jam/"
+      >game jam</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://marcusaasjensen.com/tags/indie/"
+      >indie</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://marcusaasjensen.com/tags/atmospheric/"
+      >atmospheric</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;marcusaasjensen.com&#x2F;portfolio&#x2F;uncanny&#x2F;"
+    ><span class="mr-1.5">←</span><span>🎶 Uncanny — Action Rhythm Boss Game</span></a
+  >
+  <!---->
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  <!---->
+  <!---->
+<!---->
+  
+
+  <!-- Page End inject -->
+  
+</article>
+
+    </main>
+    
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    <!---->
+    <!---->
+    &copy; 2025<!---->
+    
+    <a class="link" href="https://marcusaasjensen.com">
+      Marcus Aas Jensen
+    </a>
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;github.com&#x2F;st1020&#x2F;kita&#x2F;blob&#x2F;main&#x2F;LICENSE" rel="noopener" target="_blank">
+      MIT License
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank">
+      Powered by Zola
+    </a>
+  </div>
+  <!-- Footer inject -->
+  
+</footer>
+
+    
+  </body>
+  </html>
+  
