@@ -1820,41 +1820,47 @@ article {
 }
 
 :root {
-  /* Couleur hint personnalisable - changez cette valeur */
-  --hint-color: #3bf6b5; /* Bleu par défaut, changeable */
-  --hint-color-rgb: 59, 130, 246; /* Version RGB pour transparence */
+  --hint-color: #3ec2ac;
+  --hint-color-rgb: 59, 246, 191;
 }
 
 .card-hover {
-  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-  /* Ombre iOS réaliste en mode normal */
-  box-shadow: 
-    0 1px 3px rgba(0, 0, 0, 0.1),
-    0 1px 2px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.25s cubic-bezier(0.4,0,0.2,1),
+              border-color 0.25s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform, box-shadow, border-color, background;
+
+  background: rgba(255,255,255,0.075);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1),
+              0 1px 2px rgba(0,0,0,0.06);
+}
+
+/* glassy highlight */
+.card-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                              rgba(var(--hint-color-rgb), 0.05),
+                              transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease, background-position 0.1s ease;
+}
+
+.card-hover:hover::before {
+  opacity: 0.8;
 }
 
 .card-hover:hover {
   transform: translateY(-2px);
   border: 2px solid var(--hint-color);
-  box-shadow: 
-    0 0 0 1px var(--hint-color),
-    0 10px 25px -5px rgba(var(--hint-color-rgb), 0.2),
-    0 6px 10px -3px rgba(0, 0, 0, 0.1);
 }
 
 .card-hover:active {
   transform: translateY(0px) scale(0.98);
-}
-
-.dark .card-hover {
-  box-shadow: 
-    0 1px 3px rgba(255, 255, 255, 0.05),
-    0 1px 2px rgba(255, 255, 255, 0.03);
-}
-
-.dark .card-hover:hover {
-  box-shadow: 
-    0 0 0 1px var(--hint-color),
-    0 10px 25px -5px rgba(var(--hint-color-rgb), 0.3),
-    0 6px 10px -3px rgba(255, 255, 255, 0.08);
 }

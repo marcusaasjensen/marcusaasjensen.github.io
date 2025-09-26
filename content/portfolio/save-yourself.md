@@ -1,6 +1,7 @@
 +++
 title = "🎮 Save Yourself — Brackeys Game Jam 2025.1 Submission"
 date = "2025-03-22"
+weight = 0
 description = "An atmospheric platformer where you place save points to undo your mistakes."
 [taxonomies]
 tags = ["platformer", "puzzle", "game jam", "indie", "atmospheric"]

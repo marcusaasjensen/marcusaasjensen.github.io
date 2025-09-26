@@ -1,6 +1,7 @@
 +++
 title = "🎶 Uncanny — Action Rhythm Boss Game"
 date = "2023-04-18"
+weight = 1
 description = "A fever-dream action rhythm game where you dodge and dash through uncanny boss attacks."
 [taxonomies]
 tags = ["action", "rhythm", "bullet hell", "indie","atmospheric"]
