@@ -92,9 +92,9 @@ url = "mailto:aasjensen@hotmail.com"
 name = "github"
 url = "https://github.com/marcusaasjensen"
 
-[[extra.profile.social]]
-name = "itchio"
-url = "https://marcusjensen.itch.io"
+# [[extra.profile.social]]
+# name = "itchio"
+# url = "https://marcusjensen.itch.io"
 
 [[extra.profile.social]]
 name = "x"

@@ -4,7 +4,7 @@ date = "2025-03-22"
 weight = 0
 description = "An atmospheric platformer where you place save points to undo your mistakes."
 [taxonomies]
-tags = ["platformer", "puzzle", "game jam", "indie", "atmospheric"]
+tags = ["Platformer", "Puzzle", "Game Jam", "Indie", "Atmospheric", "Unity", "C#", "2D"]
 [extra]
 cover.image = "images/save-yourself-cover.png"
 cover.alt = "Save Yourself cover"
@@ -13,6 +13,15 @@ category = "Games"
 
 ✨ **Save Yourself** is a 2D atmospheric platformer where you create your own save points to undo mistakes.  
 With a calm, melancholic soundtrack and cool-color aesthetic, it creates a world that feels safe—maybe *too* safe.
+
+
+<iframe width="560" height="315"
+    src="https://www.youtube.com/embed/ljFf6XrCG3k"
+    title="Save Yourself - Trailer"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
 
 <iframe frameborder="0" src="https://itch.io/embed/3347010?dark=true" width="552" height="167"><a href="https://marcusjensen.itch.io/save-yourself">Save Yourself by Marcus Jensen</a></iframe>
 

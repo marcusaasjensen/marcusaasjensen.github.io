@@ -2,9 +2,9 @@
 title = "🖥️ CPU-Based 3D Renderer in C++"
 date = "2025-07-01"
 weight = 2
-description = "A CPU-based 3D renderer written in C++ 20."
+description = "A CPU-based 3D renderer written in C++ 20 with importable object files."
 [taxonomies]
-tags = ["3D renderer", "C++", "graphics", "software renderer", "open source"]
+tags = ["3D", "Rendering", "C++", "Graphics", "Software", "Tool"]
 [extra]
 cover.image = "images/3d-renderer-cover.png"
 cover.alt = "3D Renderer project cover"

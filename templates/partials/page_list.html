@@ -7,32 +7,34 @@
 {% set pages = section.pages %}
 {% endif %}
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 items-stretch">
 {% for page in pages %}
 <section
-  class="card-hover block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 lg:mb-6 lg:p-6 cursor-pointer"
+  class="card-hover block-bg relative rounded-lg p-4 lg:p-6 cursor-pointer h-full min-h-[300px] md:min-h-[350px] flex flex-col"
 >
   {% if page.extra.cover.image %}
-  <figure class="mt-0 mb-4">
+  <figure class="mt-0 mb-4 flex-shrink-0">
     <img
-      class="h-48 md:h-40 lg:h-48 w-full rounded-lg object-cover transition-transform duration-200 hover:scale-[1.02]"
+      class="h-48 md:h-40 lg:h-48 w-full rounded-lg object-cover object-center transition-transform duration-200 hover:scale-[1.02]"
       src="{{ get_url(path=page.extra.cover.image) }}"
       alt="{{ page.extra.cover.alt | default(value='cover') }}"
     />
   </figure>
   {% endif %}
 
-  <h3 class="my-0! pb-1 leading-tight! font-bold text-lg transition-colors duration-200 hover:text-[var(--hint-color)]">{{ page.title }}</h3>
+  <h3 class="my-0! pb-1 leading-tight! font-bold text-lg transition-colors duration-200 hover:text-[var(--hint-color)] flex-shrink-0">{{ page.title }}</h3>
 
-  <div class="not-prose my-2">
+  <div class="not-prose my-2 flex-grow">
     {% if page.description %}
-    <p class="text-sm md:text-base opacity-80 line-clamp-2">{{ page.description }}</p>
+    <p class="text-sm md:text-base opacity-80 line-clamp-3">{{ page.description }}</p>
     {% elif page.summary %}
-    <div class="text-sm md:text-base opacity-80 line-clamp-2">{{ page.summary | safe }}</div>
+    <div class="text-sm md:text-base opacity-80 line-clamp-3">{{ page.summary | safe }}</div>
     {% endif %}
   </div>
 
-  {% include "partials/page_info.html" %}
+  <div class="mt-auto pt-2 flex-shrink-0">
+    {% include "partials/page_info.html" %}
+  </div>
 
   <a class="absolute inset-0 text-[0px] z-10" href="{{ page.permalink }}">{{ page.title }}</a>
 </section>
