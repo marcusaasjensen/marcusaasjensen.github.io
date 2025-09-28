@@ -14,15 +14,17 @@ category = "Games"
 ✨ **Uncanny** is a fast-paced **action rhythm game** where you dodge and dash through surreal boss attacks.  
 Blending rhythm-based mechanics with bullet-hell chaos, it draws inspiration from *Just Shapes & Beats* and *Cuphead* to create a hypnotic, dreamlike challenge.
 
-<iframe width="560" height="315"
-    src="https://www.youtube.com/embed/Jcd_hAIVvMk"
-    title="Uncanny - Launch Trailer"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-</iframe>
+<div class="video-wrapper">
+    <iframe
+        src="https://www.youtube.com/embed/Jcd_hAIVvMk"
+        title="Uncanny - Launch Trailer"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>
 
-<iframe frameborder="0" src="https://itch.io/embed/2023586?dark=true" width="552" height="167"><a href="https://marcusjensen.itch.io/uncanny">Uncanny by Marcus Jensen</a></iframe>
+<iframe frameborder="0" src="https://itch.io/embed/2023586?dark=true" width="100%" height="100%"><a href="https://marcusjensen.itch.io/uncanny">Uncanny by Marcus Jensen</a></iframe>
 
 💻 **GitHub Repository:** [Uncanny Game Project](https://github.com/marcusaasjensen/uncanny-game-project)
 

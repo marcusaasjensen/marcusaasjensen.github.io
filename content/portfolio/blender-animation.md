@@ -10,14 +10,15 @@ cover.image = "images/marionette-cover.png"
 cover.alt = "Marionette Blender Animation"
 category = "Art & Animation"
 +++
-
-<iframe width="560" height="315"
-    src="https://www.youtube.com/embed/vFojjL7MOK8"
-    title="Marionette — Blender Animation"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-</iframe>
+<div class = "video-wrapper">
+    <iframe
+        src="https://www.youtube.com/embed/vFojjL7MOK8"
+        title="Marionette — Blender Animation"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>
 
 ---
 

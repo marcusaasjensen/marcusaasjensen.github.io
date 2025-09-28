@@ -13,13 +13,15 @@ category = "Projects"
 
 ✨ **Dialogue System** is a visual dialogue editor for Unity, designed to create rich narrative interactions with branching choices, text animations, and character emotion management.
 
-<iframe width="560" height="315"
-    src="https://www.youtube.com/embed/QhQQnyrjZJc"
-    title="Dialogue System Demo"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-</iframe>
+<div class = "video-wrapper">
+    <iframe
+        src="https://www.youtube.com/embed/QhQQnyrjZJc"
+        title="Dialogue System Demo"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>
 
 💻 **GitHub Repository:** [Dialogue System Project](https://github.com/marcusaasjensen/dialogue-system)
 

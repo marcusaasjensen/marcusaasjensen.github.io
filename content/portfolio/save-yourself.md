@@ -15,15 +15,17 @@ category = "Games"
 With a calm, melancholic soundtrack and cool-color aesthetic, it creates a world that feels safe—maybe *too* safe.
 
 
-<iframe width="560" height="315"
+<div class="video-wrapper">
+  <iframe 
     src="https://www.youtube.com/embed/ljFf6XrCG3k"
     title="Save Yourself - Trailer"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
-</iframe>
+  </iframe>
+</div>
 
-<iframe frameborder="0" src="https://itch.io/embed/3347010?dark=true" width="552" height="167"><a href="https://marcusjensen.itch.io/save-yourself">Save Yourself by Marcus Jensen</a></iframe>
+<iframe frameborder="0" src="https://itch.io/embed/3347010?dark=true" width="100%" height="100%"><a href="https://marcusjensen.itch.io/save-yourself">Save Yourself by Marcus Jensen</a></iframe>
 
 ---
 
