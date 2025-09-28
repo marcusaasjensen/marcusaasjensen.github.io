@@ -57,9 +57,3 @@ Built with:
 - 🎨 **Krita** for the artwork
 - 🔊 **Audacity** for sound editing
 All assets were created from scratch (except a few sound effects from [freesound.org](https://freesound.org)).
-
----
-
-## 🙏 Acknowledgements
-Huge thanks to everyone who played, streamed, and shared feedback during the jam—  
-your input was invaluable in shaping **Uncanny** into the hypnotic boss-fight experience it is today. 💜
