@@ -12,7 +12,7 @@ name = "Frontend Engineer Intern"
 desc = "Development of a fully customizable dashboard for operation monitoring as a Proof of Concept."
 start_date = "May 2024"
 end_date = "Aug 2024"
-tags = ["Angular", "TypeScript", "HTML", "CSS"]
+tags = ["Angular", "TypeScript", "UI"]
 logo = "/images/amadeus.png"
 links = [{ name = "Amadeus", url = "https://amadeus.com" }]
 
@@ -24,14 +24,14 @@ end_date = "Jul 2022"
 tags = ["ReactNative", "JavaScript", "Mobile"]
 logo = "/images/dniit.png"
 links = [
-    { name = "Da Nang International Institute of Technology (DNIIT)", url = "https://www.udn.vn/" },
+    { name = "Da Nang International Institute of Technology", url = "https://www.udn.vn/" },
 ]
 
 [[education]]
 name = "Computer Science Engineering Degree"
-desc = "Specialization in Software Engineering and User Interfactions."
-start_date = "Sept 2022"
-end_date = "Sept 2025"
+desc = "Specialization in Software Engineering and User Interactions."
+start_date = "Sep 2022"
+end_date = "Sep 2025"
 tags = []
 logo = "/images/polytech.png"
 links = [
@@ -46,16 +46,16 @@ end_date = "Apr 2022"
 tags = []
 logo = "/images/uqac.png"
 links = [
-    { name = "Université du Québec à Chicoutimi (UQAC)", url = "https://www.uqac.ca/" },
+    { name = "Université du Québec à Chicoutimi", url = "https://www.uqac.ca/" },
 ]
 
 [[education]]
 name = "Associate Degree in Computer Science"
 desc = "Fundamentals of computer science, programming, algorithms and web development."
-start_date = "Sept 2020"
+start_date = "Sep 2020"
 end_date = "Jul 2022"
 tags = []
 logo = "/images/iut.png"
 links = [
-    { name = "IUT Nice Côte d'Azur (Fabron)", url = "https://iut.univ-cotedazur.fr/" },
+    { name = "IUT Nice Côte d'Azur", url = "https://iut.univ-cotedazur.fr/" },
 ]
