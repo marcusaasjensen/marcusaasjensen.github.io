@@ -51,7 +51,7 @@ With a calm, melancholic soundtrack and cool-color aesthetic, it creates a world
 *Screenshots from the Brackeys Game Jam build*
 | | |
 |---|---|
-| ![Gameplay Screenshot 1](/images/save-yourself-gameplay1.png) | ![Gameplay Screenshot 2](/images/save-yourself-gameplay2.png) |
+| [![Gameplay Screenshot 1](/images/save-yourself-gameplay1.png)](/images/save-yourself-gameplay1.png) | [![Gameplay Screenshot 2](/images/save-yourself-gameplay2.png)](/images/save-yourself-gameplay2.png) |
 
 
 ---

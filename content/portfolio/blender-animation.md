@@ -10,6 +10,7 @@ cover.image = "images/marionette-cover.png"
 cover.alt = "Marionette Blender Animation"
 category = "Art & Animation"
 +++
+
 <div class = "video-wrapper">
     <iframe
         src="https://www.youtube.com/embed/vFojjL7MOK8"
@@ -31,6 +32,7 @@ Its awkward, eerie movements become a quiet metaphor for learning to live with t
 ---
 
 ## 🎶 Original Music
+
 <audio controls>
   <source src="/audio/marionette.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
@@ -57,7 +59,10 @@ What started as a simple experiment in 3D became a personal artistic journey com
 
 The marionette’s design originated from a hand-drawn concept, reimagined in 3D while keeping the fragile, almost magical aesthetic of the original illustration.
 
-![Marionette Drawing](/images/marionette-drawing.png)
+<a href="/images/marionette-drawing.png">
+  <img src="/images/marionette-drawing.png" alt="Marionette Drawing" style="width:50%;height:auto;" />
+</a>
+
 
 ---
 

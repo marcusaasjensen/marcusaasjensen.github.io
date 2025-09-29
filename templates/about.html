@@ -12,7 +12,7 @@
 <h2>💻 Experience</h2>
 {% for experience in data.experience %}
 <div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
-  <!-- Title + Date Row -->
+  
   <div class="flex justify-between items-center">
     <h3 class="my-2 text-xl font-bold text-black dark:text-white">{{ experience.name }}</h3>
     <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
@@ -29,7 +29,7 @@
       {% endfor %}
     </div>
     <div class="flex flex-wrap gap-x-2">
-      {% for link in experience.links %}
+      <!-- {% for link in experience.links %}
       <a
         class="underline"
         href="{{ link.url | replace(from=`$BASE_URL`, to=config.base_url) | safe  }}"
@@ -37,7 +37,12 @@
         target="_blank"
         >{{ link.name }}</a
       >
-      {% endfor %}
+      {% endfor %} -->
+      {% if experience.logo %}
+      <a href="{{ experience.links[0].url }}" target="_blank" rel="noopener">
+      <img src="{{ experience.logo }}" alt="{{ experience.name }} logo" class="h-8 w-auto object-contain" />
+      </a>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -61,17 +66,21 @@
       {% for tag in education.tags %}
       <span>#{{ tag }}</span>
       {% endfor %}
-    </div>
-    <div class="flex flex-wrap gap-x-2">
       {% for link in education.links %}
       <a
         class="underline"
         href="{{ link.url | replace(from=`$BASE_URL`, to=config.base_url) | safe  }}"
         rel="noopener"
         target="_blank"
-        >{{ link.name }}</a
-      >
+        >{{ link.name }}</a>
       {% endfor %}
+    </div>
+    <div class="flex flex-wrap gap-x-2">
+      {% if education.logo %}
+      <a href="{{ education.links[0].url }}" target="_blank" rel="noopener">
+      <img src="{{ education.logo }}" alt="{{ education.name }} logo" class="h-8 w-auto object-contain" />
+      </a>
+      {% endif %}
     </div>
   </div>
 </div>

@@ -26,8 +26,11 @@ Blending rhythm-based mechanics with bullet-hell chaos, it draws inspiration fro
 
 <iframe frameborder="0" src="https://itch.io/embed/2023586?dark=true" width="100%" height="100%"><a href="https://marcusjensen.itch.io/uncanny">Uncanny by Marcus Jensen</a></iframe>
 
-💻 **GitHub Repository:** [Uncanny Game Project](https://github.com/marcusaasjensen/uncanny-game-project)
+💻 **GitHub Repository**
 
+<a href="https://github.com/marcusaasjensen/uncanny-game-project">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=marcusaasjensen&repo=uncanny-game-project&theme=github_dark_dimmed" alt="Uncanny Game Repo"/>
+</a>
 
 ---
 
@@ -48,7 +51,7 @@ Blending rhythm-based mechanics with bullet-hell chaos, it draws inspiration fro
 ## 📸 Gallery
 *Screenshot from Uncanny*
 
-![Gameplay Screenshot 1](/images/uncanny-gameplay.png)
+[![Gameplay Screenshot 1](/images/uncanny-gameplay.png)](/images/uncanny-gameplay.png)
 
 ---
 

@@ -23,11 +23,16 @@ category = "Projects"
     </iframe>
 </div>
 
-💻 **GitHub Repository:** [Dialogue System Project](https://github.com/marcusaasjensen/dialogue-system)
+💻 **GitHub Repository**
+
+<a href="https://github.com/marcusaasjensen/dialogue-system">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=marcusaasjensen&repo=dialogue-system&theme=github_dark_dimmed" alt="Dialogue System Repo"/>
+</a>
 
 ---
 
 ## 🎯 Key Features
+
 - 🧩 **Visual Dialogue Graph Editor**: create simple or branching dialogue nodes with intuitive visual connections.
 - 🎭 **Dynamic Characters**: manage sprites, voices, emotions, and reactions.
 - ⏱️ **Animated Text System**: control typing speed and text animations.
@@ -37,16 +42,19 @@ category = "Projects"
 ---
 
 ## 📸 Gallery
+
 *Screenshots of the dialogue editor*
 
 | | |
 |---|---|
-| ![Dialogue Graph Editor](/images/dialogue-system-editor.png) | ![Dialogue with Multiple Choices](/images/dialogue-system-example.png) |
+| <a href="/images/dialogue-system-editor.png"><img src="/images/dialogue-system-editor.png" alt="Dialogue Graph Editor" style="width:80%;height:auto;" /></a> | <a href="/images/dialogue-system-example.png"><img src="/images/dialogue-system-example.png" alt="Dialogue with Multiple Choices" style="width:80%;height:auto;" /></a> |
 
 ---
 
 ## 🛠️ Development
+
 Built with:
+
 - 🎮 **Unity 2022.3.0f1**
 - 🧵 **TextMeshPro 3.0.6** for UI dialogues
 - 🧩 **ScriptableObjects** for data management
