@@ -50,8 +50,6 @@ math = true
 mermaid = true
 # Enable comment support globally.
 comment = true
-# The URL of social image.
-social_image = "icons/github.svg"
 
 [extra.style]
 # The custom background color.
@@ -128,12 +126,15 @@ url = "$BASE_URL/about"
 # name = "Tags"
 # url = "$BASE_URL/tags"
 
+[[extra.menu]]
+name = "💚 Extras"
+url = "$BASE_URL/extras"
 
 # The page footer options.
 [extra.footer]
 since = 2025
 license = "MIT License"
-license_url = "https://github.com/st1020/kita/blob/main/LICENSE"
+license_url = "https://github.com/marcusaasjensen/marcusaasjensen.github.io/blob/main/LICENSE"
 
 # The giscus comment options, only available when comment is enabled.
 [extra.giscus]

@@ -1,0 +1,86 @@
+{% import "macros.html" as macros %}
+{% extends "index.html" %}
+{% block main %}
+
+{% for asset in page.assets %}
+  {% if asset is ending_with("data.toml") %}
+    {% set_global data = load_data(path=asset, format="toml") %}
+  {% endif %}
+{% endfor %}
+
+<h1 class="mb-16">{{ page.title }}</h1>
+
+Other than software development, I also enjoy various creative pursuits. Here are some of my hobbies and interests. 🌱
+
+<hr />
+<h2>🎵 Video Game Music</h2>
+<p class="mb-6 text-sm text-gray-600 dark:text-gray-400">
+  I create music mainly for pleasure and experimentation. I'm not a trained musician and have no formal music theory background. My tracks are drafts and unfinished in general, but I enjoy expressing ideas and imagining themes for my games. I still like to share a few tracks here. Feedback is welcomed!
+</p>
+<div class="not-prose mt-6 flex flex-col gap-8">
+  
+  {% for track in data.music %}
+    
+    {% if track.theme and track.tracks %}
+    <div class="block-bg rounded-lg p-6 flex-1 min-w-[250px] mb-4">
+      <h3 class="text-lg font-semibold mb-4">{{ track.theme }}</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400">{{ track.theme_description }}</p>
+      <br />
+      <hr />
+      <div class="flex flex-col gap-6">
+        {% for t in track.tracks %}
+          <div class="block-hover rounded-lg p-6 flex-1 min-w-[250px]">
+            <span class="font-medium text-base mb-3 block">{{ t.name }}</span>
+            <audio controls class="mt-2 w-full mb-3">
+                <source src="/audio/{{ t.file }}" type="audio/{{ t.ext }}">
+            </audio>
+            {% if t.description %}
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">{{ t.description }}</p>
+            {% endif %}
+            {% if t.keywords %}
+            <div class="flex flex-wrap gap-4 mt-2">
+                {% for keyword in t.keywords %}
+                <span class="bg-gray-200 dark:bg-gray-700 text-xs px-3 py-1 font-medium"">{{ keyword }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% else %}
+      <div class="block-bg block-hover rounded-lg p-6 flex-1 min-w-[250px] mb-4"> <!-- increased padding -->
+        <span class="font-medium text-base mb-3 block">{{ track.name }}</span>
+        <audio controls class="mt-2 w-full mb-3">
+          <source src="/audio/{{ track.file }}" type="audio/{{ track.ext }}">
+        </audio>
+        {% if track.description %}
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">{{ track.description }}</p>
+        {% endif %}
+        {% if track.keywords %}
+          <div class="flex flex-wrap gap-4 mt-2">
+            {% for keyword in track.keywords %}
+              <span class="bg-gray-200 dark:bg-gray-700 text-xs px-3 py-1 font-medium">{{ keyword }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    
+  {% endfor %}
+
+</div>
+
+<script>
+  // Stop all other audio players when one plays
+  const audios = document.querySelectorAll('audio');
+  audios.forEach(audio => {
+    audio.addEventListener('play', () => {
+      audios.forEach(a => {
+        if (a !== audio) a.pause();
+      });
+    });
+  });
+</script>
+
+{% endblock main %}

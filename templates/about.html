@@ -52,6 +52,7 @@
 <div class="not-prose mt-6 flex flex-col">
 
   {% for group in data.skills %}
+  <div class="mb-12">
     <h3 class="text-lg font-semibold mb-2">{{ group.title }}</h3>
     <div class="mb-6 flex flex-wrap">
       {% for skill in group.items %}
@@ -65,6 +66,7 @@
         </a>
       {% endfor %}
     </div>
+  </div>
   {% endfor %}
 
 </div>
