@@ -48,6 +48,27 @@
 </div>
 {% endfor %}
 
+<h2>🛠 Skills</h2>
+<div class="not-prose mt-6 flex flex-col">
+
+  {% for group in data.skills %}
+    <h3 class="text-lg font-semibold mb-2">{{ group.title }}</h3>
+    <div class="mb-6 flex flex-wrap">
+      {% for skill in group.items %}
+        <a 
+          href="{{ skill.url }}" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          {{ skill.name }}
+        </a>
+      {% endfor %}
+    </div>
+  {% endfor %}
+
+</div>
+
 <h2>🎓 Education</h2>
 {% for education in data.education %}
 <div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
@@ -85,4 +106,5 @@
   </div>
 </div>
 {% endfor %}
+
 {% endblock main %}

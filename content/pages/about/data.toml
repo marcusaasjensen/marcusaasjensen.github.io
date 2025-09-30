@@ -29,7 +29,7 @@ links = [
 
 [[education]]
 name = "Computer Science Engineering Degree"
-desc = "Specialization in Software Engineering and User Interactions."
+desc = "Specialization in software engineering and user interactions."
 start_date = "Sep 2022"
 end_date = "Sep 2025"
 tags = []
@@ -40,7 +40,7 @@ links = [
 
 [[education]]
 name = "Semester Abroad in Canada 🍁"
-desc = "Courses in Game Development, Unreal Engine, C++ and Mathematics."
+desc = "Courses in game development, Unreal Engine, C++ and mathematics."
 start_date = "Jan 2022"
 end_date = "Apr 2022"
 tags = []
@@ -58,4 +58,60 @@ tags = []
 logo = "/images/iut.png"
 links = [
     { name = "IUT Nice Côte d'Azur", url = "https://iut.univ-cotedazur.fr/" },
+]
+
+[[skills]]
+title = "Programming Languages"
+items = [
+    { name = "C#", url = "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)" },
+    { name = "C++", url = "https://en.wikipedia.org/wiki/C%2B%2B" },
+    { name = "Java", url = "https://en.wikipedia.org/wiki/Java_(programming_language)" },
+    { name = "JavaScript", url = "https://en.wikipedia.org/wiki/JavaScript" },
+    { name = "TypeScript", url = "https://en.wikipedia.org/wiki/TypeScript" },
+    { name = "HTML", url = "https://en.wikipedia.org/wiki/HTML" },
+    { name = "CSS", url = "https://en.wikipedia.org/wiki/CSS" },
+    { name = "Python", url = "https://en.wikipedia.org/wiki/Python_(programming_language)" },
+]
+
+[[skills]]
+title = "3D Tools & Techniques"
+items = [
+    { name = "Unity 3D", url = "https://en.wikipedia.org/wiki/Unity_(game_engine)" },
+    { name = "Blender", url = "https://en.wikipedia.org/wiki/Blender_(software)" },
+    { name = "Scriptable Objects", url = "https://docs.unity3d.com/Manual/class-ScriptableObject.html" },
+    { name = "3D Rendering", url = "https://en.wikipedia.org/wiki/3D_computer_graphics#Rendering" },
+    { name = "Rasterization", url = "https://en.wikipedia.org/wiki/Rasterisation" },
+]
+
+[[skills]]
+title = "User Experience"
+items = [
+    { name = "UI", url = "https://en.wikipedia.org/wiki/User_interface" },
+    { name = "UX", url = "https://en.wikipedia.org/wiki/User_experience" },
+    { name = "Figma", url = "https://en.wikipedia.org/wiki/Figma_(software)" },
+    { name = "Scenarios", url = "https://en.wikipedia.org/wiki/Use_case" },
+    { name = "Accessibility", url = "https://en.wikipedia.org/wiki/Accessibility" },
+    { name = "Game Feel", url = "https://en.wikipedia.org/wiki/Game_feel" },
+    { name = "VR", url = "https://en.wikipedia.org/wiki/Virtual_reality" },
+    { name = "AR", url = "https://en.wikipedia.org/wiki/Augmented_reality" },
+    { name = "XR", url = "https://en.wikipedia.org/wiki/Extended_reality" },
+    { name = "HoloLens", url = "https://en.wikipedia.org/wiki/Microsoft_HoloLens" },
+    { name = "Multimodality in VR", url = "https://en.wikipedia.org/wiki/Multimodal_interaction" },
+]
+
+[[skills]]
+title = "Software Architecture & Engineering"
+items = [
+    { name = "OOP", url = "https://en.wikipedia.org/wiki/Object-oriented_programming" },
+    { name = "Design Patterns", url = "https://en.wikipedia.org/wiki/Software_design_pattern" },
+    { name = "UML", url = "https://en.wikipedia.org/wiki/Unified_Modeling_Language" },
+    { name = "Qt", url = "https://en.wikipedia.org/wiki/Qt_(software)" },
+    { name = "Angular", url = "https://en.wikipedia.org/wiki/Angular_(application_platform)" },
+    { name = "React Native", url = "https://en.wikipedia.org/wiki/React_Native" },
+    { name = "REST APIs", url = "https://en.wikipedia.org/wiki/Representational_state_transfer" },
+    { name = "Git", url = "https://en.wikipedia.org/wiki/Git" },
+    { name = "GitHub", url = "https://en.wikipedia.org/wiki/GitHub" },
+    { name = "Jira", url = "https://en.wikipedia.org/wiki/Jira_(software)" },
+    { name = "Confluence", url = "https://en.wikipedia.org/wiki/Confluence_(software)" },
+    { name = "Agile", url = "https://en.wikipedia.org/wiki/Agile_software_development" },
 ]
