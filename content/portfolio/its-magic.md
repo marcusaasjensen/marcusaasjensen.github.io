@@ -14,6 +14,12 @@ category = "Technical"
 It’s Magic is an experimental **multiplayer game** exploring **distributed interaction** across several devices.  
 Created as a college final project in a team of 4, it combines Unity clients and a mobile app to create a cooperative, immersive potion-making adventure.
 
+💻 **GitHub Repository**
+
+<a href="https://github.com/marcusaasjensen/its-magic">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=marcusaasjensen&repo=its-magic&theme=github_dark_dimmed" alt="Its Magic Repo"/>
+</a>
+
 ---
 
 ## ✨ Overview

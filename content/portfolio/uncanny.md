@@ -48,13 +48,6 @@ Blending rhythm-based mechanics with bullet-hell chaos, it draws inspiration fro
 
 ---
 
-## 📸 Gallery
-*Screenshot from Uncanny*
-
-[![Gameplay Screenshot 1](/images/uncanny-gameplay.png)](/images/uncanny-gameplay.png)
-
----
-
 ## 🛠️ Development
 Built with:
 - 🎮 **Unity** for the gameplay in C#
@@ -62,3 +55,23 @@ Built with:
 - 🎨 **Krita** for the artwork
 - 🔊 **Audacity** for sound editing
 All assets were created from scratch (except a few sound effects from [freesound.org](https://freesound.org)).
+
+---
+
+## 📸 Gallery
+*Screenshot from Uncanny*
+[![Gameplay Screenshot 1](/images/uncanny-gameplay.png)](/images/uncanny-gameplay.png)
+
+*Boss Sketches from Uncanny*
+
+<div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+  <a href="/images/wanderer.png" style="flex:1 1 200px; max-width:40%;">
+    <img src="/images/wanderer.png" alt="Wanderer" style="width:100%; height:auto;" />
+  </a>
+  <a href="/images/uncanny_moon.png" style="flex:1 1 200px; max-width:25%;">
+    <img src="/images/uncanny_moon.png" alt="Uncanny Moon" style="width:100%; height:auto;" />
+  </a>
+  <a href="/images/uncanny_moon_sketch.png" style="flex:1 1 200px; max-width:25%;">
+    <img src="/images/uncanny_moon_sketch.png" alt="Uncanny Moon Sketch" style="width:100%; height:auto;" />
+  </a>
+</div>

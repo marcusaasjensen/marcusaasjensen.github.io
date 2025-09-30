@@ -66,6 +66,20 @@ The marionette’s design originated from a hand-drawn concept, reimagined in 3D
 
 ---
 
+## 📸 Gallery
+*Animation Screenshots*
+<div style="display:flex; flex-wrap:wrap; gap:5px; justify-content:center;">
+  <a href="/images/marionette1.png" style="flex:1 1 300px; min-width:25%;">
+    <img src="/images/marionette1.png" alt="Marionette 1" style="width:100%; height:auto;" />
+  </a>
+  <a href="/images/marionette2.png" style="flex:1 1 300px; min-width:25%;">
+    <img src="/images/marionette2.png" alt="Marionette 2" style="width:100%; height:auto;" />
+  </a>
+</div>
+
+
+
+
 ## 🙏 Reflection
 
 Learning Blender after years of 2D animation in Unity opened new creative doors.  
