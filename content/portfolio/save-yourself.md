@@ -4,7 +4,7 @@ date = "2025-03-22"
 weight = 0
 description = "An atmospheric platformer where you place save points to undo your mistakes."
 [taxonomies]
-tags = ["Platformer", "Puzzle", "Game Jam", "Indie", "Atmospheric", "Unity", "C#", "2D"]
+tags = ["Platformer", "Puzzle", "Game Jam", "Indie", "Atmospheric", "Unity", "CSharp", "2D"]
 [extra]
 cover.image = "images/save-yourself-cover.png"
 cover.alt = "Save Yourself cover"

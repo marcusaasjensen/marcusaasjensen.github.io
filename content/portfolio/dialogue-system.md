@@ -4,7 +4,7 @@ date = "2024-02-16"
 weight = 2
 description = "An advanced Unity dialogue system for branching narrative and player choices."
 [taxonomies]
-tags = ["Unity", "C#", "Tool", "Narrative", "Dialogue", "2D"]
+tags = ["Unity", "CSharp", "Tool", "Narrative", "Dialogue", "2D"]
 [extra]
 cover.image = "images/dialogue-system-cover.png"
 cover.alt = "Dialogue System cover art"

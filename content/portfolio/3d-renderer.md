@@ -4,7 +4,7 @@ date = "2025-07-01"
 weight = 2
 description = "A CPU-based 3D renderer written in C++ 20 with importable object files."
 [taxonomies]
-tags = ["3D", "Rendering", "C++", "Graphics", "Software", "Tool"]
+tags = ["3D", "Rendering", "CPP", "Graphics", "Software", "Tool"]
 [extra]
 cover.image = "images/3d-renderer-cover.png"
 cover.alt = "3D Renderer project cover"
