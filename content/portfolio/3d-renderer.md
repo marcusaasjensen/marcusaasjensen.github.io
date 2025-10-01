@@ -1,7 +1,7 @@
 +++
-title = "🖥️ CPU-Based 3D Renderer in C++"
+title = "🖥️ CPU-Based 3D Renderer in C++ From Scratch"
 date = "2025-07-01"
-description = "A CPU-based 3D renderer written in C++ 20 with importable object files."
+description = "A CPU-based 3D renderer written in C++ 20 from scratch (no librairies) with importable object files."
 [taxonomies]
 tags = ["3D", "Rendering", "CPP", "Graphics", "Software", "Tool"]
 [extra]

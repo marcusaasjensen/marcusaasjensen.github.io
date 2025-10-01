@@ -1069,18 +1069,35 @@
   .break-words {
     overflow-wrap: break-word;
   }
-  .primary-link {
-    color: var(--color-black);
-    text-decoration-line: none;
-    &:hover {
-      @media (hover: hover) {
-        opacity: 80%;
-      }
-    }
-    &:where(.dark, .dark *) {
-      color: var(--color-white);
+.primary-link {
+  color: var(--color-black);
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    @media (hover: hover) {
+      opacity: 0.8;
+      background-color: rgba(0, 0, 0, 0.05);
     }
   }
+
+  &:where(.dark, .dark *) {
+    color: var(--color-white);
+  }
+
+  &:where(.dark, .dark *):hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* optional active state if you want to mark the current page */
+.primary-link.active {
+  background-color: var(--hint-color);
+  color: #076e5d;
+}
+
   .secondary-link {
     color: var(--tw-prose-body);
     text-decoration-line: none;

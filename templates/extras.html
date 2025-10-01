@@ -18,7 +18,7 @@
 
 <h2 class="text-2xl font-semibold mb-4">🎵 Video Game Music</h2>
 <p class="mb-6 text-sm text-gray-600 dark:text-gray-400">
-  I create music mainly for pleasure and experimentation. I'm not a trained musician and have no formal music theory background. My tracks are drafts and unfinished in general, but I enjoy expressing ideas and imagining themes for my games. I still like to share a few tracks here. Feedback is welcomed!
+  I create music on FL Studio mainly for pleasure and experimentation. I'm not a trained musician and have no formal music theory background. My tracks are drafts and unfinished in general, but I enjoy expressing ideas and imagining themes for my games. I still like to share a few tracks here. Feedback is welcomed!
 </p>
 
 <div class="not-prose mt-6 flex flex-col gap-8">
@@ -32,7 +32,7 @@
         {% endif %}
         <div class="flex flex-col gap-6">
           {% for t in track.tracks %}
-            <div class="block-hover rounded-lg p-6 flex-1 min-w-[250px]">
+            <div class="rounded-lg p-6 flex-1 min-w-[250px]">
               <span class="font-medium text-base mb-3 block">{{ t.name }}</span>
               <audio controls class="mt-2 w-full mb-3">
                 <source src="/audio/{{ t.file }}" type="audio/{{ t.ext }}">
@@ -52,7 +52,7 @@
         </div>
       </div>
     {% else %}
-      <div class="block-bg block-hover rounded-lg p-6 flex-1 min-w-[250px] mb-4">
+      <div class="block-bg rounded-lg p-6 flex-1 min-w-[250px] mb-4">
         <span class="font-medium text-base mb-3 block">{{ track.name }}</span>
         <audio controls class="mt-2 w-full mb-3">
           <source src="/audio/{{ track.file }}" type="audio/{{ track.ext }}">

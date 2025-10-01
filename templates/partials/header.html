@@ -1,4 +1,23 @@
 <style>
+@keyframes color-shift {
+  0%, 100% {
+    color: var(--hint-color);
+  }
+  50% {
+    color: #24be8d;
+  }
+}
+
+.title-hover {
+  transition: transform 0.3s ease-in-out, color 0.5s ease-out;
+  text-shadow: 1px 1px 1px rgba(0, 17, 18, 0.5);
+}
+
+.title-hover:hover {
+  animation: color-shift 3s ease-in-out infinite;
+  transform: translateY(-1px);
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -59,7 +78,7 @@ input:checked + .slider:before {
   <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
     <div class="flex justify-between">
       <div class="flex items-center">
-        <a class="text-2xl font-semibold" href="{{ get_url(path=``) }}">{{ config.title }}</a>
+        <a class="title-hover text-2xl font-semibold" href="{{ get_url(path=``) }}">{{ config.title }}</a>
         <label class="switch btn-dark ml-4 h-6 w-6" aria-label="Theme toggle">
           <input type="checkbox" id="theme-toggle" />
           <span class="slider round"></span>
@@ -116,7 +135,7 @@ input:checked + .slider:before {
         {% for menu in config.extra.menu %}
         <li>
           <a
-            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            class="primary-link block py-3 text-center text-lg font-medium lg:px-3 lg:py-3"
             href="{{ menu.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
             >{{ menu.name }}</a
           >
