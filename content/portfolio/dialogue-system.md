@@ -1,14 +1,14 @@
 +++
 title = "🗨️ Dialogue System — Visual Dialogue Editor for Unity"
 date = "2024-02-16"
-weight = 2
 description = "An advanced Unity dialogue system for branching narrative and player choices."
 [taxonomies]
 tags = ["Unity", "CSharp", "Tool", "Narrative", "Dialogue", "2D"]
 [extra]
 cover.image = "images/dialogue-system-cover.png"
-cover.alt = "Dialogue System cover art"
+cover.alt = "Dialogue System cover"
 category = "Projects"
+pinned = true
 +++
 
 ✨ **Dialogue System** is a visual dialogue editor for Unity, designed to create rich narrative interactions with branching choices, text animations, and character emotion management.

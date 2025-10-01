@@ -1,7 +1,6 @@
 +++
 title = "🖥️ CPU-Based 3D Renderer in C++"
 date = "2025-07-01"
-weight = 2
 description = "A CPU-based 3D renderer written in C++ 20 with importable object files."
 [taxonomies]
 tags = ["3D", "Rendering", "CPP", "Graphics", "Software", "Tool"]
@@ -9,6 +8,7 @@ tags = ["3D", "Rendering", "CPP", "Graphics", "Software", "Tool"]
 cover.image = "images/3d-renderer-cover.png"
 cover.alt = "3D Renderer project cover"
 category = "Technical"
+pinned = true
 +++
 
 ✨ **3D Renderer** is a CPU-based 3D renderer written in C++20, supporting simple primitive shapes and built entirely from scratch. It offers both perspective and orthographic projections and supports simple `.obj` imports.
@@ -26,6 +26,22 @@ category = "Technical"
 - 🖼️ **.obj Import**: Load and render simple **.obj** files.
 - 🔄 **Projection Modes**: Switch between perspective and orthographic projections.
 - 🖥️ **CPU-Based**: Built entirely from scratch without relying on external graphics libraries.
+
+---
+
+## 🖼️ Rendering Pipeline  
+
+The rendering pipeline transforms **3D objects** from their local definitions into **2D rasterized pixels** on the screen.  
+
+{% mermaid() %}
+graph TD;
+    A["Object Space<br/>(Local Space)<br/><small>Vertices defined relative to origin</small>"] --> 
+    B["World Space<br/><small>Apply transforms (position, rotation, scale)</small>"] --> 
+    C["Camera/View Space<br/><small>Relative to camera orientation</small>"] --> 
+    D["NDC<br/>(Normalized Device Coordinates)<br/><small>Range [-1, 1]</small>"] --> 
+    E["Screen Space<br/><small>Mapped to 2D pixel coords</small>"] --> 
+    F["Rasterization<br/><small>Z-Buffer + Triangle Filling</small>"];
+{% end %}
 
 ---
 

@@ -9,6 +9,7 @@ tags = ["Platformer", "Puzzle", "Game Jam", "Indie", "Atmospheric", "Unity", "CS
 cover.image = "images/save-yourself-cover.png"
 cover.alt = "Save Yourself cover"
 category = "Games"
+pinned = true
 +++
 
 ✨ **Save Yourself** is a 2D atmospheric platformer where you create your own save points to undo mistakes.  
@@ -34,16 +35,18 @@ With a calm, melancholic soundtrack and cool-color aesthetic, it creates a world
 - ⭐ **Ranked 35th out of ~2,200 games** (Top **1.6%**) 
 - 👍 Overall rating of **4/5** (**80+** reviews). 
 - 🌍 Played **400+ times** across Web, Windows, and Linux.  
-- 📰 Featured in a **PlaytestCloud case study** on player feedback ([kirbylife.co.uk](https://kirbylife.co.uk)).  
+- 📰 Featured in a **PlaytestCloud case study** on player feedback ([kirbylife.co.uk](https://kirbylife.co.uk/2025/04/14/case-study-my-playtest-process-for-save-yourself-puzzle-platformer/)).  
 
 ---
 
 ## 💡 What Players Are Saying
-> A very clever puzzle game. The idea is brilliant and execution is smooth. I love the simple visual style.
 
-> The concept is brilliant, the visuals are really cute and engaging. Really impressed that a single person could make a game like this in just one week!
-
-— *Players on itch.io*
+{% admonition(type="quote", title="Player on itch.io") %}
+This is such a great concept, I honestly think it's on the same level as Braid for its time. This is a real treasure, I'm so glad I actually didn't miss your game.
+{% end %}
+{% admonition(type="quote", title="Player on itch.io") %}
+The concept is brilliant, the visuals are really cute and engaging. Really impressed that a single person could make a game like this in just one week!
+{% end %}
 
 ---
 
@@ -68,6 +71,6 @@ All assets were created from scratch (except a few sound effects from [freesound
 
 ## 🙏 Acknowledgements
 Thank you to **Max Kirby** for generously running a full **player evaluation and case study**  
-(including the [article on kirbylife.co.uk](https://kirbylife.co.uk)) **free of charge and in close collaboration with me**. Your insights were invaluable in understanding how players experienced **Save Yourself**. 💡💚  
+(including the [article on kirbylife.co.uk](https://kirbylife.co.uk/2025/04/14/case-study-my-playtest-process-for-save-yourself-puzzle-platformer/)) **free of charge and in close collaboration with me**. Your insights were invaluable in understanding how players experienced **Save Yourself**. 💡💚  
 
 Huge thanks as well to everyone who played, rated, and shared feedback during the jam. Your support turned a one-week solo project into a community favorite. 💪

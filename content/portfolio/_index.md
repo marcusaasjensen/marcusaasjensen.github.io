@@ -1,5 +1,5 @@
 +++
 title = "Portfolio"
 template = "portfolio.html"
-sort_by = "weight"
+sort_by = "date"
 +++

@@ -1,10 +1,9 @@
 +++
 title = "🪄 It's Magic — Multi-device Multiplayer Game"
 date = "2025-01-20"
-weight = 2
 description = "Experimental multiplayer game exploring distributed interaction across several devices."
 [taxonomies]
-tags = ["2D", "Unity", "CSharp", "JavaScript", "Java", "Android", "Multiplayer", "UI", "Game"]
+tags = ["2D", "Unity", "CSharp", "JavaScript", "Java", "Android", "Multiplayer", "Academic", "Game"]
 [extra]
 cover.image = "images/its-magic-cover.png"
 cover.alt = "Its Magic project cover"

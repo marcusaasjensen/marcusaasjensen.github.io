@@ -1,10 +1,9 @@
 +++
 title = "🪢 Marionette — Original 3D Blender Animation"
-date = "2025-09-28"
-weight = 3
+date = "2024-01-28"
 description = "A personal short 3d animation about a fragile marionette."
 [taxonomies]
-tags = ["Blender", "3D", "Character", "Animation"]
+tags = ["Blender", "3D", "Character", "Animation", "Modeling"]
 [extra]
 cover.image = "images/marionette-cover.png"
 cover.alt = "Marionette Blender Animation"

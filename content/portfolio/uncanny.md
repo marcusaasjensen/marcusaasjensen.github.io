@@ -1,7 +1,6 @@
 +++
 title = "🎶 Uncanny — Action Rhythm Boss Game"
 date = "2023-04-18"
-weight = 1
 description = "A fever-dream action rhythm game where you dodge and dash through boss attacks."
 [taxonomies]
 tags = ["Action", "Rhythm", "Bullet Hell", "Indie","Atmospheric", "Unity", "CSharp", "2D"]
@@ -9,6 +8,7 @@ tags = ["Action", "Rhythm", "Bullet Hell", "Indie","Atmospheric", "Unity", "CSha
 cover.image = "images/uncanny-cover.png"
 cover.alt = "Uncanny cover art"
 category = "Games"
+pinned = true
 +++
 
 ✨ **Uncanny** is a fast-paced **action rhythm game** where you dodge and dash through surreal boss attacks.  
@@ -42,9 +42,11 @@ Blending rhythm-based mechanics with bullet-hell chaos, it draws inspiration fro
 ---
 
 ## 💡 What Players Are Saying
-> Love the characters in it. Feels like a fever dream.  
 
-— *[Tarodev](https://www.youtube.com/c/Tarodev), Discord*
+{% admonition(type="quote", title="Tarodev on Discord") %}
+Love the characters in it. Feels like a fever dream.  
+{% end %}
+[See Tarodev's Youtube Channel](https://www.youtube.com/c/Tarodev)
 
 ---
 
