@@ -90,7 +90,12 @@ input:checked + .slider:before {
         </label>
       </div>
       {% if config.extra.menu %}
-        <button
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+        <!-- <button
         type="button"
         class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center lg:hidden"
         aria-label="Menu"
@@ -99,7 +104,7 @@ input:checked + .slider:before {
         >
           <img class="menu-icon w-12 h-12 dark" src="/icons/menu.svg" alt="Menu" style="display: block;" />
           <img class="cross-icon w-12 h-12 dark" src="/icons/cross.svg" alt="Close" style="display: none;" />
-        </button>
+        </button> -->
       {% endif %}
     </div>
     <script>

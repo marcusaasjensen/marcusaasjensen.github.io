@@ -1487,7 +1487,7 @@ article {
   }
 }
 
-.btn-menu img {
+/* .btn-menu img {
   display: block;
   transition: filter 0.2s ease, opacity 0.2s ease;
 }
@@ -1506,10 +1506,10 @@ article {
 
 .btn-menu img.hidden {
   display: none !important;
-}
+} */
 
 
-/* .btn-menu {
+.btn-menu {
   &::before, &::after {
     display: block;
     height: 2px;
@@ -1548,7 +1548,7 @@ article {
       rotate: calc(45deg * -1);
     }
   }
-} */
+}
 .nav-wrapper {
   display: none;
   @media (width >= 64rem) {
