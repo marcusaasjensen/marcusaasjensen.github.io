@@ -14,7 +14,7 @@
 }
 
 .title-hover:hover {
-  animation: color-shift 3s ease-in-out infinite;
+  animation: color-shift 3s ease-in-out infinite, color 0.5s ease-out;
   transform: translateY(-1px);
 }
 
@@ -22,7 +22,7 @@
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 34px;
+  height: 30px;
 }
 
 .switch input {
@@ -39,16 +39,16 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: 0.4s;
+  transition: transform 0.4s;
   border-radius: 34px;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
+  height: 22px;
+  width: 22px;
+  left: 6px;
   bottom: 4px;
   transition: 0.4s;
 
@@ -58,6 +58,11 @@
   background-position: left center;
 
   border-radius: 50%;
+}
+
+.slider:hover {
+  outline: #24be8d solid 2px;
+  transition: outline .1s;
 }
 
 input:checked + .slider {
@@ -77,56 +82,72 @@ input:checked + .slider:before {
 >
   <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
     <div class="flex justify-between">
-      <div class="flex items-center">
-        <a class="title-hover text-2xl font-semibold" href="{{ get_url(path=``) }}">{{ config.title }}</a>
+      <div class="flex items-center justify-center">
+        <a class="title-hover text-2xl font-semibold" href="{{ get_url(path=``) }}" style="display: block; margin-top: -4px;">{{ config.title }}</a>
         <label class="switch btn-dark ml-4 h-6 w-6" aria-label="Theme toggle">
           <input type="checkbox" id="theme-toggle" />
           <span class="slider round"></span>
         </label>
       </div>
-
       {% if config.extra.menu %}
-      <div
-        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-        role="button"
+        <button
+        type="button"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center lg:hidden"
         aria-label="Menu"
-      ></div>
+        onclick="toggleMenu(this)"
+        onkeydown="if(event.key==='Enter'||event.key===' '){toggleMenu(this);event.preventDefault();}"
+        >
+          <img class="menu-icon w-12 h-12" src="/icons/menu.svg" alt="Menu" style="display: block;" />
+          <img class="cross-icon w-12 h-12" src="/icons/cross.svg" alt="Close" style="display: none;" />
+        </button>
       {% endif %}
     </div>
-
     <script>
-      const htmlClass = document.documentElement.classList;
-      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-      const themeToggle = document.getElementById("theme-toggle");
-
-      const setDark = (isDark) => {
-        if (isDark) {
-          htmlClass.add("dark");
-          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
-        } else {
-          htmlClass.remove("dark");
-          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+        function toggleMenu(btn) {
+          const menuIcon = btn.querySelector('.menu-icon');
+          const crossIcon = btn.querySelector('.cross-icon');
+          
+          if (menuIcon.style.display === 'none') {
+            menuIcon.style.display = 'block';
+            crossIcon.style.display = 'none';
+          } else {
+            menuIcon.style.display = 'none';
+            crossIcon.style.display = 'block';
+          }
         }
-        localStorage.setItem("dark", isDark);
-        themeToggle.checked = isDark;
-      };
 
-      setTimeout(() => htmlClass.remove("not-ready"), 10);
-      const stored = localStorage.getItem("dark");
-      const prefersDark = stored ? stored === "true" : darkScheme.matches;
-      setDark(prefersDark);
+          const htmlClass = document.documentElement.classList;
+          const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+          const themeToggle = document.getElementById("theme-toggle");
 
-      darkScheme.addEventListener("change", (e) => {
-        const stored = localStorage.getItem("dark");
-        if (stored === null) setDark(e.matches);
-      });
+          const setDark = (isDark) => {
+            if (isDark) {
+              htmlClass.add("dark");
+              document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+            } else {
+              htmlClass.remove("dark");
+              document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+            }
+            localStorage.setItem("dark", isDark);
+            themeToggle.checked = isDark;
+          };
 
-      themeToggle.addEventListener("change", () => {
-        setDark(themeToggle.checked);
-      });
+          setTimeout(() => htmlClass.remove("not-ready"), 10);
+          const stored = localStorage.getItem("dark");
+          const prefersDark = stored ? stored === "true" : darkScheme.matches;
+          setDark(prefersDark);
 
-      const btnMenu = document.querySelector(".btn-menu");
-      btnMenu?.addEventListener("click", () => htmlClass.toggle("open"));
+          darkScheme.addEventListener("change", (e) => {
+            const stored = localStorage.getItem("dark");
+            if (stored === null) setDark(e.matches);
+          });
+
+          themeToggle.addEventListener("change", () => {
+            setDark(themeToggle.checked);
+          });
+
+          const btnMenu = document.querySelector(".btn-menu");
+          btnMenu?.addEventListener("click", () => htmlClass.toggle("open"));
     </script>
 
     {% if config.extra.menu %}

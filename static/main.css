@@ -1486,7 +1486,28 @@ article {
     background: var(--header-dark);
   }
 }
-.btn-menu {
+.btn-menu img {
+  display: block;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-menu img.cross-icon {
+  display: none;
+}
+
+.btn-menu img.hidden {
+  display: none !important;
+}
+
+:where(.dark, .dark *) .btn-menu img {
+  filter: invert(100%);
+}
+
+html:not(.not-ready) .btn-menu img {
+  transition: filter 0.2s ease-in-out;
+}
+
+/* .btn-menu {
   &::before, &::after {
     display: block;
     height: 2px;
@@ -1525,7 +1546,7 @@ article {
       rotate: calc(45deg * -1);
     }
   }
-}
+} */
 .nav-wrapper {
   display: none;
   @media (width >= 64rem) {
@@ -1844,14 +1865,16 @@ article {
 .card-hover {
   position: relative;
   border-radius: 0.5rem;
-  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1),
-              box-shadow 0.25s cubic-bezier(0.4,0,0.2,1),
-              border-color 0.25s cubic-bezier(0.4,0,0.2,1);
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.7s cubic-bezier(0.4,0,0.2,1),
+              border-color 0.7s cubic-bezier(0.4,0,0.2,1);
   will-change: transform, box-shadow, border-color, background;
 
   background: rgba(255,255,255,0.075);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1),
-              0 1px 2px rgba(0,0,0,0.06);
+
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08),
+              0 10px 20px rgba(0,0,0,0.06),
+              0 20px 40px rgba(0,0,0,0.04);
 }
 
 .card-hover::before {
@@ -1861,7 +1884,7 @@ article {
   pointer-events: none;
   border-radius: inherit;
   background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-                              rgba(var(--hint-color-rgb), 0.05),
+                              rgba(var(--hint-color-rgb), 0.08),
                               transparent 60%);
   opacity: 0;
   transition: opacity 0.3s ease, background-position 0.1s ease;
@@ -1874,10 +1897,22 @@ article {
 .card-hover:hover {
   transform: translateY(-2px);
   border: 2px solid var(--hint-color);
+
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.08),
+    0 10px 20px rgba(0,0,0,0.06),
+    0 20px 40px rgba(0,0,0,0.04),
+    0 6px 12px rgba(0,0,0,0.08),
+    0 12px 28px rgba(0,0,0,0.06),
+    0 24px 48px rgba(0,0,0,0.04);
 }
 
 .card-hover:active {
   transform: translateY(0px) scale(0.98);
+  box-shadow: 
+    0 2px 6px rgba(0,0,0,0.08),
+    0 4px 12px rgba(0,0,0,0.06),
+    0 8px 24px rgba(0,0,0,0.04);
 }
 
 .line-clamp-2 {
