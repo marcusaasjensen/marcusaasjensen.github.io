@@ -1959,3 +1959,13 @@ audio {
   flex: 1;
   height: 32px;
 }
+
+#particle-canvas {
+  position: absolute;
+  top: 0px;
+  left: 200px;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  z-index: 9999;
+}

@@ -71,6 +71,7 @@
           alt="Site banner"
           class="w-full h-48 object-cover"
         />
+          <canvas id="particle-canvas"></canvas>
       </div>
       {% endblock main %}
     </main>
@@ -117,3 +118,81 @@
     </script>
   </body>
 </html>
+
+<script>
+  const canvas = document.getElementById("particle-canvas");
+  const ctx = canvas.getContext("2d");
+  let particles = [];
+
+  function resizeCanvas() {
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+  }
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  class Particle {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.size = Math.random() * 2 + 1; // 🔹 tiny squares
+      this.speedX = (Math.random() - 0.5) * 1.2; // 🔹 slow drift
+      this.speedY = (Math.random() - 0.5) * 1.2;
+      this.alpha = 1;
+
+      const hues = [160, 170, 180, 190, 200];
+      const hue = hues[Math.floor(Math.random() * hues.length)];
+      this.color = `hsl(${hue}, 70%, 55%)`;
+      this.life = 0;
+      this.maxLife = 150 + Math.random() * 50; // total lifespan
+    }
+
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.life++;
+
+      // fade out naturally
+      if (this.life > this.maxLife * 0.6) {
+        this.alpha -= 0.01;
+      }
+    }
+
+    draw() {
+      ctx.globalAlpha = this.alpha;
+      ctx.fillStyle = this.color;
+      ctx.fillRect(this.x, this.y, this.size, this.size);
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((p, i) => {
+      p.update();
+      p.draw();
+
+      // remove before touching borders OR fully faded
+      if (
+        p.alpha <= 0 ||
+        p.x < 10 || p.x > canvas.width - 10 ||
+        p.y < 10 || p.y > canvas.height - 10
+      ) {
+        particles.splice(i, 1);
+      }
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Trigger burst on E
+  window.addEventListener("keydown", (e) => {
+    if (e.key.toLowerCase() === "e") {
+      const x = canvas.width / 2;  // center of banner
+      const y = canvas.height / 2;
+      for (let i = 0; i < 100; i++) {
+        particles.push(new Particle(x, y));
+      }
+    }
+  });
+</script>
