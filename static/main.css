@@ -1486,6 +1486,7 @@ article {
     background: var(--header-dark);
   }
 }
+
 .btn-menu img {
   display: block;
   transition: filter 0.2s ease, opacity 0.2s ease;
@@ -1495,17 +1496,18 @@ article {
   display: none;
 }
 
+.dark .btn-menu img.cross-icon {
+  filter: invert(100%);
+}
+
+.dark .btn-menu img.menu-icon {
+  filter: invert(100%);
+}
+
 .btn-menu img.hidden {
   display: none !important;
 }
 
-:where(.dark, .dark *) .btn-menu img {
-  filter: invert(100%);
-}
-
-html:not(.not-ready) .btn-menu img {
-  transition: filter 0.2s ease-in-out;
-}
 
 /* .btn-menu {
   &::before, &::after {
@@ -1866,10 +1868,10 @@ html:not(.not-ready) .btn-menu img {
   position: relative;
   border-radius: 0.5rem;
   transition: transform 0.5s cubic-bezier(0.4,0,0.2,1),
-              box-shadow 0.7s cubic-bezier(0.4,0,0.2,1),
-              border-color 0.7s cubic-bezier(0.4,0,0.2,1);
+  box-shadow 0.7s cubic-bezier(0.4,0,0.2,1),
+  border-color cubic-bezier(0.4,0,0.2,1);
   will-change: transform, box-shadow, border-color, background;
-
+  
   background: rgba(255,255,255,0.075);
 
   box-shadow: 0 4px 8px rgba(0,0,0,0.08),
@@ -1879,6 +1881,7 @@ html:not(.not-ready) .btn-menu img {
 
 .card-hover::before {
   content: '';
+  display: block;
   position: absolute;
   inset: 0;
   pointer-events: none;

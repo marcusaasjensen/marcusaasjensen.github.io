@@ -70,7 +70,7 @@ items = [
     { name = "TypeScript", url = "https://en.wikipedia.org/wiki/TypeScript" },
     { name = "HTML", url = "https://en.wikipedia.org/wiki/HTML" },
     { name = "CSS", url = "https://en.wikipedia.org/wiki/CSS" },
-    { name = "Python", url = "https://en.wikipedia.org/wiki/Python_(programming_language)" },
+    # { name = "Python", url = "https://en.wikipedia.org/wiki/Python_(programming_language)" },
 ]
 
 [[skills]]
