@@ -25,6 +25,7 @@ All our dreams can come true if we have the courage to pursue them
 ---
 
 ## ⚠️ Important Notes
+
 - 🚧 **School Project**: This game was developed as part of a school project and may contain bugs and glitches.
 - 🖥️ **Performance Requirements**: Best experienced on a PC running at 60 FPS; may not perform well on lower-end hardware.
 - 🛠️ **No Performance Options**: Lacks settings for adjusting performance or graphics quality.
@@ -39,5 +40,3 @@ All our dreams can come true if we have the courage to pursue them
 |---|---|
 | [![Screenshot 1](/images/little-princess1.png)](/images/little-princess1.png) | [![Screenshot 2](/images/little-princess2.png)](/images/little-princess2.png) |
 | [![Screenshot 3](/images/little-princess3.png)](/images/little-princess3.png) | [![Screenshot 4](/images/little-princess4.png)](/images/little-princess4.png) |
-
-

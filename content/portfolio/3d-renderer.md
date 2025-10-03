@@ -22,6 +22,7 @@ pinned = true
 ---
 
 ## 🛠️ Features
+
 - 🧱 **Primitive Shapes**: Render basic shapes like cubes, spheres, and pyramids.
 - 🖼️ **.obj Import**: Load and render simple **.obj** files.
 - 🔄 **Projection Modes**: Switch between perspective and orthographic projections.

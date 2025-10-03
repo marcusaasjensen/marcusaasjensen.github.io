@@ -1,6 +1,6 @@
 +++
 title = "✈️ Airport Network Epidemic Simulation"
-date = "2023-01-01"
+date = "2022-12-20"
 description = "A Unity-based simulation modeling epidemic spread within an airport network."
 [taxonomies]
 tags = ["Unity", "CSharp", "Simulation", "3D", "Academic"]
@@ -11,6 +11,12 @@ category = "Projects"
 +++
 
 ✨ **Airport Network Epidemic** is a Unity-based simulation modeling how an epidemic spreads through a network of airports. It provides insight into disease propagation and the interconnectedness of global travel hubs.
+
+{% admonition(type="warning", title="Disclaimer") %}
+This project is old (2022) and is not an accurate depiction of a real world epidemic.
+
+Although you can try the final version in the latest release, the final project itself was lost. You can only access this old project version on GitHub with other added scripts that were only present in the newer lost project.
+{% end %}
 
 💻 **GitHub Repository**
 
@@ -30,6 +36,7 @@ category = "Projects"
 ---
 
 ## ⚙️ Parameters
+
 - 🦠 Chance of Airplane Getting Virus (0 to 1): probability that an airplane becomes contaminated with the virus.
 
 - ∆T Virus Infection Delta T (in days): time before a new airplane contamination occurs at a contaminated airport.
@@ -61,7 +68,7 @@ Built with:
 
 ---
 
-## 📝 Instructions
+## 🔧 Setup
 
 1. Extract the `airport_network_epidemic.zip` file.  
 2. Launch the `Virus_Airport_Network_Simulation.exe` file.  

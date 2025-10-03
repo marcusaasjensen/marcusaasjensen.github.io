@@ -1,5 +1,5 @@
 +++
-title = "🪄 It's Magic — Multi-device Multiplayer Game"
+title = "🪄 It's Magic — Multi-Device Multiplayer Game"
 date = "2025-01-20"
 description = "Experimental multiplayer game exploring distributed interaction across several devices."
 [taxonomies]
