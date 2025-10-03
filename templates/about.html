@@ -1,11 +1,11 @@
 {% import "macros.html" as macros %}
-{% extends "index.html" %}<!---->
-{% block main %}<!---->
-{% for asset in page.assets %}<!---->
-{% if asset is ending_with("data.toml") %}<!---->
-{% set_global data = load_data(path=asset, format="toml") %}<!---->
-{% endif %}<!---->
-{% endfor %}<!---->
+{% extends "index.html" %}
+{% block main %}
+{% for asset in page.assets %}
+{% if asset is ending_with("data.toml") %}
+{% set_global data = load_data(path=asset, format="toml") %}
+{% endif %}
+{% endfor %}
 
 <h1 class="mb-16">{{ page.title }}</h1>
 
@@ -24,23 +24,40 @@
   
   <div class="my-2 flex flex-wrap items-center justify-between">
     <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
-      {% for tag in experience.tags %}
-      <span>#{{ tag }}</span>
-      {% endfor %}
+      <span>{{ experience.location }}</span>
     </div>
     <div class="flex flex-wrap gap-x-2">
-      <!-- {% for link in experience.links %}
-      <a
-        class="underline"
-        href="{{ link.url | replace(from=`$BASE_URL`, to=config.base_url) | safe  }}"
-        rel="noopener"
-        target="_blank"
-        >{{ link.name }}</a
-      >
-      {% endfor %} -->
       {% if experience.logo %}
       <a href="{{ experience.links[0].url }}" target="_blank" rel="noopener">
-      <img src="{{ experience.logo }}" alt="{{ experience.name }} logo" class="h-8 w-auto object-contain" />
+        <img src="{{ experience.logo }}" alt="{{ experience.name }} logo" class="h-8 w-auto object-contain" />
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<h2>🎓 Education</h2>
+{% for education in data.education %}
+<div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
+  
+  <div class="flex justify-between items-center">
+    <h3 class="my-2 text-xl font-bold text-black dark:text-white">{{ education.name }}</h3>
+    <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
+      {{ education.start_date }}{% if education.end_date %} – {{ education.end_date }}{% endif %}
+    </div>
+  </div>
+  
+  <p>{{ education.desc }}</p>
+  
+  <div class="my-2 flex flex-wrap items-center justify-between">
+    <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
+      <span>{{ education.location }}</span>
+    </div>
+    <div class="flex flex-wrap gap-x-2">
+      {% if education.logo %}
+      <a href="{{ education.links[0].url }}" target="_blank" rel="noopener">
+        <img src="{{ education.logo }}" alt="{{ education.name }} logo" class="h-8 w-auto object-contain" />
       </a>
       {% endif %}
     </div>
@@ -50,7 +67,6 @@
 
 <h2>🛠 Skills</h2>
 <div class="not-prose mt-6 flex flex-col">
-
   {% for group in data.skills %}
   <div class="mb-12">
     <h3 class="text-lg font-semibold mb-2">{{ group.title }}</h3>
@@ -68,45 +84,55 @@
     </div>
   </div>
   {% endfor %}
-
 </div>
 
-<h2>🎓 Education</h2>
-{% for education in data.education %}
+<h2>📜 Certifications</h2>
+{% for cert in data.certifications %}
 <div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
-  <!-- Title + Date Row -->
+  
   <div class="flex justify-between items-center">
-    <h3 class="my-2 text-xl font-bold text-black dark:text-white">{{ education.name }}</h3>
+    <h3 class="my-2 text-xl font-bold text-black dark:text-white">{{ cert.name }}</h3>
     <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
-      {{ education.start_date }}{% if education.end_date %} – {{ education.end_date }}{% endif %}
+      {{ cert.date }}
     </div>
   </div>
   
-  <p>{{ education.desc }}</p>
+  {% if cert.desc %}
+  <p>{{ cert.desc }}</p>
+  {% endif %}
   
-  <div class="my-2 flex flex-wrap items-center justify-between">
+  <div class="my-2 flex flex-wrap items-center justify-start">
     <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
-      {% for tag in education.tags %}
-      <span>#{{ tag }}</span>
-      {% endfor %}
-      {% for link in education.links %}
+      {% for link in cert.links %}
       <a
         class="underline"
-        href="{{ link.url | replace(from=`$BASE_URL`, to=config.base_url) | safe  }}"
+        href="{{ link.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
         rel="noopener"
         target="_blank"
         >{{ link.name }}</a>
       {% endfor %}
     </div>
-    <div class="flex flex-wrap gap-x-2">
-      {% if education.logo %}
-      <a href="{{ education.links[0].url }}" target="_blank" rel="noopener">
-      <img src="{{ education.logo }}" alt="{{ education.name }} logo" class="h-8 w-auto object-contain" />
-      </a>
-      {% endif %}
-    </div>
   </div>
 </div>
 {% endfor %}
 
-{% endblock main %}
+<h2>🌍 Languages</h2>
+<div class="not-prose mt-6 flex flex-wrap gap-4 justify-center">
+  {% for lang in data.Languages %}
+  <div class="block-bg rounded-lg p-6 text-center w-44 sm:w-60 flex-shrink-0">
+    <div class="flex justify-center mb-4">
+      <div class="h-2 w-2 flex items-center justify-center overflow-hidden rounded-lg shadow-md bg-white">
+<img src="{{ lang.flag }}" alt="{{ lang.name }} flag" class="h-6 w-auto rounded-md object-cover shadow-md" />
+      </div>
+    </div>
+    <h3 class="text-lg font-bold text-black dark:text-white mb-2">
+      {{ lang.name }}
+    </h3>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      {{ lang.level }}
+    </p>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
