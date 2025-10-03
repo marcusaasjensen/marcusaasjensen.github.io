@@ -20,7 +20,7 @@ category = "Projects"
 
 ---
 
-## 📽️ Demo
+## 📽️ Showcase
 
 <video width="720" controls>
   <source src="https://raw.githubusercontent.com/luvluvdt3/VRvard/develop/docs/FINAL_VR.mp4" type="video/mp4">

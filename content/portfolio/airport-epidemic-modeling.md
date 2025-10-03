@@ -51,7 +51,7 @@ Although you can try the final version in the latest release, the final project 
 
 ---
 
-## 📽️ Demo
+## 📽️ Showcase
 
 Here is a cliché simulation of an epidemic with 30 connected airports. The virus is extremely contagious everyday and cleaning measures are negligeable during an unknown epidemic. When an airport is in lockdown, cleaning measures are taken seriously.
 
