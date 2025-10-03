@@ -58,7 +58,7 @@ comment = true
 # The custom background color in dark mode.
 # bg_dark_color = ""
 
-header_blur = false
+header_blur = true
 
 # Enable header blur.
 # The custom header color, only available when `header_blur` is false.
