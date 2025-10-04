@@ -73,29 +73,7 @@
 
 </div>
 
-<h2 class="text-2xl font-semibold mt-12 mb-4">🎵 Music License</h2>
-
-<div class="block-bg rounded-lg p-6 mb-8">
-  <p class="text-gray-700 dark:text-gray-300 mb-4">
-    All music on this site is created by <strong>Marcus Aas Jensen</strong>.
-  </p>
-  <p class="text-gray-600 dark:text-gray-400 mb-4">
-    You are free to <strong>use, share, and remix</strong> the tracks for your own projects, <strong>as long as you give proper credit</strong>.
-  </p>
-  <p class="text-gray-600 dark:text-gray-400 mb-4">
-    <strong>Credit Example:</strong><br>
-    "Music by Marcus Aas Jensen. See website <a href='https://marcusaasjensen.com' class='underline'>https://marcusaasjensen.com</a>"
-  </p>
-  <p class="text-gray-600 dark:text-gray-400 mb-4">
-    If you use the tracks commercially, please <strong>contact me</strong> for permission.
-  </p>
-
-  <div class="mt-4">
-    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
-      <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" alt="CC BY 4.0 License" class="inline-block">
-    </a>
-  </div>
-</div>
+{% include "partials/license_text.html" %}
 
 <script>
   const audios = document.querySelectorAll('audio');
