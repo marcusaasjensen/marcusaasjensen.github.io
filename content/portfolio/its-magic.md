@@ -89,6 +89,43 @@ Play as **three wizards** working together to brew a potion before time runs out
 
 ---
 
-## 🎮 Experience
-It’s Magic invites players to **mix physical gestures and digital feedback** in a playful, collaborative setting.  
-Whether dragging ingredients, slashing branches, or blowing into a phone to light fires, each action contributes to the shared magical goal.
+## 📸 Gallery
+
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+
+  <a href="https://github.com/user-attachments/assets/c88956ce-76a6-44bd-89c0-506c72a829f9" style="flex: 1 1 300px; max-width: 500px;">
+    <img src="https://github.com/user-attachments/assets/c88956ce-76a6-44bd-89c0-506c72a829f9" alt="Growing Minds Map" style="width:100%; height:auto; border-radius:8px;" />
+  </a>
+
+  <a href="https://github.com/user-attachments/assets/fa88282f-da62-46a8-85ce-361a5688d05f" style="flex: 1 1 300px; max-width: 500px;">
+    <img src="https://github.com/user-attachments/assets/fa88282f-da62-46a8-85ce-361a5688d05f" alt="Growing Minds Gameplay" style="width:80%; height:auto; border-radius:8px;" />
+  </a>
+
+  <a href="https://github.com/user-attachments/assets/1fda0afb-8b20-424d-93fe-37a08c753aa7" style="flex: 1 1 300px; max-width: 500px;">
+    <img src="https://github.com/user-attachments/assets/1fda0afb-8b20-424d-93fe-37a08c753aa7" alt="Growing Minds Gameplay" style="width:100%; height:auto; border-radius:8px;" />
+  </a>
+
+  <a href="https://github.com/user-attachments/assets/7fb8af25-fdf1-48e5-a896-421157196fef" style="flex: 1 1 300px; max-width: 500px;">
+    <img src="https://github.com/user-attachments/assets/7fb8af25-fdf1-48e5-a896-421157196fef" alt="Growing Minds Gameplay" style="width:80%; height:auto; border-radius:8px;" />
+  </a>
+
+  <a href="https://github.com/user-attachments/assets/37941215-6dac-43fd-b6bd-b603a2767876" style="flex: 1 1 300px; max-width: 500px;">
+    <img src="https://github.com/user-attachments/assets/37941215-6dac-43fd-b6bd-b603a2767876" alt="Growing Minds Gameplay" style="width:100%; height:auto; border-radius:8px;" />
+  </a>
+
+  <a href="https://github.com/user-attachments/assets/4f6c4de8-af2b-484a-8e9a-da50e5d9b6d7" style="flex: 1 1 300px; max-width: 500px;">
+    <img src="https://github.com/user-attachments/assets/4f6c4de8-af2b-484a-8e9a-da50e5d9b6d7" alt="Growing Minds Gameplay" style="width:100%; height:auto; border-radius:8px;" />
+  </a>
+
+  <a href="https://github.com/user-attachments/assets/d76ea95a-ef0e-40fd-84e7-3f354a9114e6" style="flex: 1 1 300px; max-width: 500px;">
+    <img src="https://github.com/user-attachments/assets/d76ea95a-ef0e-40fd-84e7-3f354a9114e6" alt="Growing Minds Gameplay" style="width:100%; height:auto; border-radius:8px;" />
+  </a>
+
+  <a href="https://github.com/user-attachments/assets/f68f0b1b-a833-4388-92fe-bda12f5c5b30" style="flex: 1 1 300px; max-width: 500px;">
+    <img src="https://github.com/user-attachments/assets/f68f0b1b-a833-4388-92fe-bda12f5c5b30" alt="Growing Minds Gameplay" style="width:100%; height:auto; border-radius:8px;" />
+  </a>
+
+  <a href="https://github.com/user-attachments/assets/41eaa7d9-6514-45c9-a9b2-a053f608475a" style="flex: 1 1 300px; max-width: 500px;">
+    <img src="https://github.com/user-attachments/assets/41eaa7d9-6514-45c9-a9b2-a053f608475a" alt="Growing Minds Gameplay" style="width:100%; height:auto; border-radius:8px;" />
+  </a>
+</div>
