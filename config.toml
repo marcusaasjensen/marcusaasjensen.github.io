@@ -136,20 +136,20 @@ since = 2025
 license = "MIT License"
 license_url = "https://github.com/marcusaasjensen/marcusaasjensen.github.io/blob/main/LICENSE"
 
-# The giscus comment options, only available when comment is enabled.
 [extra.giscus]
-repo = ""
-repo_id = ""
-category = ""
-category_id = ""
+repo = "marcusaasjensen/marcusaasjensen.github.io"
+repo_id = "R_kgDOP0zOCg"
+category = "Comments"
+category_id = "DIC_kwDOP0zOCs4CwPfG"
 mapping = "pathname"
 strict = 1
-reactions_enabled = 0
+reactions_enabled = 1
 emit_metadata = 0
-input_position = "top"
-theme = "kita"
+input_position = "bottom"
+theme = "preferred_color_scheme"
 lang = "en"
 loading = "lazy"
+
 
 [search]
 build_search_index = true

@@ -84,4 +84,8 @@
   });
 </script>
 
+  {% if page.extra.comment | default(value=config.extra.comment) %}
+  {% include "partials/comment.html" %}
+  {% endif %}
+
 {% endblock main %}
