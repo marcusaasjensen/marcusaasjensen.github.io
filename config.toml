@@ -150,3 +150,7 @@ input_position = "top"
 theme = "kita"
 lang = "en"
 loading = "lazy"
+
+[search]
+build_search_index = true
+index_format = "elasticlunr_javascript"
