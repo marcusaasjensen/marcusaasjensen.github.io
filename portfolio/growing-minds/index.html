@@ -1,0 +1,813 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    🌱 Growing Minds Game — Serious Game for Children on Biodiversity - Marcus Aas Jensen
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  
+  <!-- Author -->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  <meta name="description" content="Group project digitalizing a board game to teach children about biodiversity through serious play." />
+  <meta name="author" content="Marcus Aas Jensen" />
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="🌱 Growing Minds Game — Serious Game for Children on Biodiversity" />
+  <meta property="og:site_name" content="Marcus Aas Jensen" />
+  <meta property="og:description" content="Group project digitalizing a board game to teach children about biodiversity through serious play." />
+  <meta property="og:url" content="https:&#x2F;&#x2F;marcusaasjensen.com&#x2F;portfolio&#x2F;growing-minds&#x2F;" />
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <meta property="og:image" content="https://marcusaasjensen.com/images/growing-minds-cover.png" />
+  
+  <!---->
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://marcusaasjensen.com/main.css" />
+  <style>
+    :root {
+      --bg: #f4f4f5;
+      --bg-dark: #18181b;
+      --header: #e4e4e7;
+      --header-dark: #27272a;
+    }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://marcusaasjensen.com/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () =>
+    renderMathInElement(document.body, {
+      // customised options
+      // • auto-render specific keys, e.g.:
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+      // • rendering keys, e.g.:
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  <!---->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+  <script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+  const initMermaid = (isDark) => {
+    mermaid.initialize({
+      theme: isDark ? "dark" : "default",
+      startOnLoad: false,
+    });
+    mermaid.run();
+  };
+
+  // Add data-mermaid-code attribute on all mermaid block.
+  document.querySelectorAll(".mermaid").forEach((element) => {
+    element.setAttribute("data-mermaid-code", element.innerHTML);
+  });
+
+  // Re-render mermaid when theme changed.
+  document.body.addEventListener("set-theme", (e) => {
+    document.querySelectorAll(".mermaid").forEach((element) => {
+      const mermaidCode = element.getAttribute("data-mermaid-code");
+      if (mermaidCode != null) {
+        element.removeAttribute("data-processed");
+        element.innerHTML = mermaidCode;
+      }
+    });
+    initMermaid(e.detail === "dark");
+  });
+
+  // The es module script will load defer, so the localStorage should already be set by script in header.
+  // If this script is loaded first, the script in header will dispatch an event to re-render mermaid, it's works too.
+  initMermaid(localStorage.getItem("dark") === "true");
+</script>
+
+  <!---->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://marcusaasjensen.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://marcusaasjensen.com/apple-touch-icon.png" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="https://marcusaasjensen.com/atom.xml"
+  />
+   
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;marcusaasjensen.com&#x2F;portfolio&#x2F;growing-minds&#x2F;" />
+
+  <!-- Head inject -->
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <style>
+@keyframes color-shift {
+  0%, 100% {
+    color: var(--hint-color);
+  }
+  50% {
+    color: #24be8d;
+  }
+}
+
+.title-hover {
+  transition: transform 0.3s ease-in-out, color 0.5s ease-out;
+  text-shadow: 1px 1px 1px rgba(0, 17, 18, 0.5);
+}
+
+.title-hover:hover {
+  animation: color-shift 3s ease-in-out infinite, color 0.5s ease-out;
+  transform: scale(1.05);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: transform 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 6px;
+  bottom: 4px;
+  transition: 0.4s;
+
+  background-image: url('/icons/theme.svg');
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: left center;
+
+  border-radius: 50%;
+}
+
+.slider:hover {
+  outline: #24be8d solid 2px;
+  transition: outline .1s;
+}
+
+input:checked + .slider {
+  background-color: #181818;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-position: right center;
+  filter: invert(1);
+}
+
+</style>
+
+<header
+  class="blur-header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center justify-center">
+        <a style="display: block; margin-top: -6px;" class="title-hover text-2xl font-semibold" href="https://marcusaasjensen.com">Marcus Aas Jensen</a>
+        <label class="switch btn-dark ml-4 h-6 w-6" aria-label="Theme toggle" >
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+        <!-- <button
+        type="button"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center lg:hidden"
+        aria-label="Menu"
+        onclick="toggleMenu(this)"
+        onkeydown="if(event.key==='Enter'||event.key===' '){toggleMenu(this);event.preventDefault();}"
+        >
+          <img class="menu-icon w-12 h-12 dark" src="/icons/menu.svg" alt="Menu" style="display: block;" />
+          <img class="cross-icon w-12 h-12 dark" src="/icons/cross.svg" alt="Close" style="display: none;" />
+        </button> -->
+      
+    </div>
+    <script>
+        function toggleMenu(btn) {
+          const menuIcon = btn.querySelector('.menu-icon');
+          const crossIcon = btn.querySelector('.cross-icon');
+          
+          if (menuIcon.style.display === 'none') {
+            menuIcon.style.display = 'block';
+            crossIcon.style.display = 'none';
+          } else {
+            menuIcon.style.display = 'none';
+            crossIcon.style.display = 'block';
+          }
+        }
+
+          const htmlClass = document.documentElement.classList;
+          const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+          const themeToggle = document.getElementById("theme-toggle");
+
+          const setDark = (isDark) => {
+            if (isDark) {
+              htmlClass.add("dark");
+              document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+            } else {
+              htmlClass.remove("dark");
+              document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+            }
+            localStorage.setItem("dark", isDark);
+            themeToggle.checked = isDark;
+          };
+
+          setTimeout(() => htmlClass.remove("not-ready"), 10);
+          const stored = localStorage.getItem("dark");
+          const prefersDark = stored ? stored === "true" : darkScheme.matches;
+          setDark(prefersDark);
+
+          darkScheme.addEventListener("change", (e) => {
+            const stored = localStorage.getItem("dark");
+            if (stored === null) setDark(e.matches);
+          });
+
+          themeToggle.addEventListener("change", () => {
+            setDark(themeToggle.checked);
+          });
+
+          const btnMenu = document.querySelector(".btn-menu");
+          btnMenu?.addEventListener("click", () => htmlClass.toggle("open"));
+    </script>
+    <div id="search-results"></div>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium lg:px-3 lg:py-3"
+            href="https://marcusaasjensen.com/portfolio"
+            >📂 Portfolio</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium lg:px-3 lg:py-3"
+            href="https://marcusaasjensen.com/about"
+            >ℹ️ About Me</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium lg:px-3 lg:py-3"
+            href="https://marcusaasjensen.com/extras"
+            >💚 Extras</a
+          >
+        </li>
+        
+      </ul>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    
+
+    <main
+      class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg relative mx-auto min-h-[calc(100vh-9rem)] max-w-3xl px-4 pt-24 pb-16 break-words lg:pt-32"
+    >
+      
+<article>
+  <!-- Page Start inject -->
+  
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">🌱 Growing Minds Game — Serious Game for Children on Biodiversity</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2025-02-27</time>
+  <span class="mx-1">&middot;</span>
+  <span>5min</span>
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>Marcus Aas Jensen</span>
+  
+  <!-- Page Info inject -->
+  
+</div>
+
+  </header>
+
+  <!---->
+  <figure class="mt-0 mb-12">
+    <img
+      class="h-auto w-full rounded-lg"
+      src="https://marcusaasjensen.com/images/growing-minds-cover.png"
+      alt="Growing Minds game cover"
+    />
+  </figure>
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://marcusaasjensen.com/portfolio/growing-minds/#seedling-project-overview"
+            >🌱 Project Overview</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://marcusaasjensen.com/portfolio/growing-minds/#video-game-the-game"
+            >🎮 The Game</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://marcusaasjensen.com/portfolio/growing-minds/#woman-computer-my-role"
+            >👩‍💻 My Role</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://marcusaasjensen.com/portfolio/growing-minds/#camera-flash-gallery"
+            >📸 Gallery</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://marcusaasjensen.com/portfolio/growing-minds/#books-references"
+            >📚 References</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><h2 id="seedling-project-overview">🌱 Project Overview</h2>
+<p>This project was carried out as a <strong>group project of 3 students</strong> in the context of <strong>research on serious games and the digitalization of educational tools</strong>.<br />
+The objective was to bring an existing <strong>board game about biodiversity</strong> into a <strong>digital format</strong> using Unity, while preserving its <strong>collaborative</strong> and <strong>educational</strong> nature.</p>
+<p>The <strong>original board game "Growing Minds"</strong> was created by <strong>Saumya Grover</strong> and <strong>Nimet Hüma Sabirli</strong>. After being tested in schools worldwide, the authors sought to explore digitalization as a way to broaden its reach and integrate it into modern learning environments.</p>
+<p>Our challenge was to ensure that the <strong>playful, outdoor, and collaborative benefits</strong> of the original were preserved in the digital version.</p>
+<p>The project was conducted under the supervision and guidance of:</p>
+<ul>
+<li><a href="https://www-sop.inria.fr/members/Hui-Yin.Wu/">Hui-Yin Wu</a> (Professor, Inria)</li>
+<li><a href="https://fr.linkedin.com/in/pauline-devictor-92a02b233">Pauline Devictor</a> (Research &amp; Project Supervisor)</li>
+</ul>
+ <!---->
+
+
+<div
+  class="my-4 flex flex-col rounded-lg bg-[var(--admonition-bg)]"
+  style="--admonition-bg: rgba(255, 145, 0, 0.1)"
+>
+  <div class="flex items-center rounded-t-lg bg-[var(--admonition-bg)] p-1">
+    <div
+      class="mx-2 h-4 w-4 text-[0px] [background:var(--url)_center_center_no-repeat] dark:invert"
+      style="--url: url(./icons/warning.svg)"
+    >
+      warning
+    </div>
+    <span><strong>Note</strong></span>
+  </div>
+  <div class="pl-4"><p>This project is not available for public use. It is presented here as part of my portfolio to highlight my role in <strong>managing the entire Unity project</strong> and its technical implementation.</p>
+</div>
+</div>
+<h2 id="video-game-the-game">🎮 The Game</h2>
+<p>The digital version reimagines the board game with mechanics adapted to <strong>mobile platforms (Android &amp; iOS)</strong>:</p>
+<ul>
+<li>Players begin with an <strong>initial tile</strong> and connect additional tiles to build an <strong>ecosystem</strong>.</li>
+<li>Tiles represent <strong>animals, plants, or natural elements</strong>.</li>
+<li>Connecting tiles reveals <strong>rules</strong> that grant points.
+<ul>
+<li>Example: Connecting a <strong>Bee</strong> tile with a <strong>Honey</strong> tile unlocks the rule: <em>“the bee makes honey”</em>.</li>
+</ul>
+</li>
+<li>Even when no explicit rule exists, connecting tiles with thematic links (e.g., animals or plants) still grants points.</li>
+<li>Teachers can also <strong>define custom rules</strong>, making the experience flexible for classroom use.</li>
+</ul>
+<p>The project successfully translated the <strong>serious game</strong> into a <strong>digital environment</strong>, offering children an <strong>interactive, collaborative, and educational experience</strong>.</p>
+<h2 id="woman-computer-my-role">👩‍💻 My Role</h2>
+<p>I was responsible for <strong>managing the entire Unity project</strong>:</p>
+<ul>
+<li>Building the game structure and ecosystem-connection mechanics.</li>
+<li>Implementing scoring and dynamic rules.</li>
+<li>Overseeing deployment to <strong>iOS and Android</strong>.</li>
+<li>Coordinating contributions within the group.</li>
+</ul>
+<p>This role strengthened my skills in <strong>Unity, C# development, mobile deployment, and serious game design</strong>.</p>
+<hr />
+<h2 id="camera-flash-gallery">📸 Gallery</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+  <a href="/images/growing-minds-map.jpg" style="flex: 1 1 300px; max-width: 500px;">
+    <img src="/images/growing-minds-map.jpg" alt="Growing Minds Map" style="width:100%; height:auto; border-radius:8px;" />
+  </a>
+  <a href="/images/growing-minds.png" style="flex: 1 1 300px; max-width: 500px;">
+    <img src="/images/growing-minds.png" alt="Growing Minds Gameplay" style="width:100%; height:auto; border-radius:8px;" />
+  </a>
+</div>
+<h2 id="books-references">📚 References</h2>
+<p>[1] Swink, S. (2009). <em>Game Feel: A Game Designer's Guide to Virtual Sensation (1st ed.)</em>. CRC Press.<br />
+<a href="https://www.taylorfrancis.com/books/mono/10.1201/9781482267334/game-feel-steve-swink">https://www.taylorfrancis.com/books/mono/10.1201/9781482267334/game-feel-steve-swink</a></p>
+<p>[2] Zhou, H., &amp; Forbes, A. G. (2022). <em>Data Feel: Exploring Visual Effects in Video Games to Support Sensemaking Tasks.</em> IEEE VIS4DH.<br />
+<a href="https://ieeexplore.ieee.org/abstract/document/9974787">https://ieeexplore.ieee.org/abstract/document/9974787</a></p>
+<p>[3] Fjællingsdal, K. S., &amp; Klöckner, C. A. (2019). <em>Gaming Green: The Educational Potential of Eco – A Digital Simulated Ecosystem.</em> Frontiers in Psychology, 10:2846.<br />
+<a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2019.02846/full">https://www.frontiersin.org/articles/10.3389/fpsyg.2019.02846/full</a></p>
+<p>[4] Ferreira, S. M., Gouin-Vallerand, C., &amp; Hotte, R. (2016). <em>Game Based Learning: A Case Study on Designing an Educational Game for Children in Developing Countries.</em> IEEE VS-GAMES.<br />
+<a href="https://ieeexplore.ieee.org/abstract/document/7590350">https://ieeexplore.ieee.org/abstract/document/7590350</a></p>
+<p>[5] Lo, J. J., Ji, N. W., Syu, Y. H., You, W. J., &amp; Chen, Y. T. (2008). <em>Developing a Digital Game-Based Situated Learning System for Ocean Ecology.</em> In Transactions on Edutainment I. LNCS vol 5080. Springer.<br />
+<a href="https://link.springer.com/chapter/10.1007/978-3-540-69744-2_5">https://link.springer.com/chapter/10.1007/978-3-540-69744-2_5</a></p>
+<p>[6] Diniz dos Santos, A., Strada, F., &amp; Bottino, A. (2018). <em>Approaching Sustainability Learning Via Digital Serious Games.</em> IEEE Transactions on Learning Technologies.<br />
+<a href="https://ieeexplore.ieee.org/abstract/document/8417451">https://ieeexplore.ieee.org/abstract/document/8417451</a></p>
+<p>[7] CEECD (2023). <em>Child’s Play: Learning that Comes Naturally.</em><br />
+<a href="https://www.child-encyclopedia.com/pdf/synthese/play">https://www.child-encyclopedia.com/pdf/synthese/play</a></p>
+<p>[8] Kosa, M., Yilmaz, M., O'Connor, R., &amp; Clarke, P. (2016). <em>Software Engineering Education and Games: A Systematic Literature Review.</em> Journal of Universal Computer Science, 22(12).<br />
+<a href="https://doras.dcu.ie/21648/1/jucs_22_12_1558_1574_kosa.pdf">https://doras.dcu.ie/21648/1/jucs_22_12_1558_1574_kosa.pdf</a></p>
+<p>[9] Shahid, S., Krahmer, E., Swerts, M., &amp; Mubin, O. (2010). <em>Child-robot Interaction During Collaborative Game Play: Effects of Age and Gender on Emotion and Experience.</em> OZCHI '10.<br />
+<a href="https://dl.acm.org/doi/abs/10.1145/1952222.1952294">https://dl.acm.org/doi/abs/10.1145/1952222.1952294</a></p>
+<p>[10] Parker, R., &amp; Thomsen, B. S. (2019). <em>Learning Through Play at School.</em><br />
+<a href="https://research.acer.edu.au/cgi/viewcontent.cgi?article=1023&amp;context=learning_processes">https://research.acer.edu.au/cgi/viewcontent.cgi?article=1023&amp;context=learning_processes</a></p>
+<p>[11] <em>Play Facilitation: The Science Behind the Art of Engaging Young Children.</em> (University of Helsinki, 2020).<br />
+<a href="https://helda.helsinki.fi/server/api/core/bitstreams/aace01a3-7af6-4791-a502-35940d67a07c/content">https://helda.helsinki.fi/server/api/core/bitstreams/aace01a3-7af6-4791-a502-35940d67a07c/content</a></p>
+<p>[12] Ceka, A., &amp; Murati, R. (2016). <em>The Role of Parents in the Education of Children.</em> Journal of Education and Practice, 7(5).<br />
+<a href="https://eric.ed.gov/?id=EJ1092391">https://eric.ed.gov/?id=EJ1092391</a></p>
+<p>[13] Claire (2021). <em>The Role of Play in Forest School.</em><br />
+<a href="https://wildlings.sg/post/the-role-of-play-in-forest-school">https://wildlings.sg/post/the-role-of-play-in-forest-school</a></p>
+<p>[14] Thomsen, B. S. (2019). <em>Learning Through Free Play, Guided Play, Games and Instruction.</em><br />
+<a href="https://www.linkedin.com/pulse/learning-through-free-play-guided-games-instruction-thomsen/">https://www.linkedin.com/pulse/learning-through-free-play-guided-games-instruction-thomsen/</a></p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mr-1.5 mb-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://marcusaasjensen.com/tags/research/"
+      >Research</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://marcusaasjensen.com/tags/academic/"
+      >Academic</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://marcusaasjensen.com/tags/unity/"
+      >Unity</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://marcusaasjensen.com/tags/csharp/"
+      >CSharp</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://marcusaasjensen.com/tags/serious-game/"
+      >Serious Game</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://marcusaasjensen.com/tags/android/"
+      >Android</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://marcusaasjensen.com/tags/ios/"
+      >iOS</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://marcusaasjensen.com/tags/2d/"
+      >2D</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;marcusaasjensen.com&#x2F;portfolio&#x2F;save-yourself&#x2F;"
+    ><span class="mr-1.5">←</span><span>🎮 Save Yourself — Brackeys Game Jam 2025.1 Submission</span></a
+  >
+  
+  
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;marcusaasjensen.com&#x2F;portfolio&#x2F;vrvard&#x2F;"
+    ><span>✨ VRvard — A Magical VR Experience</span><span class="ml-1.5">→</span></a
+  >
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  <!---->
+  
+<div class="giscus mt-12"></div>
+<script
+  src="https://giscus.app/client.js"
+  data-repo="marcusaasjensen&#x2F;marcusaasjensen.github.io"
+  data-repo-id="R_kgDOP0zOCg"
+  data-category="Comments"
+  data-category-id="DIC_kwDOP0zOCs4CwPfG"
+  data-mapping="pathname"
+  data-strict="1"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script>
+<!---->
+<!---->
+  
+
+  <!-- Page End inject -->
+  
+</article>
+
+    </main>
+    
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    <!---->
+    <!---->
+    &copy; 2025<!---->
+    
+    <a class="link" href="https://marcusaasjensen.com">
+      Marcus Aas Jensen
+    </a>
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&#x2F;marcusaasjensen.github.io&#x2F;blob&#x2F;main&#x2F;LICENSE" rel="noopener" target="_blank">
+      MIT License
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank">
+      Powered by Zola
+    </a>
+  </div>
+  <!-- Footer inject -->
+  
+</footer>
+
+    
+
+    <style>
+      .skill-icon {
+        transition: transform 0.25s ease, filter 0.25s ease;
+      }
+
+      .skill-icon:hover {
+        transform: scale(1.2);
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+      }
+    </style>
+
+    <script>
+      const container = document.querySelector(".skills-container");
+      if(container) {
+      const icons = container.querySelectorAll(".skill-icon");
+
+      container.addEventListener("mousemove", (e) => {
+        const rect = container.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+
+        icons.forEach((icon) => {
+          const iconRect = icon.getBoundingClientRect();
+          const iconX = iconRect.left + iconRect.width / 2 - rect.left;
+          const iconY = iconRect.top + iconRect.height / 2 - rect.top;
+
+          const dist = Math.hypot(mouseX - iconX, mouseY - iconY);
+          const scale = Math.max(1, 1.4 - dist / 200);
+          icon.style.transform = `scale(${scale})`;
+        });
+      });
+
+      container.addEventListener("mouseleave", () => {
+        icons.forEach((icon) => {
+          icon.style.transform = "scale(1)";
+        });
+      });
+    }
+    </script>
+  </body>
+</html>
+
+<!-- <script>
+  const canvas = document.getElementById("particle-canvas");
+  const ctx = canvas.getContext("2d");
+  let particles = [];
+
+  function resizeCanvas() {
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+  }
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  class Particle {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.size = Math.random() * 2 + 1; // 🔹 tiny squares
+      this.speedX = (Math.random() - 0.5) * 1.2; // 🔹 slow drift
+      this.speedY = (Math.random() - 0.5) * 1.2;
+      this.alpha = 1;
+
+      const hues = [160, 170, 180, 190, 200];
+      const hue = hues[Math.floor(Math.random() * hues.length)];
+      this.color = `hsl(${hue}, 70%, 55%)`;
+      this.life = 0;
+      this.maxLife = 150 + Math.random() * 50; // total lifespan
+    }
+
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.life++;
+
+      // fade out naturally
+      if (this.life > this.maxLife * 0.6) {
+        this.alpha -= 0.01;
+      }
+    }
+
+    draw() {
+      ctx.globalAlpha = this.alpha;
+      ctx.fillStyle = this.color;
+      ctx.fillRect(this.x, this.y, this.size, this.size);
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((p, i) => {
+      p.update();
+      p.draw();
+
+      // remove before touching borders OR fully faded
+      if (
+        p.alpha <= 0 ||
+        p.x < 10 || p.x > canvas.width - 10 ||
+        p.y < 10 || p.y > canvas.height - 10
+      ) {
+        particles.splice(i, 1);
+      }
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Trigger burst on E
+  window.addEventListener("keydown", (e) => {
+    if (e.key.toLowerCase() === "e") {
+      const x = canvas.width / 2;  // center of banner
+      const y = canvas.height / 2;
+      for (let i = 0; i < 100; i++) {
+        particles.push(new Particle(x, y));
+      }
+    }
+  });
+</script> -->

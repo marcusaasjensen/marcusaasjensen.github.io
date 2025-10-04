@@ -1,0 +1,1169 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    About Me - Marcus Aas Jensen
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  
+  <!-- Author -->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  <meta name="description" content="About Me" />
+  <meta name="author" content="Marcus Aas Jensen" />
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Me" />
+  <meta property="og:site_name" content="Marcus Aas Jensen" />
+  <meta property="og:description" content="About Me" />
+  <meta property="og:url" content="https:&#x2F;&#x2F;marcusaasjensen.com&#x2F;about&#x2F;" />
+  
+  <!---->
+  
+  <!---->
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://marcusaasjensen.com/main.css" />
+  <style>
+    :root {
+      --bg: #f4f4f5;
+      --bg-dark: #18181b;
+      --header: #e4e4e7;
+      --header-dark: #27272a;
+    }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://marcusaasjensen.com/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () =>
+    renderMathInElement(document.body, {
+      // customised options
+      // • auto-render specific keys, e.g.:
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+      // • rendering keys, e.g.:
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  <!---->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+  <script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+  const initMermaid = (isDark) => {
+    mermaid.initialize({
+      theme: isDark ? "dark" : "default",
+      startOnLoad: false,
+    });
+    mermaid.run();
+  };
+
+  // Add data-mermaid-code attribute on all mermaid block.
+  document.querySelectorAll(".mermaid").forEach((element) => {
+    element.setAttribute("data-mermaid-code", element.innerHTML);
+  });
+
+  // Re-render mermaid when theme changed.
+  document.body.addEventListener("set-theme", (e) => {
+    document.querySelectorAll(".mermaid").forEach((element) => {
+      const mermaidCode = element.getAttribute("data-mermaid-code");
+      if (mermaidCode != null) {
+        element.removeAttribute("data-processed");
+        element.innerHTML = mermaidCode;
+      }
+    });
+    initMermaid(e.detail === "dark");
+  });
+
+  // The es module script will load defer, so the localStorage should already be set by script in header.
+  // If this script is loaded first, the script in header will dispatch an event to re-render mermaid, it's works too.
+  initMermaid(localStorage.getItem("dark") === "true");
+</script>
+
+  <!---->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://marcusaasjensen.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://marcusaasjensen.com/apple-touch-icon.png" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="https://marcusaasjensen.com/atom.xml"
+  />
+   
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;marcusaasjensen.com&#x2F;about&#x2F;" />
+
+  <!-- Head inject -->
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <style>
+@keyframes color-shift {
+  0%, 100% {
+    color: var(--hint-color);
+  }
+  50% {
+    color: #24be8d;
+  }
+}
+
+.title-hover {
+  transition: transform 0.3s ease-in-out, color 0.5s ease-out;
+  text-shadow: 1px 1px 1px rgba(0, 17, 18, 0.5);
+}
+
+.title-hover:hover {
+  animation: color-shift 3s ease-in-out infinite, color 0.5s ease-out;
+  transform: scale(1.05);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: transform 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 6px;
+  bottom: 4px;
+  transition: 0.4s;
+
+  background-image: url('/icons/theme.svg');
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: left center;
+
+  border-radius: 50%;
+}
+
+.slider:hover {
+  outline: #24be8d solid 2px;
+  transition: outline .1s;
+}
+
+input:checked + .slider {
+  background-color: #181818;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-position: right center;
+  filter: invert(1);
+}
+
+</style>
+
+<header
+  class="blur-header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center justify-center">
+        <a style="display: block; margin-top: -6px;" class="title-hover text-2xl font-semibold" href="https://marcusaasjensen.com">Marcus Aas Jensen</a>
+        <label class="switch btn-dark ml-4 h-6 w-6" aria-label="Theme toggle" >
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+        <!-- <button
+        type="button"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center lg:hidden"
+        aria-label="Menu"
+        onclick="toggleMenu(this)"
+        onkeydown="if(event.key==='Enter'||event.key===' '){toggleMenu(this);event.preventDefault();}"
+        >
+          <img class="menu-icon w-12 h-12 dark" src="/icons/menu.svg" alt="Menu" style="display: block;" />
+          <img class="cross-icon w-12 h-12 dark" src="/icons/cross.svg" alt="Close" style="display: none;" />
+        </button> -->
+      
+    </div>
+    <script>
+        function toggleMenu(btn) {
+          const menuIcon = btn.querySelector('.menu-icon');
+          const crossIcon = btn.querySelector('.cross-icon');
+          
+          if (menuIcon.style.display === 'none') {
+            menuIcon.style.display = 'block';
+            crossIcon.style.display = 'none';
+          } else {
+            menuIcon.style.display = 'none';
+            crossIcon.style.display = 'block';
+          }
+        }
+
+          const htmlClass = document.documentElement.classList;
+          const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+          const themeToggle = document.getElementById("theme-toggle");
+
+          const setDark = (isDark) => {
+            if (isDark) {
+              htmlClass.add("dark");
+              document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+            } else {
+              htmlClass.remove("dark");
+              document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+            }
+            localStorage.setItem("dark", isDark);
+            themeToggle.checked = isDark;
+          };
+
+          setTimeout(() => htmlClass.remove("not-ready"), 10);
+          const stored = localStorage.getItem("dark");
+          const prefersDark = stored ? stored === "true" : darkScheme.matches;
+          setDark(prefersDark);
+
+          darkScheme.addEventListener("change", (e) => {
+            const stored = localStorage.getItem("dark");
+            if (stored === null) setDark(e.matches);
+          });
+
+          themeToggle.addEventListener("change", () => {
+            setDark(themeToggle.checked);
+          });
+
+          const btnMenu = document.querySelector(".btn-menu");
+          btnMenu?.addEventListener("click", () => htmlClass.toggle("open"));
+    </script>
+    <div id="search-results"></div>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium lg:px-3 lg:py-3"
+            href="https://marcusaasjensen.com/portfolio"
+            >📂 Portfolio</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium lg:px-3 lg:py-3"
+            href="https://marcusaasjensen.com/about"
+            >ℹ️ About Me</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium lg:px-3 lg:py-3"
+            href="https://marcusaasjensen.com/extras"
+            >💚 Extras</a
+          >
+        </li>
+        
+      </ul>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    
+
+    <main
+      class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg relative mx-auto min-h-[calc(100vh-9rem)] max-w-3xl px-4 pt-24 pb-16 break-words lg:pt-32"
+    >
+      
+
+
+
+
+
+
+<h1 class="mb-16">About Me</h1>
+
+<h2>💻 Experience</h2>
+
+<div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
+  
+  <div class="flex justify-between items-center">
+    <h3 class="my-2 text-xl font-bold text-black dark:text-white">Cloud UI Engineer Intern</h3>
+    <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
+      Mar 2025 – Aug 2025
+    </div>
+  </div>
+  
+  <p>Collaborated with a team of four engineers to build a JavaScript library in SAPUI5, enabling Joule AI (LLM) to convert user prompts into metric visualizations (graphs, tables, charts) for automated dashboard generation in SAP Cloud ALM solution.</p>
+  
+  <div class="my-2 flex flex-wrap items-center justify-between">
+    <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
+      <span>SAP Labs, France</span>
+    </div>
+    <div class="flex flex-wrap gap-x-2">
+      
+      <a href="https:&#x2F;&#x2F;www.sap.com" target="_blank" rel="noopener">
+        <img src="&#x2F;images&#x2F;sap.png" alt="Cloud UI Engineer Intern logo" class="h-8 w-auto object-contain" />
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+<div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
+  
+  <div class="flex justify-between items-center">
+    <h3 class="my-2 text-xl font-bold text-black dark:text-white">Frontend Engineer Intern</h3>
+    <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
+      May 2024 – Aug 2024
+    </div>
+  </div>
+  
+  <p>Architected a customizable operations monitoring dashboard using Angular, AmCharts 5, and GridstackJS, centralizing transaction, error, and response-time monitoring with 10 key visualizations.</p>
+  
+  <div class="my-2 flex flex-wrap items-center justify-between">
+    <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
+      <span>Amadeus, France</span>
+    </div>
+    <div class="flex flex-wrap gap-x-2">
+      
+      <a href="https:&#x2F;&#x2F;amadeus.com" target="_blank" rel="noopener">
+        <img src="&#x2F;images&#x2F;amadeus.png" alt="Frontend Engineer Intern logo" class="h-8 w-auto object-contain" />
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+<div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
+  
+  <div class="flex justify-between items-center">
+    <h3 class="my-2 text-xl font-bold text-black dark:text-white">Mobile Developer Intern</h3>
+    <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
+      May 2022 – Jul 2022
+    </div>
+  </div>
+  
+  <p>Implemented the frontend of an emergency messaging mobile app with React Native (JavaScript) for iOS and Android in a team of four students.</p>
+  
+  <div class="my-2 flex flex-wrap items-center justify-between">
+    <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
+      <span>DNIIT, Vietnam</span>
+    </div>
+    <div class="flex flex-wrap gap-x-2">
+      
+      <a href="https:&#x2F;&#x2F;www.udn.vn&#x2F;" target="_blank" rel="noopener">
+        <img src="&#x2F;images&#x2F;dniit.png" alt="Mobile Developer Intern logo" class="h-8 w-auto object-contain" />
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+
+<h2>🎓 Education</h2>
+
+<div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
+  
+  <div class="flex justify-between items-center">
+    <h3 class="my-2 text-xl font-bold text-black dark:text-white">Computer Science Engineering Degree</h3>
+    <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
+      Sep 2022 – Sep 2025
+    </div>
+  </div>
+  
+  <p>Specialization in software engineering and user interactions.</p>
+  
+  <div class="my-2 flex flex-wrap items-center justify-between">
+    <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
+      <span>Polytech Nice Sophia, France</span>
+    </div>
+    <div class="flex flex-wrap gap-x-2">
+      
+      <a href="https:&#x2F;&#x2F;www.polytech.unice.fr&#x2F;" target="_blank" rel="noopener">
+        <img src="&#x2F;images&#x2F;polytech.png" alt="Computer Science Engineering Degree logo" class="h-8 w-auto object-contain" />
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+<div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
+  
+  <div class="flex justify-between items-center">
+    <h3 class="my-2 text-xl font-bold text-black dark:text-white">Semester Abroad in Canada 🍁</h3>
+    <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
+      Jan 2022 – Apr 2022
+    </div>
+  </div>
+  
+  <p>Courses in game development, Unreal Engine, C++ and mathematics.</p>
+  
+  <div class="my-2 flex flex-wrap items-center justify-between">
+    <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
+      <span>UQAC, Canada</span>
+    </div>
+    <div class="flex flex-wrap gap-x-2">
+      
+      <a href="https:&#x2F;&#x2F;www.uqac.ca&#x2F;" target="_blank" rel="noopener">
+        <img src="&#x2F;images&#x2F;uqac.png" alt="Semester Abroad in Canada 🍁 logo" class="h-8 w-auto object-contain" />
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+<div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
+  
+  <div class="flex justify-between items-center">
+    <h3 class="my-2 text-xl font-bold text-black dark:text-white">Associate Degree in Computer Science</h3>
+    <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
+      Sep 2020 – Jul 2022
+    </div>
+  </div>
+  
+  <p>Fundamentals of computer science, programming, algorithms and web development.</p>
+  
+  <div class="my-2 flex flex-wrap items-center justify-between">
+    <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
+      <span>IUT Nice Côte d&#x27;Azur, France</span>
+    </div>
+    <div class="flex flex-wrap gap-x-2">
+      
+      <a href="https:&#x2F;&#x2F;iut.univ-cotedazur.fr&#x2F;" target="_blank" rel="noopener">
+        <img src="&#x2F;images&#x2F;iut.png" alt="Associate Degree in Computer Science logo" class="h-8 w-auto object-contain" />
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+
+<h2>🛠 Skills</h2>
+<div class="not-prose mt-6 flex flex-col">
+  
+  <div class="mb-12">
+    <h3 class="text-lg font-semibold mb-2">Programming Languages</h3>
+    <div class="mb-6 flex flex-wrap">
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;C_Sharp_(programming_language)" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          C#
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;C%2B%2B" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          C++
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Java_(programming_language)" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Java
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;JavaScript" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          JavaScript
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;TypeScript" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          TypeScript
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;HTML" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          HTML
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;CSS" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          CSS
+        </a>
+      
+    </div>
+  </div>
+  
+  <div class="mb-12">
+    <h3 class="text-lg font-semibold mb-2">3D Tools &amp; Techniques</h3>
+    <div class="mb-6 flex flex-wrap">
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Unity_(game_engine)" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Unity 3D
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Blender_(software)" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Blender
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;docs.unity3d.com&#x2F;Manual&#x2F;class-ScriptableObject.html" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Scriptable Objects
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;3D_computer_graphics#Rendering" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          3D Rendering
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Rasterisation" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Rasterization
+        </a>
+      
+    </div>
+  </div>
+  
+  <div class="mb-12">
+    <h3 class="text-lg font-semibold mb-2">User Experience</h3>
+    <div class="mb-6 flex flex-wrap">
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Frontend_development" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Frontend
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;User_interface" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          UI
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;User_experience" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          UX
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Figma_(software)" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Figma
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Use_case" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Scenarios
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Accessibility" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Accessibility
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Game_feel" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Game Feel
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Virtual_reality" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          VR
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Augmented_reality" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          AR
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Extended_reality" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          XR
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Microsoft_HoloLens" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          HoloLens
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Meta_Quest" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Meta Quest
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Multimodal_interaction" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Multimodality interaction
+        </a>
+      
+    </div>
+  </div>
+  
+  <div class="mb-12">
+    <h3 class="text-lg font-semibold mb-2">Software Architecture &amp; Engineering</h3>
+    <div class="mb-6 flex flex-wrap">
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Object-oriented_programming" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          OOP
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Software_design_pattern" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Design Patterns
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Unified_Modeling_Language" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          UML
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Qt_(software)" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Qt
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Angular_(application_platform)" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Angular
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;React_Native" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          React Native
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Representational_state_transfer" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          REST APIs
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Git" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Git
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;GitHub" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          GitHub
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Jira_(software)" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Jira
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Confluence_(software)" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Confluence
+        </a>
+      
+        <a 
+          href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Agile_software_development" 
+          target="_blank" 
+          rel="noopener" 
+          class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+        >
+          Agile
+        </a>
+      
+    </div>
+  </div>
+  
+</div>
+
+<h2>📜 Certifications</h2>
+
+<div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
+  
+  <div class="flex justify-between items-center">
+    <h3 class="my-2 text-xl font-bold text-black dark:text-white">TOEIC</h3>
+    <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
+      Jan 2023
+    </div>
+  </div>
+  
+  
+  <p>Scored 905&#x2F;990</p>
+  
+  
+  <div class="my-2 flex flex-wrap items-center justify-start">
+    <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
+      
+      <a
+        class="underline"
+        href="https://www.etsglobal.org/"
+        rel="noopener"
+        target="_blank"
+        >ETS Global</a>
+      
+    </div>
+  </div>
+</div>
+
+<div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
+  
+  <div class="flex justify-between items-center">
+    <h3 class="my-2 text-xl font-bold text-black dark:text-white">French Driving License</h3>
+    <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
+      Jul 2022
+    </div>
+  </div>
+  
+  
+  
+  <div class="my-2 flex flex-wrap items-center justify-start">
+    <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
+      
+      <a
+        class="underline"
+        href="https://www.service-public.fr/"
+        rel="noopener"
+        target="_blank"
+        >Service-Public.fr</a>
+      
+    </div>
+  </div>
+</div>
+
+<div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
+  
+  <div class="flex justify-between items-center">
+    <h3 class="my-2 text-xl font-bold text-black dark:text-white">Youth Worker Diploma</h3>
+    <div class="text-sm text-gray-500 font-bold dark:text-gray-400">
+      Fev 2020
+    </div>
+  </div>
+  
+  
+  <p>Training from Ceméa organization with experience in leading and supervising children and teenagers during leisure activities.</p>
+  
+  
+  <div class="my-2 flex flex-wrap items-center justify-start">
+    <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
+      
+      <a
+        class="underline"
+        href="https://cemea.asso.fr/qui-sommes-nous/une-structure-associative"
+        rel="noopener"
+        target="_blank"
+        >Ceméa</a>
+      
+    </div>
+  </div>
+</div>
+
+
+<h2>🌍 Languages</h2>
+<div class="not-prose mt-6 flex flex-wrap gap-4 justify-center">
+  
+  <div class="block-bg rounded-lg p-6 text-center w-44 sm:w-60 flex-shrink-0">
+    <div class="flex justify-center mb-4">
+      <div class="h-2 w-2 flex items-center justify-center overflow-hidden rounded-lg shadow-md bg-white">
+<img src="&#x2F;images&#x2F;france.png" alt="French flag" class="h-6 w-auto rounded-md object-cover shadow-md" />
+      </div>
+    </div>
+    <h3 class="text-lg font-bold text-black dark:text-white mb-2">
+      French
+    </h3>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      Native
+    </p>
+  </div>
+  
+  <div class="block-bg rounded-lg p-6 text-center w-44 sm:w-60 flex-shrink-0">
+    <div class="flex justify-center mb-4">
+      <div class="h-2 w-2 flex items-center justify-center overflow-hidden rounded-lg shadow-md bg-white">
+<img src="&#x2F;images&#x2F;uk.png" alt="English flag" class="h-6 w-auto rounded-md object-cover shadow-md" />
+      </div>
+    </div>
+    <h3 class="text-lg font-bold text-black dark:text-white mb-2">
+      English
+    </h3>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      Fluent
+    </p>
+  </div>
+  
+  <div class="block-bg rounded-lg p-6 text-center w-44 sm:w-60 flex-shrink-0">
+    <div class="flex justify-center mb-4">
+      <div class="h-2 w-2 flex items-center justify-center overflow-hidden rounded-lg shadow-md bg-white">
+<img src="&#x2F;images&#x2F;japan.png" alt="Japanese flag" class="h-6 w-auto rounded-md object-cover shadow-md" />
+      </div>
+    </div>
+    <h3 class="text-lg font-bold text-black dark:text-white mb-2">
+      Japanese
+    </h3>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      Basic
+    </p>
+  </div>
+  
+</div>
+
+
+    </main>
+    
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    <!---->
+    <!---->
+    &copy; 2025<!---->
+    
+    <a class="link" href="https://marcusaasjensen.com">
+      Marcus Aas Jensen
+    </a>
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&#x2F;marcusaasjensen.github.io&#x2F;blob&#x2F;main&#x2F;LICENSE" rel="noopener" target="_blank">
+      MIT License
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank">
+      Powered by Zola
+    </a>
+  </div>
+  <!-- Footer inject -->
+  
+</footer>
+
+    
+
+    <style>
+      .skill-icon {
+        transition: transform 0.25s ease, filter 0.25s ease;
+      }
+
+      .skill-icon:hover {
+        transform: scale(1.2);
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+      }
+    </style>
+
+    <script>
+      const container = document.querySelector(".skills-container");
+      if(container) {
+      const icons = container.querySelectorAll(".skill-icon");
+
+      container.addEventListener("mousemove", (e) => {
+        const rect = container.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+
+        icons.forEach((icon) => {
+          const iconRect = icon.getBoundingClientRect();
+          const iconX = iconRect.left + iconRect.width / 2 - rect.left;
+          const iconY = iconRect.top + iconRect.height / 2 - rect.top;
+
+          const dist = Math.hypot(mouseX - iconX, mouseY - iconY);
+          const scale = Math.max(1, 1.4 - dist / 200);
+          icon.style.transform = `scale(${scale})`;
+        });
+      });
+
+      container.addEventListener("mouseleave", () => {
+        icons.forEach((icon) => {
+          icon.style.transform = "scale(1)";
+        });
+      });
+    }
+    </script>
+  </body>
+</html>
+
+<!-- <script>
+  const canvas = document.getElementById("particle-canvas");
+  const ctx = canvas.getContext("2d");
+  let particles = [];
+
+  function resizeCanvas() {
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+  }
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  class Particle {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.size = Math.random() * 2 + 1; // 🔹 tiny squares
+      this.speedX = (Math.random() - 0.5) * 1.2; // 🔹 slow drift
+      this.speedY = (Math.random() - 0.5) * 1.2;
+      this.alpha = 1;
+
+      const hues = [160, 170, 180, 190, 200];
+      const hue = hues[Math.floor(Math.random() * hues.length)];
+      this.color = `hsl(${hue}, 70%, 55%)`;
+      this.life = 0;
+      this.maxLife = 150 + Math.random() * 50; // total lifespan
+    }
+
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.life++;
+
+      // fade out naturally
+      if (this.life > this.maxLife * 0.6) {
+        this.alpha -= 0.01;
+      }
+    }
+
+    draw() {
+      ctx.globalAlpha = this.alpha;
+      ctx.fillStyle = this.color;
+      ctx.fillRect(this.x, this.y, this.size, this.size);
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((p, i) => {
+      p.update();
+      p.draw();
+
+      // remove before touching borders OR fully faded
+      if (
+        p.alpha <= 0 ||
+        p.x < 10 || p.x > canvas.width - 10 ||
+        p.y < 10 || p.y > canvas.height - 10
+      ) {
+        particles.splice(i, 1);
+      }
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Trigger burst on E
+  window.addEventListener("keydown", (e) => {
+    if (e.key.toLowerCase() === "e") {
+      const x = canvas.width / 2;  // center of banner
+      const y = canvas.height / 2;
+      for (let i = 0; i < 100; i++) {
+        particles.push(new Particle(x, y));
+      }
+    }
+  });
+</script> -->

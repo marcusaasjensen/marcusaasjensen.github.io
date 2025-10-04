@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Marcus Aas Jensen</title>
+    <subtitle>Marcus Aas Jensen&#x27;s Personal Website</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://marcusaasjensen.com/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://marcusaasjensen.com"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-07-01T00:00:00+00:00</updated>
+    <id>https://marcusaasjensen.com/atom.xml</id>
+    <entry xml:lang="en">
+        <title>🖥️ CPU-Based 3D Renderer in C++ From Scratch</title>
+        <published>2025-07-01T00:00:00+00:00</published>
+        <updated>2025-07-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/3d-renderer/"/>
+        <id>https://marcusaasjensen.com/portfolio/3d-renderer/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/3d-renderer/">&lt;p&gt;✨ &lt;strong&gt;3D Renderer&lt;&#x2F;strong&gt; is a CPU-based 3D renderer written in C++20, supporting simple primitive shapes and built entirely from scratch. It offers both perspective and orthographic projections and supports simple &lt;code&gt;.obj&lt;&#x2F;code&gt; imports.&lt;&#x2F;p&gt;
+&lt;p&gt;💻 &lt;strong&gt;GitHub Repository&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&#x2F;3d-renderer&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;github-readme-stats.vercel.app&#x2F;api&#x2F;pin&#x2F;?username=marcusaasjensen&amp;repo=3d-renderer&amp;theme=github_dark_dimmed&quot; alt=&quot;3D Renderer Repo&quot;&#x2F;&gt;
+&lt;&#x2F;a&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;tools-features&quot;&gt;🛠️ Features&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🧱 &lt;strong&gt;Primitive Shapes&lt;&#x2F;strong&gt;: Render basic shapes like cubes, spheres, and pyramids.&lt;&#x2F;li&gt;
+&lt;li&gt;🖼️ &lt;strong&gt;.obj Import&lt;&#x2F;strong&gt;: Load and render simple &lt;strong&gt;.obj&lt;&#x2F;strong&gt; files.&lt;&#x2F;li&gt;
+&lt;li&gt;🔄 &lt;strong&gt;Projection Modes&lt;&#x2F;strong&gt;: Switch between perspective and orthographic projections.&lt;&#x2F;li&gt;
+&lt;li&gt;🖥️ &lt;strong&gt;CPU-Based&lt;&#x2F;strong&gt;: Built entirely from scratch without relying on external graphics libraries.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;frame-photo-rendering-pipeline&quot;&gt;🖼️ Rendering Pipeline&lt;&#x2F;h2&gt;
+&lt;p&gt;The rendering pipeline transforms &lt;strong&gt;3D objects&lt;&#x2F;strong&gt; from their local definitions into &lt;strong&gt;2D rasterized pixels&lt;&#x2F;strong&gt; on the screen.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;mermaid bg-inherit&quot;&gt;
+  graph TD;
+    A[&amp;quot;Object Space&amp;lt;br&amp;#x2F;&amp;gt;(Local Space)&amp;lt;br&amp;#x2F;&amp;gt;&amp;lt;small&amp;gt;Vertices defined relative to origin&amp;lt;&amp;#x2F;small&amp;gt;&amp;quot;] --&amp;gt; 
+    B[&amp;quot;World Space&amp;lt;br&amp;#x2F;&amp;gt;&amp;lt;small&amp;gt;Apply transforms (position, rotation, scale)&amp;lt;&amp;#x2F;small&amp;gt;&amp;quot;] --&amp;gt; 
+    C[&amp;quot;Camera&amp;#x2F;View Space&amp;lt;br&amp;#x2F;&amp;gt;&amp;lt;small&amp;gt;Relative to camera orientation&amp;lt;&amp;#x2F;small&amp;gt;&amp;quot;] --&amp;gt; 
+    D[&amp;quot;NDC&amp;lt;br&amp;#x2F;&amp;gt;(Normalized Device Coordinates)&amp;lt;br&amp;#x2F;&amp;gt;&amp;lt;small&amp;gt;Range [-1, 1]&amp;lt;&amp;#x2F;small&amp;gt;&amp;quot;] --&amp;gt; 
+    E[&amp;quot;Screen Space&amp;lt;br&amp;#x2F;&amp;gt;&amp;lt;small&amp;gt;Mapped to 2D pixel coords&amp;lt;&amp;#x2F;small&amp;gt;&amp;quot;] --&amp;gt; 
+    F[&amp;quot;Rasterization&amp;lt;br&amp;#x2F;&amp;gt;&amp;lt;small&amp;gt;Z-Buffer + Triangle Filling&amp;lt;&amp;#x2F;small&amp;gt;&amp;quot;];
+&lt;&#x2F;pre&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;camera-flash-gallery&quot;&gt;📸 Gallery&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;em&gt;Screenshots of the 3D Renderer in action&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;images&#x2F;shaded.png&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;shaded.png&quot; alt=&quot;Shaded View&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;images&#x2F;3d-renderer-cover.png&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;3d-renderer-cover.png&quot; alt=&quot;Z-Buffer View&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;user-attachments&#x2F;assets&#x2F;cd2f8b72-7aa9-4921-8a46-783a0146263f&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;github.com&#x2F;user-attachments&#x2F;assets&#x2F;cd2f8b72-7aa9-4921-8a46-783a0146263f&quot; alt=&quot;Wireframe&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;user-attachments&#x2F;assets&#x2F;4ded6d99-e889-4c36-a4d1-b14c8eb235c9&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;github.com&#x2F;user-attachments&#x2F;assets&#x2F;4ded6d99-e889-4c36-a4d1-b14c8eb235c9&quot; alt=&quot;Suzanne&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🎮 Save Yourself — Brackeys Game Jam 2025.1 Submission</title>
+        <published>2025-03-22T00:00:00+00:00</published>
+        <updated>2025-03-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/save-yourself/"/>
+        <id>https://marcusaasjensen.com/portfolio/save-yourself/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/save-yourself/">&lt;p&gt;✨ &lt;strong&gt;Save Yourself&lt;&#x2F;strong&gt; is a 2D atmospheric platformer where you create your own save points to undo mistakes.&lt;br &#x2F;&gt;
+With a calm, melancholic soundtrack and cool-color aesthetic, it creates a world that feels safe—maybe &lt;em&gt;too&lt;&#x2F;em&gt; safe.&lt;&#x2F;p&gt;
+&lt;div class=&quot;video-wrapper&quot;&gt;
+  &lt;iframe 
+    src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;ljFf6XrCG3k&quot;
+    title=&quot;Save Yourself - Trailer&quot;
+    frameborder=&quot;0&quot;
+    allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;
+    allowfullscreen&gt;
+  &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;iframe frameborder=&quot;0&quot; src=&quot;https:&#x2F;&#x2F;itch.io&#x2F;embed&#x2F;3347010?dark=true&quot; width=&quot;100%&quot; height=&quot;100%&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;marcusjensen.itch.io&#x2F;save-yourself&quot;&gt;Save Yourself by Marcus Jensen&lt;&#x2F;a&gt;&lt;&#x2F;iframe&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;trophy-game-jam-highlights&quot;&gt;🏆 Game Jam Highlights&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🕹 &lt;strong&gt;Developed solo in just 7 days&lt;&#x2F;strong&gt; for &lt;a href=&quot;https:&#x2F;&#x2F;itch.io&#x2F;jam&#x2F;brackeys-10&quot;&gt;Brackeys Game Jam 2025.1&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;⭐ &lt;strong&gt;Ranked 35th out of ~2,200 games&lt;&#x2F;strong&gt; (Top &lt;strong&gt;1.6%&lt;&#x2F;strong&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;👍 Overall rating of &lt;strong&gt;4&#x2F;5&lt;&#x2F;strong&gt; (&lt;strong&gt;80+&lt;&#x2F;strong&gt; reviews).&lt;&#x2F;li&gt;
+&lt;li&gt;🌍 Played &lt;strong&gt;400+ times&lt;&#x2F;strong&gt; across Web, Windows, and Linux.&lt;&#x2F;li&gt;
+&lt;li&gt;📰 Featured in a &lt;strong&gt;PlaytestCloud case study&lt;&#x2F;strong&gt; on player feedback (&lt;a href=&quot;https:&#x2F;&#x2F;kirbylife.co.uk&#x2F;2025&#x2F;04&#x2F;14&#x2F;case-study-my-playtest-process-for-save-yourself-puzzle-platformer&#x2F;&quot;&gt;kirbylife.co.uk&lt;&#x2F;a&gt;).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;bulb-what-players-are-saying&quot;&gt;💡 What Players Are Saying&lt;&#x2F;h2&gt;
+&lt;p&gt; &lt;!----&gt;
+
+
+&lt;div
+  class=&quot;my-4 flex flex-col rounded-lg bg-[var(--admonition-bg)]&quot;
+  style=&quot;--admonition-bg: rgba(159, 159, 159, 0.1)&quot;
+&gt;
+  &lt;div class=&quot;flex items-center rounded-t-lg bg-[var(--admonition-bg)] p-1&quot;&gt;
+    &lt;div
+      class=&quot;mx-2 h-4 w-4 text-[0px] [background:var(--url)_center_center_no-repeat] dark:invert&quot;
+      style=&quot;--url: url(.&#x2F;icons&#x2F;quote.svg)&quot;
+    &gt;
+      quote
+    &lt;&#x2F;div&gt;
+    &lt;span&gt;&lt;strong&gt;Player on itch.io&lt;&#x2F;strong&gt;&lt;&#x2F;span&gt;
+  &lt;&#x2F;div&gt;
+  &lt;div class=&quot;pl-4&quot;&gt;&lt;p&gt;This is such a great concept, I honestly think it&#x27;s on the same level as Braid for its time. This is a real treasure, I&#x27;m so glad I actually didn&#x27;t miss your game.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+ &lt;!----&gt;
+
+
+&lt;div
+  class=&quot;my-4 flex flex-col rounded-lg bg-[var(--admonition-bg)]&quot;
+  style=&quot;--admonition-bg: rgba(159, 159, 159, 0.1)&quot;
+&gt;
+  &lt;div class=&quot;flex items-center rounded-t-lg bg-[var(--admonition-bg)] p-1&quot;&gt;
+    &lt;div
+      class=&quot;mx-2 h-4 w-4 text-[0px] [background:var(--url)_center_center_no-repeat] dark:invert&quot;
+      style=&quot;--url: url(.&#x2F;icons&#x2F;quote.svg)&quot;
+    &gt;
+      quote
+    &lt;&#x2F;div&gt;
+    &lt;span&gt;&lt;strong&gt;Player on itch.io&lt;&#x2F;strong&gt;&lt;&#x2F;span&gt;
+  &lt;&#x2F;div&gt;
+  &lt;div class=&quot;pl-4&quot;&gt;&lt;p&gt;The concept is brilliant, the visuals are really cute and engaging. Really impressed that a single person could make a game like this in just one week!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;camera-flash-gallery&quot;&gt;📸 Gallery&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;em&gt;Screenshots from the Brackeys Game Jam build&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;images&#x2F;save-yourself-gameplay1.png&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;save-yourself-gameplay1.png&quot; alt=&quot;Gameplay Screenshot 1&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;images&#x2F;save-yourself-gameplay2.png&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;save-yourself-gameplay2.png&quot; alt=&quot;Gameplay Screenshot 2&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;tools-development&quot;&gt;🛠️ Development&lt;&#x2F;h2&gt;
+&lt;p&gt;Built with:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;🎮 &lt;strong&gt;Unity&lt;&#x2F;strong&gt; for the gameplay in C#&lt;&#x2F;li&gt;
+&lt;li&gt;🎧 &lt;strong&gt;FL Studio&lt;&#x2F;strong&gt; for the music&lt;&#x2F;li&gt;
+&lt;li&gt;🎨 &lt;strong&gt;Krita&lt;&#x2F;strong&gt; for the artwork&lt;&#x2F;li&gt;
+&lt;li&gt;🔊 &lt;strong&gt;Audacity&lt;&#x2F;strong&gt; for sound editing
+All assets were created from scratch (except a few sound effects from &lt;a href=&quot;https:&#x2F;&#x2F;freesound.org&quot;&gt;freesound.org&lt;&#x2F;a&gt;).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;pray-acknowledgements&quot;&gt;🙏 Acknowledgements&lt;&#x2F;h2&gt;
+&lt;p&gt;Thank you to &lt;strong&gt;Max Kirby&lt;&#x2F;strong&gt; for generously running a full &lt;strong&gt;player evaluation and case study&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+(including the &lt;a href=&quot;https:&#x2F;&#x2F;kirbylife.co.uk&#x2F;2025&#x2F;04&#x2F;14&#x2F;case-study-my-playtest-process-for-save-yourself-puzzle-platformer&#x2F;&quot;&gt;article on kirbylife.co.uk&lt;&#x2F;a&gt;) &lt;strong&gt;free of charge and in close collaboration with me&lt;&#x2F;strong&gt;. Your insights were invaluable in understanding how players experienced &lt;strong&gt;Save Yourself&lt;&#x2F;strong&gt;. 💡💚&lt;&#x2F;p&gt;
+&lt;p&gt;Huge thanks as well to everyone who played, rated, and shared feedback during the jam. Your support turned a one-week solo project into a community favorite. 💪&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🌱 Growing Minds Game — Serious Game for Children on Biodiversity</title>
+        <published>2025-02-27T00:00:00+00:00</published>
+        <updated>2025-02-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/growing-minds/"/>
+        <id>https://marcusaasjensen.com/portfolio/growing-minds/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/growing-minds/">&lt;h2 id=&quot;seedling-project-overview&quot;&gt;🌱 Project Overview&lt;&#x2F;h2&gt;
+&lt;p&gt;This project was carried out as a &lt;strong&gt;group project of 3 students&lt;&#x2F;strong&gt; in the context of &lt;strong&gt;research on serious games and the digitalization of educational tools&lt;&#x2F;strong&gt;.&lt;br &#x2F;&gt;
+The objective was to bring an existing &lt;strong&gt;board game about biodiversity&lt;&#x2F;strong&gt; into a &lt;strong&gt;digital format&lt;&#x2F;strong&gt; using Unity, while preserving its &lt;strong&gt;collaborative&lt;&#x2F;strong&gt; and &lt;strong&gt;educational&lt;&#x2F;strong&gt; nature.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;strong&gt;original board game &quot;Growing Minds&quot;&lt;&#x2F;strong&gt; was created by &lt;strong&gt;Saumya Grover&lt;&#x2F;strong&gt; and &lt;strong&gt;Nimet Hüma Sabirli&lt;&#x2F;strong&gt;. After being tested in schools worldwide, the authors sought to explore digitalization as a way to broaden its reach and integrate it into modern learning environments.&lt;&#x2F;p&gt;
+&lt;p&gt;Our challenge was to ensure that the &lt;strong&gt;playful, outdoor, and collaborative benefits&lt;&#x2F;strong&gt; of the original were preserved in the digital version.&lt;&#x2F;p&gt;
+&lt;p&gt;The project was conducted under the supervision and guidance of:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www-sop.inria.fr&#x2F;members&#x2F;Hui-Yin.Wu&#x2F;&quot;&gt;Hui-Yin Wu&lt;&#x2F;a&gt; (Professor, Inria)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;fr.linkedin.com&#x2F;in&#x2F;pauline-devictor-92a02b233&quot;&gt;Pauline Devictor&lt;&#x2F;a&gt; (Research &amp;amp; Project Supervisor)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+ &lt;!----&gt;
+
+
+&lt;div
+  class=&quot;my-4 flex flex-col rounded-lg bg-[var(--admonition-bg)]&quot;
+  style=&quot;--admonition-bg: rgba(255, 145, 0, 0.1)&quot;
+&gt;
+  &lt;div class=&quot;flex items-center rounded-t-lg bg-[var(--admonition-bg)] p-1&quot;&gt;
+    &lt;div
+      class=&quot;mx-2 h-4 w-4 text-[0px] [background:var(--url)_center_center_no-repeat] dark:invert&quot;
+      style=&quot;--url: url(.&#x2F;icons&#x2F;warning.svg)&quot;
+    &gt;
+      warning
+    &lt;&#x2F;div&gt;
+    &lt;span&gt;&lt;strong&gt;Note&lt;&#x2F;strong&gt;&lt;&#x2F;span&gt;
+  &lt;&#x2F;div&gt;
+  &lt;div class=&quot;pl-4&quot;&gt;&lt;p&gt;This project is not available for public use. It is presented here as part of my portfolio to highlight my role in &lt;strong&gt;managing the entire Unity project&lt;&#x2F;strong&gt; and its technical implementation.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;video-game-the-game&quot;&gt;🎮 The Game&lt;&#x2F;h2&gt;
+&lt;p&gt;The digital version reimagines the board game with mechanics adapted to &lt;strong&gt;mobile platforms (Android &amp;amp; iOS)&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Players begin with an &lt;strong&gt;initial tile&lt;&#x2F;strong&gt; and connect additional tiles to build an &lt;strong&gt;ecosystem&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Tiles represent &lt;strong&gt;animals, plants, or natural elements&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Connecting tiles reveals &lt;strong&gt;rules&lt;&#x2F;strong&gt; that grant points.
+&lt;ul&gt;
+&lt;li&gt;Example: Connecting a &lt;strong&gt;Bee&lt;&#x2F;strong&gt; tile with a &lt;strong&gt;Honey&lt;&#x2F;strong&gt; tile unlocks the rule: &lt;em&gt;“the bee makes honey”&lt;&#x2F;em&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Even when no explicit rule exists, connecting tiles with thematic links (e.g., animals or plants) still grants points.&lt;&#x2F;li&gt;
+&lt;li&gt;Teachers can also &lt;strong&gt;define custom rules&lt;&#x2F;strong&gt;, making the experience flexible for classroom use.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The project successfully translated the &lt;strong&gt;serious game&lt;&#x2F;strong&gt; into a &lt;strong&gt;digital environment&lt;&#x2F;strong&gt;, offering children an &lt;strong&gt;interactive, collaborative, and educational experience&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;woman-computer-my-role&quot;&gt;👩‍💻 My Role&lt;&#x2F;h2&gt;
+&lt;p&gt;I was responsible for &lt;strong&gt;managing the entire Unity project&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Building the game structure and ecosystem-connection mechanics.&lt;&#x2F;li&gt;
+&lt;li&gt;Implementing scoring and dynamic rules.&lt;&#x2F;li&gt;
+&lt;li&gt;Overseeing deployment to &lt;strong&gt;iOS and Android&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Coordinating contributions within the group.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This role strengthened my skills in &lt;strong&gt;Unity, C# development, mobile deployment, and serious game design&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;camera-flash-gallery&quot;&gt;📸 Gallery&lt;&#x2F;h2&gt;
+&lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;&quot;&gt;
+  &lt;a href=&quot;&#x2F;images&#x2F;growing-minds-map.jpg&quot; style=&quot;flex: 1 1 300px; max-width: 500px;&quot;&gt;
+    &lt;img src=&quot;&#x2F;images&#x2F;growing-minds-map.jpg&quot; alt=&quot;Growing Minds Map&quot; style=&quot;width:100%; height:auto; border-radius:8px;&quot; &#x2F;&gt;
+  &lt;&#x2F;a&gt;
+  &lt;a href=&quot;&#x2F;images&#x2F;growing-minds.png&quot; style=&quot;flex: 1 1 300px; max-width: 500px;&quot;&gt;
+    &lt;img src=&quot;&#x2F;images&#x2F;growing-minds.png&quot; alt=&quot;Growing Minds Gameplay&quot; style=&quot;width:100%; height:auto; border-radius:8px;&quot; &#x2F;&gt;
+  &lt;&#x2F;a&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;books-references&quot;&gt;📚 References&lt;&#x2F;h2&gt;
+&lt;p&gt;[1] Swink, S. (2009). &lt;em&gt;Game Feel: A Game Designer&#x27;s Guide to Virtual Sensation (1st ed.)&lt;&#x2F;em&gt;. CRC Press.&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;www.taylorfrancis.com&#x2F;books&#x2F;mono&#x2F;10.1201&#x2F;9781482267334&#x2F;game-feel-steve-swink&quot;&gt;https:&#x2F;&#x2F;www.taylorfrancis.com&#x2F;books&#x2F;mono&#x2F;10.1201&#x2F;9781482267334&#x2F;game-feel-steve-swink&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;[2] Zhou, H., &amp;amp; Forbes, A. G. (2022). &lt;em&gt;Data Feel: Exploring Visual Effects in Video Games to Support Sensemaking Tasks.&lt;&#x2F;em&gt; IEEE VIS4DH.&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;ieeexplore.ieee.org&#x2F;abstract&#x2F;document&#x2F;9974787&quot;&gt;https:&#x2F;&#x2F;ieeexplore.ieee.org&#x2F;abstract&#x2F;document&#x2F;9974787&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;[3] Fjællingsdal, K. S., &amp;amp; Klöckner, C. A. (2019). &lt;em&gt;Gaming Green: The Educational Potential of Eco – A Digital Simulated Ecosystem.&lt;&#x2F;em&gt; Frontiers in Psychology, 10:2846.&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;www.frontiersin.org&#x2F;articles&#x2F;10.3389&#x2F;fpsyg.2019.02846&#x2F;full&quot;&gt;https:&#x2F;&#x2F;www.frontiersin.org&#x2F;articles&#x2F;10.3389&#x2F;fpsyg.2019.02846&#x2F;full&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;[4] Ferreira, S. M., Gouin-Vallerand, C., &amp;amp; Hotte, R. (2016). &lt;em&gt;Game Based Learning: A Case Study on Designing an Educational Game for Children in Developing Countries.&lt;&#x2F;em&gt; IEEE VS-GAMES.&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;ieeexplore.ieee.org&#x2F;abstract&#x2F;document&#x2F;7590350&quot;&gt;https:&#x2F;&#x2F;ieeexplore.ieee.org&#x2F;abstract&#x2F;document&#x2F;7590350&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;[5] Lo, J. J., Ji, N. W., Syu, Y. H., You, W. J., &amp;amp; Chen, Y. T. (2008). &lt;em&gt;Developing a Digital Game-Based Situated Learning System for Ocean Ecology.&lt;&#x2F;em&gt; In Transactions on Edutainment I. LNCS vol 5080. Springer.&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;link.springer.com&#x2F;chapter&#x2F;10.1007&#x2F;978-3-540-69744-2_5&quot;&gt;https:&#x2F;&#x2F;link.springer.com&#x2F;chapter&#x2F;10.1007&#x2F;978-3-540-69744-2_5&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;[6] Diniz dos Santos, A., Strada, F., &amp;amp; Bottino, A. (2018). &lt;em&gt;Approaching Sustainability Learning Via Digital Serious Games.&lt;&#x2F;em&gt; IEEE Transactions on Learning Technologies.&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;ieeexplore.ieee.org&#x2F;abstract&#x2F;document&#x2F;8417451&quot;&gt;https:&#x2F;&#x2F;ieeexplore.ieee.org&#x2F;abstract&#x2F;document&#x2F;8417451&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;[7] CEECD (2023). &lt;em&gt;Child’s Play: Learning that Comes Naturally.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;www.child-encyclopedia.com&#x2F;pdf&#x2F;synthese&#x2F;play&quot;&gt;https:&#x2F;&#x2F;www.child-encyclopedia.com&#x2F;pdf&#x2F;synthese&#x2F;play&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;[8] Kosa, M., Yilmaz, M., O&#x27;Connor, R., &amp;amp; Clarke, P. (2016). &lt;em&gt;Software Engineering Education and Games: A Systematic Literature Review.&lt;&#x2F;em&gt; Journal of Universal Computer Science, 22(12).&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;doras.dcu.ie&#x2F;21648&#x2F;1&#x2F;jucs_22_12_1558_1574_kosa.pdf&quot;&gt;https:&#x2F;&#x2F;doras.dcu.ie&#x2F;21648&#x2F;1&#x2F;jucs_22_12_1558_1574_kosa.pdf&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;[9] Shahid, S., Krahmer, E., Swerts, M., &amp;amp; Mubin, O. (2010). &lt;em&gt;Child-robot Interaction During Collaborative Game Play: Effects of Age and Gender on Emotion and Experience.&lt;&#x2F;em&gt; OZCHI &#x27;10.&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;dl.acm.org&#x2F;doi&#x2F;abs&#x2F;10.1145&#x2F;1952222.1952294&quot;&gt;https:&#x2F;&#x2F;dl.acm.org&#x2F;doi&#x2F;abs&#x2F;10.1145&#x2F;1952222.1952294&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;[10] Parker, R., &amp;amp; Thomsen, B. S. (2019). &lt;em&gt;Learning Through Play at School.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;research.acer.edu.au&#x2F;cgi&#x2F;viewcontent.cgi?article=1023&amp;amp;context=learning_processes&quot;&gt;https:&#x2F;&#x2F;research.acer.edu.au&#x2F;cgi&#x2F;viewcontent.cgi?article=1023&amp;amp;context=learning_processes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;[11] &lt;em&gt;Play Facilitation: The Science Behind the Art of Engaging Young Children.&lt;&#x2F;em&gt; (University of Helsinki, 2020).&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;helda.helsinki.fi&#x2F;server&#x2F;api&#x2F;core&#x2F;bitstreams&#x2F;aace01a3-7af6-4791-a502-35940d67a07c&#x2F;content&quot;&gt;https:&#x2F;&#x2F;helda.helsinki.fi&#x2F;server&#x2F;api&#x2F;core&#x2F;bitstreams&#x2F;aace01a3-7af6-4791-a502-35940d67a07c&#x2F;content&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;[12] Ceka, A., &amp;amp; Murati, R. (2016). &lt;em&gt;The Role of Parents in the Education of Children.&lt;&#x2F;em&gt; Journal of Education and Practice, 7(5).&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;eric.ed.gov&#x2F;?id=EJ1092391&quot;&gt;https:&#x2F;&#x2F;eric.ed.gov&#x2F;?id=EJ1092391&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;[13] Claire (2021). &lt;em&gt;The Role of Play in Forest School.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;wildlings.sg&#x2F;post&#x2F;the-role-of-play-in-forest-school&quot;&gt;https:&#x2F;&#x2F;wildlings.sg&#x2F;post&#x2F;the-role-of-play-in-forest-school&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;[14] Thomsen, B. S. (2019). &lt;em&gt;Learning Through Free Play, Guided Play, Games and Instruction.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;pulse&#x2F;learning-through-free-play-guided-games-instruction-thomsen&#x2F;&quot;&gt;https:&#x2F;&#x2F;www.linkedin.com&#x2F;pulse&#x2F;learning-through-free-play-guided-games-instruction-thomsen&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>✨ VRvard — A Magical VR Experience</title>
+        <published>2025-02-05T00:00:00+00:00</published>
+        <updated>2025-02-05T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/vrvard/"/>
+        <id>https://marcusaasjensen.com/portfolio/vrvard/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/vrvard/">&lt;p&gt;✨ &lt;strong&gt;VRvard&lt;&#x2F;strong&gt; is an immersive virtual reality experience that transports you to a magical world filled with interactive environments. Developed as a collaborative project with &lt;img src=&quot;https:&#x2F;&#x2F;github.com&#x2F;luvluvdt3&quot; alt=&quot;Thi Thanh Tu Duong&quot; &#x2F;&gt;, VRvard offers users the opportunity to explore and interact with potions and powers using the Meta Quest VR headset.&lt;&#x2F;p&gt;
+&lt;p&gt;💻 &lt;strong&gt;GitHub Repository&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;luvluvdt3&#x2F;VRvard&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;github-readme-stats.vercel.app&#x2F;api&#x2F;pin&#x2F;?username=luvluvdt3&amp;repo=VRvard&amp;theme=github_dark_dimmed&quot; alt=&quot;VRVardRepo&quot;&#x2F;&gt;
+&lt;&#x2F;a&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;projector-showcase&quot;&gt;📽️ Showcase&lt;&#x2F;h2&gt;
+&lt;video width=&quot;720&quot; controls&gt;
+  &lt;source src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;luvluvdt3&#x2F;VRvard&#x2F;develop&#x2F;docs&#x2F;FINAL_VR.mp4&quot; type=&quot;video&#x2F;mp4&quot;&gt;
+  Your browser does not support the video tag.
+&lt;&#x2F;video&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;wrench-setup&quot;&gt;🔧 Setup&lt;&#x2F;h2&gt;
+&lt;p&gt;Prequisites: Unity 6 with Android Build Support.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Clone the repository&lt;&#x2F;li&gt;
+&lt;li&gt;Open the project with Unity&lt;&#x2F;li&gt;
+&lt;li&gt;Connect your Meta Quest to your computer with a USB cable and application &lt;code&gt;Meta Quest Link&lt;&#x2F;code&gt; and make sure it is in developer mode
+3.5 (Optional) At this state, you can actually use Meta Link to launch Unity Editor to test directly on your Meta Quest with a good USB 3 cable.&lt;&#x2F;li&gt;
+&lt;li&gt;Go to &lt;code&gt;File&lt;&#x2F;code&gt; -&amp;gt; &lt;code&gt;Build Settings&lt;&#x2F;code&gt; -&amp;gt; &lt;code&gt;Android&lt;&#x2F;code&gt; -&amp;gt; &lt;code&gt;Build&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Check if your Meta Quest is connected and shown in section &lt;code&gt;Run Device&lt;&#x2F;code&gt;. If not shown, click &lt;code&gt;Refresh&lt;&#x2F;code&gt; button&lt;&#x2F;li&gt;
+&lt;li&gt;Choose our scene &lt;code&gt;Main&lt;&#x2F;code&gt; and build the project by clicking &lt;code&gt;Build and Run&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🪄 It&#x27;s Magic — Multi-Device Multiplayer Game</title>
+        <published>2025-01-20T00:00:00+00:00</published>
+        <updated>2025-01-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/its-magic/"/>
+        <id>https://marcusaasjensen.com/portfolio/its-magic/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/its-magic/">&lt;p&gt;It’s Magic is an experimental &lt;strong&gt;multiplayer game&lt;&#x2F;strong&gt; exploring &lt;strong&gt;distributed interaction&lt;&#x2F;strong&gt; across several devices.&lt;br &#x2F;&gt;
+Created as a college final project in a team of 4, it combines Unity clients and a mobile app to create a cooperative, immersive potion-making adventure.&lt;&#x2F;p&gt;
+&lt;p&gt;💻 &lt;strong&gt;GitHub Repository&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&#x2F;its-magic&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;github-readme-stats.vercel.app&#x2F;api&#x2F;pin&#x2F;?username=marcusaasjensen&amp;repo=its-magic&amp;theme=github_dark_dimmed&quot; alt=&quot;Its Magic Repo&quot;&#x2F;&gt;
+&lt;&#x2F;a&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;sparkles-overview&quot;&gt;✨ Overview&lt;&#x2F;h2&gt;
+&lt;p&gt;Three players cooperate in a magical world using &lt;strong&gt;three different interfaces&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Interactive Table&lt;&#x2F;strong&gt; – Top-down view of the forest and workshop.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Vertical Screen&lt;&#x2F;strong&gt; – Side views for detailed actions.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile Phone&lt;&#x2F;strong&gt; – Special tools and environment control.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The game encourages &lt;strong&gt;communication and coordination&lt;&#x2F;strong&gt; as each device provides unique perspectives and actions.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;dart-goal-of-the-game&quot;&gt;🎯 Goal of the Game&lt;&#x2F;h2&gt;
+&lt;p&gt;Play as &lt;strong&gt;three wizards&lt;&#x2F;strong&gt; working together to brew a potion before time runs out.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;🍄 Harvest Ingredients&lt;&#x2F;strong&gt; – Gather forest ingredients and store them in the bag.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;🥣 Prepare the Cauldron&lt;&#x2F;strong&gt; – Toss ingredients into the cauldron inside the house.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;🪵 Heat the Cauldron&lt;&#x2F;strong&gt; – Move it to the chimney when bubbling starts.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;🔥 Light the Fire&lt;&#x2F;strong&gt; – Use the bellows to ignite the flame.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;⚗️ Finish the Potion&lt;&#x2F;strong&gt; – Wait for dark blue bubbles, then pour the potion into a flask.&lt;br &#x2F;&gt;
+⚠️ &lt;strong&gt;Careful not to spill it!&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;desktop-device-interactions&quot;&gt;🖥️ Device Interactions&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;interactive-table&quot;&gt;Interactive Table&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Multi-touch Selection&lt;&#x2F;strong&gt; – Cooperative harvesting and object manipulation.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Drag &amp;amp; Drop&lt;&#x2F;strong&gt; – Move ingredients and reveal hidden areas on the vertical screen with the magic wand.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;vertical-screen&quot;&gt;Vertical Screen&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Slash Interaction&lt;&#x2F;strong&gt; – Cut ingredients in the side forest scene.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Tap Navigation&lt;&#x2F;strong&gt; – Open doors, trigger objects, and receive hints.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;mobile-phone&quot;&gt;Mobile Phone&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;💨 Blow into Microphone&lt;&#x2F;strong&gt; – Ignite fires for the cauldron.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;👜 Throwable Inventory&lt;&#x2F;strong&gt; – Manage and share collected ingredients.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;💡 Brightness Control&lt;&#x2F;strong&gt; – Change time of day to access night-only resources like fireflies.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;gear-technical-details&quot;&gt;⚙️ Technical Details&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Unity 3D 2022.3.20f1&lt;&#x2F;strong&gt; for both top and side view clients.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Android Studio&lt;&#x2F;strong&gt; for the mobile app.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;WebSocket Server&lt;&#x2F;strong&gt; handles real-time communication between all devices.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;wrench-setup&quot;&gt;🔧 Setup&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Build the Android App&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open &lt;code&gt;Client&#x2F;Android&lt;&#x2F;code&gt; in Android Studio and build the APK.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Build Unity Clients&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create separate builds for the table (top view) and vertical screen.&lt;&#x2F;li&gt;
+&lt;li&gt;Update &lt;code&gt;config.json&lt;&#x2F;code&gt; with the correct IP&#x2F;port (see &lt;code&gt;config.template.json&lt;&#x2F;code&gt;).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Run the Server&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;In the &lt;code&gt;Server&lt;&#x2F;code&gt; folder:&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;npm&lt;&#x2F;span&gt;&lt;span&gt; install
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;npm&lt;&#x2F;span&gt;&lt;span&gt; run start
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Launch All Clients&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Run each Unity build on different machines and start the Android app.&lt;&#x2F;li&gt;
+&lt;li&gt;If the app crashes, simply restart it.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;video-game-experience&quot;&gt;🎮 Experience&lt;&#x2F;h2&gt;
+&lt;p&gt;It’s Magic invites players to &lt;strong&gt;mix physical gestures and digital feedback&lt;&#x2F;strong&gt; in a playful, collaborative setting.&lt;br &#x2F;&gt;
+Whether dragging ingredients, slashing branches, or blowing into a phone to light fires, each action contributes to the shared magical goal.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>👑 Little Princess — Experimental 3D Narrative Game</title>
+        <published>2024-05-01T00:00:00+00:00</published>
+        <updated>2024-05-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/little-princess/"/>
+        <id>https://marcusaasjensen.com/portfolio/little-princess/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/little-princess/">&lt;p&gt;✨ &lt;strong&gt;Little Princess&lt;&#x2F;strong&gt; is a 3D experimental narrative game made as a school project. The game follows the journey of a forgotten idea, Little Princess, who longs to be remembered and brought to life.&lt;&#x2F;p&gt;
+ &lt;!----&gt;
+
+
+&lt;div
+  class=&quot;my-4 flex flex-col rounded-lg bg-[var(--admonition-bg)]&quot;
+  style=&quot;--admonition-bg: rgba(159, 159, 159, 0.1)&quot;
+&gt;
+  &lt;div class=&quot;flex items-center rounded-t-lg bg-[var(--admonition-bg)] p-1&quot;&gt;
+    &lt;div
+      class=&quot;mx-2 h-4 w-4 text-[0px] [background:var(--url)_center_center_no-repeat] dark:invert&quot;
+      style=&quot;--url: url(.&#x2F;icons&#x2F;quote.svg)&quot;
+    &gt;
+      quote
+    &lt;&#x2F;div&gt;
+    &lt;span&gt;&lt;strong&gt;Walt Disney&lt;&#x2F;strong&gt;&lt;&#x2F;span&gt;
+  &lt;&#x2F;div&gt;
+  &lt;div class=&quot;pl-4&quot;&gt;&lt;p&gt;All our dreams can come true if we have the courage to pursue them&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;💻 &lt;strong&gt;GitHub Repository&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&#x2F;little-princess&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;github-readme-stats.vercel.app&#x2F;api&#x2F;pin&#x2F;?username=marcusaasjensen&amp;repo=little-princess&amp;theme=github_dark_dimmed&quot; alt=&quot;Little Princess Repo&quot;&#x2F;&gt;
+&lt;&#x2F;a&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;warning-important-notes&quot;&gt;⚠️ Important Notes&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🚧 &lt;strong&gt;School Project&lt;&#x2F;strong&gt;: This game was developed as part of a school project and may contain bugs and glitches.&lt;&#x2F;li&gt;
+&lt;li&gt;🖥️ &lt;strong&gt;Performance Requirements&lt;&#x2F;strong&gt;: Best experienced on a PC running at 60 FPS; may not perform well on lower-end hardware.&lt;&#x2F;li&gt;
+&lt;li&gt;🛠️ &lt;strong&gt;No Performance Options&lt;&#x2F;strong&gt;: Lacks settings for adjusting performance or graphics quality.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;camera-flash-gallery&quot;&gt;📸 Gallery&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;em&gt;Gameplay screenshots from Little Princess.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;images&#x2F;little-princess1.png&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;little-princess1.png&quot; alt=&quot;Screenshot 1&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;images&#x2F;little-princess2.png&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;little-princess2.png&quot; alt=&quot;Screenshot 2&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;images&#x2F;little-princess3.png&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;little-princess3.png&quot; alt=&quot;Screenshot 3&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;images&#x2F;little-princess4.png&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;little-princess4.png&quot; alt=&quot;Screenshot 4&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🔷 Quanridor</title>
+        <published>2024-04-26T00:00:00+00:00</published>
+        <updated>2024-04-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/quanridor/"/>
+        <id>https://marcusaasjensen.com/portfolio/quanridor/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/quanridor/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;quanridor-title.png&quot; alt=&quot;Quanridor Title&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;✨ &lt;strong&gt;Quanridor&lt;&#x2F;strong&gt; is a multiplayer adaptation of the classic &lt;strong&gt;Quoridor&lt;&#x2F;strong&gt; board game, developed as a school project using only &lt;strong&gt;pure HTML, CSS, and JavaScript&lt;&#x2F;strong&gt;.
+This version introduces a unique &lt;strong&gt;fog of war&lt;&#x2F;strong&gt; mechanic: players can only see tiles within their line of sight, adding depth and strategy to the gameplay.
+The game supports both &lt;strong&gt;web and mobile platforms&lt;&#x2F;strong&gt;, with options to play against AI opponents, locally with friends, or online with others.&lt;br &#x2F;&gt;
+Additional systems include chat, emotes, a leaderboard, statistics, and more.&lt;&#x2F;p&gt;
+&lt;p&gt;💻 &lt;strong&gt;GitHub Repository&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcpinet&#x2F;quanridor&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;github-readme-stats.vercel.app&#x2F;api&#x2F;pin&#x2F;?username=marcpinet&amp;repo=quanridor&amp;theme=github_dark_dimmed&quot; alt=&quot;Little Princess Repo&quot;&#x2F;&gt;
+&lt;&#x2F;a&gt;
+&lt;h2 id=&quot;video-game-showcase&quot;&gt;🎮 Showcase&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;pc-version&quot;&gt;PC Version&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;video src=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcpinet&#x2F;quanridor&#x2F;assets&#x2F;52708150&#x2F;8aa827ca-f739-4675-a9a9-6386ea3f930d&quot; controls width=&quot;100%&quot;&gt;&lt;&#x2F;video&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;mobile-version&quot;&gt;Mobile Version&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;video src=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcpinet&#x2F;quanridor&#x2F;assets&#x2F;52708150&#x2F;9ef180f8-7e02-4061-984a-86cdffe0278c&quot; controls width=&quot;25%&quot;&gt;&lt;&#x2F;video&gt;&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;globe-with-meridians-hosting&quot;&gt;🌐 Hosting&lt;&#x2F;h2&gt;
+&lt;p&gt;You can play directly at: &lt;a href=&quot;http:&#x2F;&#x2F;quanridor.marcpinet.fr&#x2F;&quot;&gt;http:&#x2F;&#x2F;quanridor.marcpinet.fr&lt;&#x2F;a&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;(unless the server is offline, in which case the project can also be run locally).&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;package-features&quot;&gt;📦 Features&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Minimalistic and clean UI&#x2F;UX design 🖥️&lt;&#x2F;li&gt;
+&lt;li&gt;Login &#x2F; Register system with secure backend 📝&lt;&#x2F;li&gt;
+&lt;li&gt;Token authentication system (JWT) 🍪&lt;&#x2F;li&gt;
+&lt;li&gt;In-progress game listing 📋&lt;&#x2F;li&gt;
+&lt;li&gt;Play locally with someone else 🎮&lt;&#x2F;li&gt;
+&lt;li&gt;Play against bots with different levels of difficulty 🤖&lt;&#x2F;li&gt;
+&lt;li&gt;Multiplayer online games with friends or random players 🌐&lt;&#x2F;li&gt;
+&lt;li&gt;Social system (friends, chat, emotes, notifications, etc.) 📱&lt;&#x2F;li&gt;
+&lt;li&gt;Challenge your friends to a duel 🤺&lt;&#x2F;li&gt;
+&lt;li&gt;Leaderboard with elo 🏆&lt;&#x2F;li&gt;
+&lt;li&gt;Mobile compatibility 📱&lt;&#x2F;li&gt;
+&lt;li&gt;Resume abandoned games from the database 📂&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;bulb-how-to-play&quot;&gt;💡 How to Play&lt;&#x2F;h2&gt;
+&lt;p&gt;Create an account and start a game!&lt;&#x2F;p&gt;
+&lt;p&gt;A test account is available:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;&#x2F;strong&gt; &lt;code&gt;admin&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;&#x2F;strong&gt; &lt;code&gt;admin&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;writing-hand-authors&quot;&gt;✍️ Authors&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcpinet&quot;&gt;Marc Pinet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;rodriguezarthur&quot;&gt;Arthur Rodriguez&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&quot;&gt;Marcus Aas Jensen&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;LorisDrid&quot;&gt;Loris Drid&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🗨️ Dialogue System — Visual Dialogue Editor for Unity</title>
+        <published>2024-02-16T00:00:00+00:00</published>
+        <updated>2024-02-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/dialogue-system/"/>
+        <id>https://marcusaasjensen.com/portfolio/dialogue-system/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/dialogue-system/">&lt;p&gt;✨ &lt;strong&gt;Dialogue System&lt;&#x2F;strong&gt; is a visual dialogue editor for Unity, designed to create rich narrative interactions with branching choices, text animations, and character emotion management.&lt;&#x2F;p&gt;
+&lt;div class = &quot;video-wrapper&quot;&gt;
+    &lt;iframe
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;QhQQnyrjZJc&quot;
+        title=&quot;Dialogue System Demo&quot;
+        frameborder=&quot;0&quot;
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;💻 &lt;strong&gt;GitHub Repository&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&#x2F;dialogue-system&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;github-readme-stats.vercel.app&#x2F;api&#x2F;pin&#x2F;?username=marcusaasjensen&amp;repo=dialogue-system&amp;theme=github_dark_dimmed&quot; alt=&quot;Dialogue System Repo&quot;&#x2F;&gt;
+&lt;&#x2F;a&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;dart-key-features&quot;&gt;🎯 Key Features&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🧩 &lt;strong&gt;Visual Dialogue Graph Editor&lt;&#x2F;strong&gt;: create simple or branching dialogue nodes with intuitive visual connections.&lt;&#x2F;li&gt;
+&lt;li&gt;🎭 &lt;strong&gt;Dynamic Characters&lt;&#x2F;strong&gt;: manage sprites, voices, emotions, and reactions.&lt;&#x2F;li&gt;
+&lt;li&gt;⏱️ &lt;strong&gt;Animated Text System&lt;&#x2F;strong&gt;: control typing speed and text animations.&lt;&#x2F;li&gt;
+&lt;li&gt;🎶 &lt;strong&gt;Audio &amp;amp; Visual Commands&lt;&#x2F;strong&gt;: integrate sound effects, music, and animated text through custom tags.&lt;&#x2F;li&gt;
+&lt;li&gt;💾 &lt;strong&gt;Save &amp;amp; Load&lt;&#x2F;strong&gt;: persist dialogue states with checkpoint support.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;camera-flash-gallery&quot;&gt;📸 Gallery&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;em&gt;Screenshots of the dialogue editor&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;images&#x2F;dialogue-system-editor.png&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;dialogue-system-editor.png&quot; alt=&quot;Dialogue Graph Editor&quot; style=&quot;width:80%;height:auto;&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;images&#x2F;dialogue-system-example.png&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;dialogue-system-example.png&quot; alt=&quot;Dialogue with Multiple Choices&quot; style=&quot;width:80%;height:auto;&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;tools-development&quot;&gt;🛠️ Development&lt;&#x2F;h2&gt;
+&lt;p&gt;Built with:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;🎮 &lt;strong&gt;Unity 2022.3.0f1&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;🧵 &lt;strong&gt;TextMeshPro 3.0.6&lt;&#x2F;strong&gt; for UI dialogues&lt;&#x2F;li&gt;
+&lt;li&gt;🧩 &lt;strong&gt;ScriptableObjects&lt;&#x2F;strong&gt; for data management&lt;&#x2F;li&gt;
+&lt;li&gt;🎛️ &lt;strong&gt;Unity Event System&lt;&#x2F;strong&gt; for handling actions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;All tools and assets are modular and extensible for easy integration into your Unity projects.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🪢 Marionette — Original 3D Blender Animation</title>
+        <published>2024-01-28T00:00:00+00:00</published>
+        <updated>2024-01-28T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/blender-animation/"/>
+        <id>https://marcusaasjensen.com/portfolio/blender-animation/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/blender-animation/">&lt;div class = &quot;video-wrapper&quot;&gt;
+    &lt;iframe
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;vFojjL7MOK8&quot;
+        title=&quot;Marionette — Blender Animation&quot;
+        frameborder=&quot;0&quot;
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;milky-way-concept&quot;&gt;🌌 Concept&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Marionette&lt;&#x2F;strong&gt; began as a character I sketched two years before and slowly evolved into a nine-second 3D short.&lt;br &#x2F;&gt;
+The puppet lives in contradiction with &lt;strong&gt;its chains both restraining and sustaining it&lt;&#x2F;strong&gt; which reflects the way our insecurities can trap us while also defining who we are.
+Its awkward, eerie movements become a quiet metaphor for learning to live with the strings we cannot fully cut.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;notes-original-music&quot;&gt;🎶 Original Music&lt;&#x2F;h2&gt;
+&lt;audio controls&gt;
+  &lt;source src=&quot;&#x2F;audio&#x2F;marionette.mp3&quot; type=&quot;audio&#x2F;mpeg&quot;&gt;
+  Your browser does not support the audio element.
+&lt;&#x2F;audio&gt;
+&lt;p&gt;To give the animation its bittersweet atmosphere, I composed an &lt;strong&gt;original theme in FL Studio&lt;&#x2F;strong&gt; specifically for the marionette.&lt;br &#x2F;&gt;
+The music mirrors the fragile tension of the character and its quiet innocence, amplifying the emotional contrast between restraint and freedom.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;art-creation-process&quot;&gt;🎨 Creation Process&lt;&#x2F;h2&gt;
+&lt;p&gt;This was my &lt;strong&gt;first fully-modeled and animated 3D character&lt;&#x2F;strong&gt;, made entirely in &lt;strong&gt;Blender&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Custom rigging with &lt;strong&gt;constraints&lt;&#x2F;strong&gt; for precise control&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Chain physics (baked)&lt;&#x2F;strong&gt; to bring the strings to life&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Lattice modifier&lt;&#x2F;strong&gt; for subtle hair motion&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Original music&lt;&#x2F;strong&gt; to reinforce the mood&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;What started as a simple experiment in 3D became a personal artistic journey combining drawing, modeling, and animation into a single expressive piece.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;pencil2-from-drawing-to-model&quot;&gt;✏️ From Drawing to Model&lt;&#x2F;h2&gt;
+&lt;p&gt;The marionette’s design originated from a hand-drawn concept, reimagined in 3D while keeping the fragile, almost magical aesthetic of the original illustration.&lt;&#x2F;p&gt;
+&lt;a href=&quot;&#x2F;images&#x2F;marionette-drawing.png&quot;&gt;
+  &lt;img src=&quot;&#x2F;images&#x2F;marionette-drawing.png&quot; alt=&quot;Marionette Drawing&quot; style=&quot;width:50%;height:auto;&quot; &#x2F;&gt;
+&lt;&#x2F;a&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;camera-flash-gallery&quot;&gt;📸 Gallery&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;em&gt;Animation Screenshots&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;div style=&quot;display:flex; flex-wrap:wrap; gap:5px; justify-content:center;&quot;&gt;
+  &lt;a href=&quot;&#x2F;images&#x2F;marionette1.png&quot; style=&quot;flex:1 1 300px; min-width:25%;&quot;&gt;
+    &lt;img src=&quot;&#x2F;images&#x2F;marionette1.png&quot; alt=&quot;Marionette 1&quot; style=&quot;width:100%; height:auto;&quot; &#x2F;&gt;
+  &lt;&#x2F;a&gt;
+  &lt;a href=&quot;&#x2F;images&#x2F;marionette2.png&quot; style=&quot;flex:1 1 300px; min-width:25%;&quot;&gt;
+    &lt;img src=&quot;&#x2F;images&#x2F;marionette2.png&quot; alt=&quot;Marionette 2&quot; style=&quot;width:100%; height:auto;&quot; &#x2F;&gt;
+  &lt;&#x2F;a&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;pray-reflection&quot;&gt;🙏 Reflection&lt;&#x2F;h2&gt;
+&lt;p&gt;Learning Blender after years of 2D animation in Unity opened new creative doors.&lt;br &#x2F;&gt;
+This project taught me to translate a still drawing into a living character and gave me a first taste of storytelling in three dimensions.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🚴 Let&#x27;s Go Biking — JCDecaux Bike Route Planner</title>
+        <published>2023-12-17T00:00:00+00:00</published>
+        <updated>2023-12-17T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/lets-go-biking/"/>
+        <id>https://marcusaasjensen.com/portfolio/lets-go-biking/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/lets-go-biking/">&lt;p&gt;🚴 &lt;strong&gt;Let&#x27;s Go Biking&lt;&#x2F;strong&gt; is a school project designed to provide a convenient itinerary for cyclists traveling between two addresses using the JCDecaux bike service. The application functions as a self-hosted SOAP server on the server side, accompanied by a robust Java-based heavy client. Utilizing WCF servers, the app communicates through REST APIs and a routing service with proxy and cache, connecting seamlessly with providers like JCDecaux and OpenRouteService.&lt;&#x2F;p&gt;
+&lt;p&gt;💻 &lt;strong&gt;GitHub Repository&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&#x2F;lets-go-biking&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;github-readme-stats.vercel.app&#x2F;api&#x2F;pin&#x2F;?username=marcusaasjensen&amp;repo=lets-go-biking&amp;theme=github_dark_dimmed&quot; alt=&quot;Lets Go Biking Repo&quot;&#x2F;&gt;
+&lt;&#x2F;a&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;dart-key-features&quot;&gt;🎯 Key Features&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Route Planning&lt;&#x2F;strong&gt;: Calculate optimal bike routes between two addresses.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;JCDecaux Integration&lt;&#x2F;strong&gt;: Utilize JCDecaux bike stations for real-time availability.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;OpenRouteService&lt;&#x2F;strong&gt;: Leverage OpenRouteService for accurate pathfinding.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Caching &amp;amp; Proxy&lt;&#x2F;strong&gt;: Improve performance with caching and proxy mechanisms.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Cross-Platform&lt;&#x2F;strong&gt;: Developed with C# for the server and Java for the client.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;bricks-development&quot;&gt;🧱 Development&lt;&#x2F;h2&gt;
+&lt;p&gt;Built with:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;C# .NET&lt;&#x2F;strong&gt; – Server-side logic and SOAP services.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Java&lt;&#x2F;strong&gt; – Client application for user interaction.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;WCF&lt;&#x2F;strong&gt; – Communication framework for service-oriented architecture.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;OpenRouteService&lt;&#x2F;strong&gt; – Routing service for pathfinding.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;JCDecaux API&lt;&#x2F;strong&gt; – Bike station data integration.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;OpenStreetMap&lt;&#x2F;strong&gt; – Geospatial data for mapping.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;wrench-setup&quot;&gt;🔧 Setup&lt;&#x2F;h2&gt;
+&lt;p&gt;Open git bash and clone the project folder.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;git&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-git &quot;&gt;&lt;code class=&quot;language-git&quot; data-lang=&quot;git&quot;&gt;&lt;span&gt;git clone https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&#x2F;lets-go-biking.git
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Open the cloned project folder &lt;em&gt;lets-go-biking&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Setup your API keys in a .env file inside the Server folder.&lt;&#x2F;p&gt;
+&lt;p&gt;Replace the fields by your API keys for each services and according to the following &lt;em&gt;.env.template&lt;&#x2F;em&gt; file.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;dotenv&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-dotenv &quot;&gt;&lt;code class=&quot;language-dotenv&quot; data-lang=&quot;dotenv&quot;&gt;&lt;span&gt;OPEN_ROUTE_SERVICE_API_KEY=your_api_key
+&lt;&#x2F;span&gt;&lt;span&gt;JCDECAUX_API_KEY=your_api_key
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+ &lt;!----&gt;
+
+
+&lt;div
+  class=&quot;my-4 flex flex-col rounded-lg bg-[var(--admonition-bg)]&quot;
+  style=&quot;--admonition-bg: rgba(0, 191, 165, 0.1)&quot;
+&gt;
+  &lt;div class=&quot;flex items-center rounded-t-lg bg-[var(--admonition-bg)] p-1&quot;&gt;
+    &lt;div
+      class=&quot;mx-2 h-4 w-4 text-[0px] [background:var(--url)_center_center_no-repeat] dark:invert&quot;
+      style=&quot;--url: url(.&#x2F;icons&#x2F;tip.svg)&quot;
+    &gt;
+      tip
+    &lt;&#x2F;div&gt;
+    &lt;span&gt;&lt;strong&gt;Tip&lt;&#x2F;strong&gt;&lt;&#x2F;span&gt;
+  &lt;&#x2F;div&gt;
+  &lt;div class=&quot;pl-4&quot;&gt;&lt;p&gt;You can create accounts on both services to get your API keys.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;JCDecaux API key: https:&#x2F;&#x2F;developer.jcdecaux.com&#x2F;&lt;&#x2F;li&gt;
+&lt;li&gt;Open Route Service Api key: https:&#x2F;&#x2F;openrouteservice.org&#x2F;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Open the &lt;em&gt;Server&#x2F;LetsGoBiking.sln&lt;&#x2F;em&gt; project file with Visual Studio.&lt;&#x2F;p&gt;
+&lt;p&gt;Right click on Solution and select &lt;em&gt;&quot;Build Solution&quot;&lt;&#x2F;em&gt; and wait until successful build.&lt;&#x2F;p&gt;
+ &lt;!----&gt;
+
+
+&lt;div
+  class=&quot;my-4 flex flex-col rounded-lg bg-[var(--admonition-bg)]&quot;
+  style=&quot;--admonition-bg: rgba(255, 145, 0, 0.1)&quot;
+&gt;
+  &lt;div class=&quot;flex items-center rounded-t-lg bg-[var(--admonition-bg)] p-1&quot;&gt;
+    &lt;div
+      class=&quot;mx-2 h-4 w-4 text-[0px] [background:var(--url)_center_center_no-repeat] dark:invert&quot;
+      style=&quot;--url: url(.&#x2F;icons&#x2F;warning.svg)&quot;
+    &gt;
+      warning
+    &lt;&#x2F;div&gt;
+    &lt;span&gt;&lt;strong&gt;Warning&lt;&#x2F;strong&gt;&lt;&#x2F;span&gt;
+  &lt;&#x2F;div&gt;
+  &lt;div class=&quot;pl-4&quot;&gt;&lt;p&gt;Make sure to use the &lt;strong&gt;Java Version 11&lt;&#x2F;strong&gt; to run the client side afterwards.
+Also check if you have &lt;strong&gt;maven&lt;&#x2F;strong&gt; installed.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+&lt;h3 id=&quot;launch-the-app-simply-mouse-three-button&quot;&gt;Launch the app simply 🖱️&lt;&#x2F;h3&gt;
+&lt;p&gt;Click on the &lt;em&gt;LetsGoBiking.bat&lt;&#x2F;em&gt; file.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;launch-the-app-manually-gear&quot;&gt;Launch the app manually ⚙️&lt;&#x2F;h3&gt;
+&lt;p&gt;First, run both the Routing and the ProxyCache servers inside the associated folders:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Server&#x2F;ProxyCacheServer&#x2F;bin&#x2F;Release&#x2F;ProxycacheServer.exe&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;em&gt;Server&#x2F;RoutingServer&#x2F;bin&#x2F;Release&#x2F;RoutingServer.exe&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Secondly, open the command prompt in the Client folder and run in order:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;mvn&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-mvn &quot;&gt;&lt;code class=&quot;language-mvn&quot; data-lang=&quot;mvn&quot;&gt;&lt;span&gt;mvn clean install
+&lt;&#x2F;span&gt;&lt;span&gt;mvn compile
+&lt;&#x2F;span&gt;&lt;span&gt;mvn exec:java -Dexec.mainClass=&amp;quot;com.soc.testwsclient.Main&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;em&gt;Or (using IntelliJ)&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Open the Client project inside IntelliJ idea, and run in the local terminal:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;mvn&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-mvn &quot;&gt;&lt;code class=&quot;language-mvn&quot; data-lang=&quot;mvn&quot;&gt;&lt;span&gt;mvn clean install
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Finally, compile and run the main class.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🧠 Alzheimer Quiz Website</title>
+        <published>2023-10-03T00:00:00+00:00</published>
+        <updated>2023-10-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/alzheimer-quiz-website/"/>
+        <id>https://marcusaasjensen.com/portfolio/alzheimer-quiz-website/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/alzheimer-quiz-website/">&lt;p&gt;🧠 &lt;strong&gt;Alzheimer Quiz Website&lt;&#x2F;strong&gt; is a web-based quiz platform designed to provide cognitive stimulation for individuals with Alzheimer&#x27;s disease. Developed as a school project by a group of three students, the application aims to support memory retention and cognitive function through engaging quiz activities.&lt;&#x2F;p&gt;
+&lt;p&gt;💻 &lt;strong&gt;GitHub Repository&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&#x2F;alzheimer-quiz-website&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;github-readme-stats.vercel.app&#x2F;api&#x2F;pin&#x2F;?username=marcusaasjensen&amp;repo=alzheimer-quiz-website&amp;theme=github_dark_dimmed&quot; alt=&quot;Airport Network Epidemic Repo&quot;&#x2F;&gt;
+&lt;&#x2F;a&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;dart-key-features&quot;&gt;🎯 Key Features&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;User-Friendly Interface&lt;&#x2F;strong&gt;: Designed with simplicity in mind to accommodate users with cognitive impairments.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Engaging Quiz Activities&lt;&#x2F;strong&gt;: Offers a variety of quiz questions to stimulate memory and cognitive functions.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Caregiver Access&lt;&#x2F;strong&gt;: Includes a caregiver section accessible via a PIN code for monitoring and customization.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;bricks-development&quot;&gt;🧱 Development&lt;&#x2F;h2&gt;
+&lt;p&gt;Built with:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Angular&lt;&#x2F;strong&gt; – Front-end framework for building dynamic web applications.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;TypeScript, HTML &amp;amp; SCSS&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🕹️ 3D Conway’s Game of Life in Unity</title>
+        <published>2023-10-03T00:00:00+00:00</published>
+        <updated>2023-10-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/game-of-life/"/>
+        <id>https://marcusaasjensen.com/portfolio/game-of-life/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/game-of-life/">&lt;p&gt;✨ &lt;strong&gt;Game of Life 3D&lt;&#x2F;strong&gt; is a 3D implementation of Conway’s Game of Life with adjustable rules and interactive grid management.&lt;&#x2F;p&gt;
+&lt;p&gt;💻 &lt;strong&gt;GitHub Repository&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&#x2F;game-of-life-3d&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;github-readme-stats.vercel.app&#x2F;api&#x2F;pin&#x2F;?username=marcusaasjensen&amp;repo=game-of-life-3d&amp;theme=github_dark_dimmed&quot; alt=&quot;Game of Life 3D Repo&quot;&#x2F;&gt;
+&lt;&#x2F;a&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;dart-key-features&quot;&gt;🎯 Key Features&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🧩 &lt;strong&gt;3D Cellular Automata&lt;&#x2F;strong&gt;: Conway’s Game of Life in three dimensions.&lt;&#x2F;li&gt;
+&lt;li&gt;🔧 &lt;strong&gt;Adjustable Rules&lt;&#x2F;strong&gt;: configure alive neighbors for survival and birth.&lt;&#x2F;li&gt;
+&lt;li&gt;🖱️ &lt;strong&gt;Interactive Controls&lt;&#x2F;strong&gt;: modify grid size and patterns during play mode.&lt;&#x2F;li&gt;
+&lt;li&gt;🎨 &lt;strong&gt;Initial Patterns&lt;&#x2F;strong&gt;: includes a &lt;code&gt;Block3D&lt;&#x2F;code&gt; starting pattern at configurable positions.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;tools-development&quot;&gt;🛠️ Development&lt;&#x2F;h2&gt;
+&lt;p&gt;Built with:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;🎮 &lt;strong&gt;Unity 3D&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;🧩 &lt;strong&gt;C#&lt;&#x2F;strong&gt; for simulation logic&lt;&#x2F;li&gt;
+&lt;li&gt;📦 &lt;strong&gt;CellManager&lt;&#x2F;strong&gt; component to manage grid size and cells&lt;&#x2F;li&gt;
+&lt;li&gt;🕹️ &lt;strong&gt;GameOfLifeController&lt;&#x2F;strong&gt; for runtime simulation control&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;em&gt;Note: Adjust grid size and rules in the &lt;code&gt;CellManager&lt;&#x2F;code&gt; component and use the &lt;code&gt;GameOfLifeController&lt;&#x2F;code&gt; functions only in play mode.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🎶 Uncanny — Action Rhythm Boss Game</title>
+        <published>2023-04-18T00:00:00+00:00</published>
+        <updated>2023-04-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/uncanny/"/>
+        <id>https://marcusaasjensen.com/portfolio/uncanny/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/uncanny/">&lt;p&gt;✨ &lt;strong&gt;Uncanny&lt;&#x2F;strong&gt; is a fast-paced &lt;strong&gt;action rhythm game&lt;&#x2F;strong&gt; where you dodge and dash through surreal boss attacks.&lt;br &#x2F;&gt;
+Blending rhythm-based mechanics with bullet-hell chaos, it draws inspiration from &lt;em&gt;Just Shapes &amp;amp; Beats&lt;&#x2F;em&gt; and &lt;em&gt;Cuphead&lt;&#x2F;em&gt; to create a hypnotic, dreamlike challenge.&lt;&#x2F;p&gt;
+&lt;div class=&quot;video-wrapper&quot;&gt;
+    &lt;iframe
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;Jcd_hAIVvMk&quot;
+        title=&quot;Uncanny - Launch Trailer&quot;
+        frameborder=&quot;0&quot;
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;iframe frameborder=&quot;0&quot; src=&quot;https:&#x2F;&#x2F;itch.io&#x2F;embed&#x2F;2023586?dark=true&quot; width=&quot;100%&quot; height=&quot;100%&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;marcusjensen.itch.io&#x2F;uncanny&quot;&gt;Uncanny by Marcus Jensen&lt;&#x2F;a&gt;&lt;&#x2F;iframe&gt;
+&lt;p&gt;💻 &lt;strong&gt;GitHub Repository&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&#x2F;uncanny-game-project&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;github-readme-stats.vercel.app&#x2F;api&#x2F;pin&#x2F;?username=marcusaasjensen&amp;repo=uncanny-game-project&amp;theme=github_dark_dimmed&quot; alt=&quot;Uncanny Game Repo&quot;&#x2F;&gt;
+&lt;&#x2F;a&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;trophy-highlights&quot;&gt;🏆 Highlights&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🎯 Achieved &lt;strong&gt;~100 downloads on itch.io&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;🔥 Combines &lt;strong&gt;rhythm gameplay + boss fights&lt;&#x2F;strong&gt; in a unique fever-dream style.&lt;&#x2F;li&gt;
+&lt;li&gt;🎶 Features &lt;strong&gt;original music, animation, and art&lt;&#x2F;strong&gt;, all created from scratch.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;bulb-what-players-are-saying&quot;&gt;💡 What Players Are Saying&lt;&#x2F;h2&gt;
+&lt;p&gt; &lt;!----&gt;
+
+
+&lt;div
+  class=&quot;my-4 flex flex-col rounded-lg bg-[var(--admonition-bg)]&quot;
+  style=&quot;--admonition-bg: rgba(159, 159, 159, 0.1)&quot;
+&gt;
+  &lt;div class=&quot;flex items-center rounded-t-lg bg-[var(--admonition-bg)] p-1&quot;&gt;
+    &lt;div
+      class=&quot;mx-2 h-4 w-4 text-[0px] [background:var(--url)_center_center_no-repeat] dark:invert&quot;
+      style=&quot;--url: url(.&#x2F;icons&#x2F;quote.svg)&quot;
+    &gt;
+      quote
+    &lt;&#x2F;div&gt;
+    &lt;span&gt;&lt;strong&gt;Tarodev on Discord&lt;&#x2F;strong&gt;&lt;&#x2F;span&gt;
+  &lt;&#x2F;div&gt;
+  &lt;div class=&quot;pl-4&quot;&gt;&lt;p&gt;Love the characters in it. Feels like a fever dream.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+
+&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;c&#x2F;Tarodev&quot;&gt;See Tarodev&#x27;s Youtube Channel&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;tools-development&quot;&gt;🛠️ Development&lt;&#x2F;h2&gt;
+&lt;p&gt;Built with:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;🎮 &lt;strong&gt;Unity&lt;&#x2F;strong&gt; for the gameplay in C#&lt;&#x2F;li&gt;
+&lt;li&gt;🎧 &lt;strong&gt;FL Studio&lt;&#x2F;strong&gt; for the music&lt;&#x2F;li&gt;
+&lt;li&gt;🎨 &lt;strong&gt;Krita&lt;&#x2F;strong&gt; for the artwork&lt;&#x2F;li&gt;
+&lt;li&gt;🔊 &lt;strong&gt;Audacity&lt;&#x2F;strong&gt; for sound editing
+All assets were created from scratch (except a few sound effects from &lt;a href=&quot;https:&#x2F;&#x2F;freesound.org&quot;&gt;freesound.org&lt;&#x2F;a&gt;).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;camera-flash-gallery&quot;&gt;📸 Gallery&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;em&gt;Screenshot from Uncanny&lt;&#x2F;em&gt;
+&lt;a href=&quot;&#x2F;images&#x2F;uncanny-gameplay.png&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;uncanny-gameplay.png&quot; alt=&quot;Gameplay Screenshot 1&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;Boss Sketches from Uncanny&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;div style=&quot;display:flex; flex-wrap:wrap; gap:10px; justify-content:center;&quot;&gt;
+  &lt;a href=&quot;&#x2F;images&#x2F;wanderer.png&quot; style=&quot;flex:1 1 200px; max-width:40%;&quot;&gt;
+    &lt;img src=&quot;&#x2F;images&#x2F;wanderer.png&quot; alt=&quot;Wanderer&quot; style=&quot;width:100%; height:auto;&quot; &#x2F;&gt;
+  &lt;&#x2F;a&gt;
+  &lt;a href=&quot;&#x2F;images&#x2F;uncanny_moon.png&quot; style=&quot;flex:1 1 200px; max-width:25%;&quot;&gt;
+    &lt;img src=&quot;&#x2F;images&#x2F;uncanny_moon.png&quot; alt=&quot;Uncanny Moon&quot; style=&quot;width:100%; height:auto;&quot; &#x2F;&gt;
+  &lt;&#x2F;a&gt;
+  &lt;a href=&quot;&#x2F;images&#x2F;uncanny_moon_sketch.png&quot; style=&quot;flex:1 1 200px; max-width:25%;&quot;&gt;
+    &lt;img src=&quot;&#x2F;images&#x2F;uncanny_moon_sketch.png&quot; alt=&quot;Uncanny Moon Sketch&quot; style=&quot;width:100%; height:auto;&quot; &#x2F;&gt;
+  &lt;&#x2F;a&gt;
+&lt;&#x2F;div&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>✈️ Airport Network Epidemic Simulation</title>
+        <published>2022-12-20T00:00:00+00:00</published>
+        <updated>2022-12-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Marcus Aas Jensen
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://marcusaasjensen.com/portfolio/airport-epidemic-modeling/"/>
+        <id>https://marcusaasjensen.com/portfolio/airport-epidemic-modeling/</id>
+        
+        <content type="html" xml:base="https://marcusaasjensen.com/portfolio/airport-epidemic-modeling/">&lt;p&gt;✨ &lt;strong&gt;Airport Network Epidemic&lt;&#x2F;strong&gt; is a Unity-based simulation modeling how an epidemic spreads through a network of airports. It provides insight into disease propagation and the interconnectedness of global travel hubs.&lt;&#x2F;p&gt;
+ &lt;!----&gt;
+
+
+&lt;div
+  class=&quot;my-4 flex flex-col rounded-lg bg-[var(--admonition-bg)]&quot;
+  style=&quot;--admonition-bg: rgba(255, 145, 0, 0.1)&quot;
+&gt;
+  &lt;div class=&quot;flex items-center rounded-t-lg bg-[var(--admonition-bg)] p-1&quot;&gt;
+    &lt;div
+      class=&quot;mx-2 h-4 w-4 text-[0px] [background:var(--url)_center_center_no-repeat] dark:invert&quot;
+      style=&quot;--url: url(.&#x2F;icons&#x2F;warning.svg)&quot;
+    &gt;
+      warning
+    &lt;&#x2F;div&gt;
+    &lt;span&gt;&lt;strong&gt;Disclaimer&lt;&#x2F;strong&gt;&lt;&#x2F;span&gt;
+  &lt;&#x2F;div&gt;
+  &lt;div class=&quot;pl-4&quot;&gt;&lt;p&gt;This project is old (2022) and is not an accurate depiction of a real world epidemic.&lt;&#x2F;p&gt;
+&lt;p&gt;Although you can try the final version in the latest release, the final project itself was lost. You can only access this old project version on GitHub with other added scripts that were only present in the newer lost project.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;💻 &lt;strong&gt;GitHub Repository&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&#x2F;airport-network-epidemic&quot;&gt;
+    &lt;img src=&quot;https:&#x2F;&#x2F;github-readme-stats.vercel.app&#x2F;api&#x2F;pin&#x2F;?username=marcusaasjensen&amp;repo=airport-network-epidemic&amp;theme=github_dark_dimmed&quot; alt=&quot;Airport Network Epidemic Repo&quot;&#x2F;&gt;
+&lt;&#x2F;a&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;dart-key-features&quot;&gt;🎯 Key Features&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🛫 &lt;strong&gt;3D Airport Network Simulation&lt;&#x2F;strong&gt;: visualize airplanes moving through the airport network.&lt;&#x2F;li&gt;
+&lt;li&gt;🦠 &lt;strong&gt;Epidemic Spread Modeling&lt;&#x2F;strong&gt;: simulate how infectious diseases propagate over time.&lt;&#x2F;li&gt;
+&lt;li&gt;⚙️ &lt;strong&gt;Customizable Parameters&lt;&#x2F;strong&gt;: adjust infection rates, cleaning rates, number of airports.&lt;&#x2F;li&gt;
+&lt;li&gt;📊 &lt;strong&gt;Real-Time Visualization&lt;&#x2F;strong&gt;: watch the dynamic network changes as the epidemic progresses with a legend graph.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;gear-parameters&quot;&gt;⚙️ Parameters&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;🦠 Chance of Airplane Getting Virus (0 to 1): probability that an airplane becomes contaminated with the virus.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;∆T Virus Infection Delta T (in days): time before a new airplane contamination occurs at a contaminated airport.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;🛫 Number of Airports: total number of airports connected as a complete graph in the simulation.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;🧼 Chance of Cleaning the Virus (0 to 1): effectiveness of cleaning measures at airports.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;😷 Chance of Cleaning During Lockdown (0 to 1): increased effectiveness of cleaning measures during a lockdown situation.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;∆T Cleaning Delta T (in days): time before a new cleaning session.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;projector-showcase&quot;&gt;📽️ Showcase&lt;&#x2F;h2&gt;
+&lt;p&gt;Here is a cliché simulation of an epidemic with 30 connected airports. The virus is extremely contagious everyday and cleaning measures are negligeable during an unknown epidemic. When an airport is in lockdown, cleaning measures are taken seriously.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;airport-network-epidemic-demo.gif&quot; alt=&quot;Simulation Demo&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;tools-development&quot;&gt;🛠️ Development&lt;&#x2F;h2&gt;
+&lt;p&gt;Built with:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;🎮 &lt;strong&gt;Unity 3D&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;🧩 &lt;strong&gt;C#&lt;&#x2F;strong&gt; for simulation logic&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;wrench-setup&quot;&gt;🔧 Setup&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Extract the &lt;code&gt;airport_network_epidemic.zip&lt;&#x2F;code&gt; file.&lt;&#x2F;li&gt;
+&lt;li&gt;Launch the &lt;code&gt;Virus_Airport_Network_Simulation.exe&lt;&#x2F;code&gt; file.&lt;&#x2F;li&gt;
+&lt;li&gt;Define the parameters you would like.&lt;&#x2F;li&gt;
+&lt;li&gt;Click on the &lt;strong&gt;Start Simulation&lt;&#x2F;strong&gt; button.&lt;&#x2F;li&gt;
+&lt;li&gt;Click on airports to toggle their lockdown state.&lt;&#x2F;li&gt;
+&lt;li&gt;If the app starts to lag, press &lt;strong&gt;Spacebar&lt;&#x2F;strong&gt; to stop updating the stats graph.&lt;&#x2F;li&gt;
+&lt;li&gt;Close the app any time with the close button.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;pray-acknowledgments&quot;&gt;🙏 Acknowledgments&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Thank you to my professor &lt;strong&gt;Mr. Donati&lt;&#x2F;strong&gt; for assisting the project&#x27;s evolution.&lt;&#x2F;li&gt;
+&lt;li&gt;Props to my dear friend &lt;a href=&quot;https:&#x2F;&#x2F;marcpinet.fr&quot;&gt;&lt;strong&gt;Marc Pinet&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; for being part of the student group. He also made an awesome epidemic modeling project using Python which was part of our larger presentation: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marcpinet&#x2F;epidemic-modeling&quot;&gt;epidemic-modeling&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

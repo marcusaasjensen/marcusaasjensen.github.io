@@ -1,0 +1,593 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    Marcus Aas Jensen
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  
+  <!-- Author -->
+  
+  <!---->
+  <meta name="description" content="Marcus Aas Jensen&#x27;s Personal Website" />
+  <meta name="author" content="Marcus Aas Jensen" />
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Marcus Aas Jensen" />
+  <meta property="og:description" content="Marcus Aas Jensen&#x27;s Personal Website" />
+  <meta property="og:url" content="https://marcusaasjensen.com" />
+  
+  <!---->
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://marcusaasjensen.com/main.css" />
+  <style>
+    :root {
+      --bg: #f4f4f5;
+      --bg-dark: #18181b;
+      --header: #e4e4e7;
+      --header-dark: #27272a;
+    }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://marcusaasjensen.com/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () =>
+    renderMathInElement(document.body, {
+      // customised options
+      // • auto-render specific keys, e.g.:
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+      // • rendering keys, e.g.:
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  <!---->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+  <script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+  const initMermaid = (isDark) => {
+    mermaid.initialize({
+      theme: isDark ? "dark" : "default",
+      startOnLoad: false,
+    });
+    mermaid.run();
+  };
+
+  // Add data-mermaid-code attribute on all mermaid block.
+  document.querySelectorAll(".mermaid").forEach((element) => {
+    element.setAttribute("data-mermaid-code", element.innerHTML);
+  });
+
+  // Re-render mermaid when theme changed.
+  document.body.addEventListener("set-theme", (e) => {
+    document.querySelectorAll(".mermaid").forEach((element) => {
+      const mermaidCode = element.getAttribute("data-mermaid-code");
+      if (mermaidCode != null) {
+        element.removeAttribute("data-processed");
+        element.innerHTML = mermaidCode;
+      }
+    });
+    initMermaid(e.detail === "dark");
+  });
+
+  // The es module script will load defer, so the localStorage should already be set by script in header.
+  // If this script is loaded first, the script in header will dispatch an event to re-render mermaid, it's works too.
+  initMermaid(localStorage.getItem("dark") === "true");
+</script>
+
+  <!---->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://marcusaasjensen.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://marcusaasjensen.com/apple-touch-icon.png" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="https://marcusaasjensen.com/atom.xml"
+  />
+   
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;marcusaasjensen.com" />
+
+  <!-- Head inject -->
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <style>
+@keyframes color-shift {
+  0%, 100% {
+    color: var(--hint-color);
+  }
+  50% {
+    color: #24be8d;
+  }
+}
+
+.title-hover {
+  transition: transform 0.3s ease-in-out, color 0.5s ease-out;
+  text-shadow: 1px 1px 1px rgba(0, 17, 18, 0.5);
+}
+
+.title-hover:hover {
+  animation: color-shift 3s ease-in-out infinite, color 0.5s ease-out;
+  transform: scale(1.05);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: transform 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 6px;
+  bottom: 4px;
+  transition: 0.4s;
+
+  background-image: url('/icons/theme.svg');
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: left center;
+
+  border-radius: 50%;
+}
+
+.slider:hover {
+  outline: #24be8d solid 2px;
+  transition: outline .1s;
+}
+
+input:checked + .slider {
+  background-color: #181818;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-position: right center;
+  filter: invert(1);
+}
+
+</style>
+
+<header
+  class="blur-header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center justify-center">
+        <a style="display: block; margin-top: -6px;" class="title-hover text-2xl font-semibold" href="https://marcusaasjensen.com">Marcus Aas Jensen</a>
+        <label class="switch btn-dark ml-4 h-6 w-6" aria-label="Theme toggle" >
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+        <!-- <button
+        type="button"
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center lg:hidden"
+        aria-label="Menu"
+        onclick="toggleMenu(this)"
+        onkeydown="if(event.key==='Enter'||event.key===' '){toggleMenu(this);event.preventDefault();}"
+        >
+          <img class="menu-icon w-12 h-12 dark" src="/icons/menu.svg" alt="Menu" style="display: block;" />
+          <img class="cross-icon w-12 h-12 dark" src="/icons/cross.svg" alt="Close" style="display: none;" />
+        </button> -->
+      
+    </div>
+    <script>
+        function toggleMenu(btn) {
+          const menuIcon = btn.querySelector('.menu-icon');
+          const crossIcon = btn.querySelector('.cross-icon');
+          
+          if (menuIcon.style.display === 'none') {
+            menuIcon.style.display = 'block';
+            crossIcon.style.display = 'none';
+          } else {
+            menuIcon.style.display = 'none';
+            crossIcon.style.display = 'block';
+          }
+        }
+
+          const htmlClass = document.documentElement.classList;
+          const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+          const themeToggle = document.getElementById("theme-toggle");
+
+          const setDark = (isDark) => {
+            if (isDark) {
+              htmlClass.add("dark");
+              document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+            } else {
+              htmlClass.remove("dark");
+              document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+            }
+            localStorage.setItem("dark", isDark);
+            themeToggle.checked = isDark;
+          };
+
+          setTimeout(() => htmlClass.remove("not-ready"), 10);
+          const stored = localStorage.getItem("dark");
+          const prefersDark = stored ? stored === "true" : darkScheme.matches;
+          setDark(prefersDark);
+
+          darkScheme.addEventListener("change", (e) => {
+            const stored = localStorage.getItem("dark");
+            if (stored === null) setDark(e.matches);
+          });
+
+          themeToggle.addEventListener("change", () => {
+            setDark(themeToggle.checked);
+          });
+
+          const btnMenu = document.querySelector(".btn-menu");
+          btnMenu?.addEventListener("click", () => htmlClass.toggle("open"));
+    </script>
+    <div id="search-results"></div>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0">
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium lg:px-3 lg:py-3"
+            href="https://marcusaasjensen.com/portfolio"
+            >📂 Portfolio</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium lg:px-3 lg:py-3"
+            href="https://marcusaasjensen.com/about"
+            >ℹ️ About Me</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium lg:px-3 lg:py-3"
+            href="https://marcusaasjensen.com/extras"
+            >💚 Extras</a
+          >
+        </li>
+        
+      </ul>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    
+
+    <main
+      class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg relative mx-auto min-h-[calc(100vh-9rem)] max-w-3xl px-4 pt-24 pb-16 break-words lg:pt-32"
+    >
+      
+<!-- Term Title -->
+<h1 class="mb-16">#Game Jam</h1>
+<!-- Pages -->
+
+
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 items-stretch">
+
+  
+  
+    
+    <section
+      class="card-hover block-bg relative rounded-lg p-4 lg:p-6 cursor-pointer h-full min-h-[300px] md:min-h-[350px] flex flex-col overflow-visible"
+    >
+      
+      <figure class="mt-0 mb-4 flex-shrink-0 relative">
+        <img
+          class="h-48 md:h-40 lg:h-48 w-full rounded-lg object-cover object-center transition-transform duration-200 hover:scale-[1.02]"
+          src="https://marcusaasjensen.com/images/save-yourself-cover.png"
+          alt="Save Yourself cover"
+        />
+      </figure>
+      
+      
+  
+  <span
+    class="absolute top-0 right-0 text-2xl z-50 pointer-events-none"
+    title="Pinned Project"
+    style="top: -18px; right: -18px; font-size: 1.8rem;"
+  >
+    📌
+  </span>
+  
+
+      <h3 class="my-0! pb-1 leading-tight! font-bold text-lg transition-colors duration-200 hover:text-[var(--hint-color)] flex-shrink-0">🎮 Save Yourself — Brackeys Game Jam 2025.1 Submission</h3>
+
+      <div class="not-prose my-2 flex-grow">
+        
+        <p class="text-sm md:text-base opacity-80 line-clamp-3">An atmospheric platformer where you place save points to undo your mistakes.</p>
+        
+      </div>
+
+      <div class="mt-auto pt-2 flex-shrink-0">
+        <div class="text-sm antialiased opacity-60">
+  
+  <time>2025-03-22</time>
+  <span class="mx-1">&middot;</span>
+  <span>2min</span>
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>Marcus Aas Jensen</span>
+  
+  <!-- Page Info inject -->
+  
+</div>
+
+      </div>
+
+      <a class="absolute inset-0 text-[0px] z-10" href="https:&#x2F;&#x2F;marcusaasjensen.com&#x2F;portfolio&#x2F;save-yourself&#x2F;">🎮 Save Yourself — Brackeys Game Jam 2025.1 Submission</a>
+    </section>
+    
+  
+
+  
+  
+    
+  
+
+</div>
+
+<script>
+document.querySelectorAll('.card-hover').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty('--mouse-x', `${x}%`);
+    card.style.setProperty('--mouse-y', `${y}%`);
+  });
+});
+</script>
+
+
+
+<nav class="not-prose mt-16 flex font-bold">
+  
+  
+</nav>
+<!---->
+
+    </main>
+    
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    <!---->
+    <!---->
+    &copy; 2025<!---->
+    
+    <a class="link" href="https://marcusaasjensen.com">
+      Marcus Aas Jensen
+    </a>
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;github.com&#x2F;marcusaasjensen&#x2F;marcusaasjensen.github.io&#x2F;blob&#x2F;main&#x2F;LICENSE" rel="noopener" target="_blank">
+      MIT License
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank">
+      Powered by Zola
+    </a>
+  </div>
+  <!-- Footer inject -->
+  
+</footer>
+
+    
+
+    <style>
+      .skill-icon {
+        transition: transform 0.25s ease, filter 0.25s ease;
+      }
+
+      .skill-icon:hover {
+        transform: scale(1.2);
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+      }
+    </style>
+
+    <script>
+      const container = document.querySelector(".skills-container");
+      if(container) {
+      const icons = container.querySelectorAll(".skill-icon");
+
+      container.addEventListener("mousemove", (e) => {
+        const rect = container.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+
+        icons.forEach((icon) => {
+          const iconRect = icon.getBoundingClientRect();
+          const iconX = iconRect.left + iconRect.width / 2 - rect.left;
+          const iconY = iconRect.top + iconRect.height / 2 - rect.top;
+
+          const dist = Math.hypot(mouseX - iconX, mouseY - iconY);
+          const scale = Math.max(1, 1.4 - dist / 200);
+          icon.style.transform = `scale(${scale})`;
+        });
+      });
+
+      container.addEventListener("mouseleave", () => {
+        icons.forEach((icon) => {
+          icon.style.transform = "scale(1)";
+        });
+      });
+    }
+    </script>
+  </body>
+</html>
+
+<!-- <script>
+  const canvas = document.getElementById("particle-canvas");
+  const ctx = canvas.getContext("2d");
+  let particles = [];
+
+  function resizeCanvas() {
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+  }
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  class Particle {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.size = Math.random() * 2 + 1; // 🔹 tiny squares
+      this.speedX = (Math.random() - 0.5) * 1.2; // 🔹 slow drift
+      this.speedY = (Math.random() - 0.5) * 1.2;
+      this.alpha = 1;
+
+      const hues = [160, 170, 180, 190, 200];
+      const hue = hues[Math.floor(Math.random() * hues.length)];
+      this.color = `hsl(${hue}, 70%, 55%)`;
+      this.life = 0;
+      this.maxLife = 150 + Math.random() * 50; // total lifespan
+    }
+
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.life++;
+
+      // fade out naturally
+      if (this.life > this.maxLife * 0.6) {
+        this.alpha -= 0.01;
+      }
+    }
+
+    draw() {
+      ctx.globalAlpha = this.alpha;
+      ctx.fillStyle = this.color;
+      ctx.fillRect(this.x, this.y, this.size, this.size);
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((p, i) => {
+      p.update();
+      p.draw();
+
+      // remove before touching borders OR fully faded
+      if (
+        p.alpha <= 0 ||
+        p.x < 10 || p.x > canvas.width - 10 ||
+        p.y < 10 || p.y > canvas.height - 10
+      ) {
+        particles.splice(i, 1);
+      }
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Trigger burst on E
+  window.addEventListener("keydown", (e) => {
+    if (e.key.toLowerCase() === "e") {
+      const x = canvas.width / 2;  // center of banner
+      const y = canvas.height / 2;
+      for (let i = 0; i < 100; i++) {
+        particles.push(new Particle(x, y));
+      }
+    }
+  });
+</script> -->
