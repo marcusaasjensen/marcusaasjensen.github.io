@@ -9,66 +9,56 @@
     {% if page.title %}{{ page.title }} - {{ config.title }}{% else %}{{ config.title }}{% endif %}
   </title>
 
-  <!-- Meta -->
+  <!-- Theme color -->
   <meta name="theme-color" />
 
   {% if page %}
-  <!-- Author -->
-  {% set page_title = page.title | default(value=config.title) %}
-  <!---->
-  {% set description = page.description | default(value=page_title) %}
-  <!---->
-  {% if page.authors | length > 0 %}
-  <!---->
-  {% set author = page.authors | join(sep=", ") %}
-  <!---->
+    {% set page_title = page.title | default(value=config.title) %}
+    {% set description = page.description | default(value=page_title) %}
+    {% if page.authors | length > 0 %}
+      {% set author = page.authors | join(sep=", ") %}
+    {% else %}
+      {% set author = config.author | default(value=config.title) %}
+    {% endif %}
+    <meta name="description" content="{{ description }}" />
+    <meta name="author" content="{{ author }}" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ page_title }}" />
+    <meta property="og:site_name" content="{{ config.title }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:url" content="{{ page.permalink }}" />
+    {% if page.extra.cover.image %}
+      {% set image = page.extra.cover.image %}
+    {% elif config.extra.social_image %}
+      {% set image = config.extra.social_image %}
+    {% endif %}
+    {% if image %}
+      <meta property="og:image" content="{{ get_url(path=image) }}" />
+    {% endif %}
   {% else %}
-  <!---->
-  {% set author = config.author | default(value=config.title) %}
-  <!---->
-  {% endif %}
-  <!---->
-  <meta name="description" content="{{ description }}" />
-  <meta name="author" content="{{ author }}" />
-  <!-- The Open Graph protocol -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ page_title }}" />
-  <meta property="og:site_name" content="{{ config.title }}" />
-  <meta property="og:description" content="{{ description }}" />
-  <meta property="og:url" content="{{ page.permalink }}" />
-  {% if page.extra.cover.image %}
-  <!---->
-  {% set image = page.extra.cover.image %}
-  <!---->
-  {% elif config.extra.social_image %}
-  <!---->
-  {% set image = config.extra.social_image %}
-  <!---->
-  {% endif %}
-  <!---->
-  {% if image %}
-  <meta property="og:image" content="{{ get_url(path=image) }}" />
-  {% endif %}
-  <!---->
-  {% else %}
-  <!-- Author -->
-  {% set description = config.description | default(value="A personal blog") %}
-  <!---->
-  <meta name="description" content="{{ description }}" />
-  <meta name="author" content="{{ config.author | default(value=config.title) }}" />
-  <!-- The Open Graph protocol -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ config.title }}" />
-  <meta property="og:description" content="{{ description }}" />
-  <meta property="og:url" content="{{ get_url(path=``) }}" />
-  {% if config.extra.social_image %}
-  <meta property="og:image" content="{{ get_url(path=config.extra.social_image) }}" />
-  {% endif %}
-  <!---->
+    {% set description = config.description | default(value="A personal blog") %}
+    <meta name="description" content="{{ description }}" />
+    <meta name="author" content="{{ config.author | default(value=config.title) }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ config.title }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:url" content="{{ get_url(path=``) }}" />
+    {% if config.extra.social_image %}
+      <meta property="og:image" content="{{ get_url(path=config.extra.social_image) }}" />
+    {% endif %}
   {% endif %}
 
-  <!-- CSS & JS -->
-  <link rel="preload stylesheet" as="style" href="{{ get_url(path=`main.css`) }}" />
+  <!-- Preconnect & Preload -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preload" as="style" href="{{ get_url(path='main.css') }}" />
+  <link rel="preload" as="image" href="{{ get_url(path=config.extra.profile.avatar_url) }}" />
+  <link rel="preload" as="image" href="{{ get_url(path='icons/theme.svg') }}" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="{{ get_url(path='main.css') }}" />
+
   <style>
     :root {
       --bg: {{ config.extra.style.bg_color | default(value="#f4f4f5") }};
@@ -78,67 +68,43 @@
     }
   </style>
 
-  {% if section.path is defined and section.path == "/" and (paginator is undefined or
-  paginator.current_index == 1) %}
-  <!-- Avatar -->
-  {% if config.extra.profile.avatar_url %}
-  <link rel="preload" as="image" href="{{ get_url(path=config.extra.profile.avatar_url) }}" />
+  <!-- LCP / Banner Image (example, adjust as needed) -->
+  {% if page.extra.cover.image %}
+    <link rel="preload" as="image" href="{{ get_url(path=page.extra.cover.image) }}" />
   {% endif %}
 
-  <!-- Social List -->
-  {% if config.extra.profile.social and section.path == "/" and (paginator is undefined or
-  paginator.current_index == 1) %}
-  <!---->
-  {% for social in config.extra.profile.social %}
-  <link rel="preload" as="image" href="{{ macros::get_social_icon(icon=social.name) }}" />
-  {% endfor %}
-  <!---->
-  {% endif %}
-  <!---->
-  {% endif %}
-
-  <!-- Dark Icon -->
-  <link rel="preload" as="image" href="{{ get_url(path=`icons/theme.svg`) }}" />
-
-  <!-- Math -->
+  <!-- Math (KaTeX) -->
   {% if page.extra.math | default(value=config.extra.math) %}
-  <!---->
-  {% include "partials/math.html" %}
-  <!---->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" as="style" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+    {% include "partials/math.html" %}
   {% endif %}
-  <!---->
 
   <!-- Mermaid -->
   {% if page.extra.mermaid | default(value=config.extra.mermaid) %}
-  <!---->
-  {% include "partials/mermaid.html" %}
-  <!---->
+    <script type="module" defer>
+      if (document.querySelector('.mermaid')) {
+        import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs')
+          .then(m => m.default.initialize({ startOnLoad: true }));
+      }
+    </script>
+    {% include "partials/mermaid.html" %}
   {% endif %}
-  <!---->
 
   <!-- Favicon -->
-  <link rel="icon" href="{{ get_url(path=`favicon.ico`) }}" />
-  <link rel="apple-touch-icon" href="{{ get_url(path=`apple-touch-icon.png`) }}" />
+  <link rel="icon" href="{{ get_url(path='favicon.ico') }}" />
+  <link rel="apple-touch-icon" href="{{ get_url(path='apple-touch-icon.png') }}" />
 
   <!-- Feeds -->
   {% if config.generate_feed %}
-  <!---->
-  {% if "atom.xml" in config.feed_filenames %}
-  <link
-    rel="alternate"
-    type="application/atom+xml"
-    title="Atom"
-    href="{{ get_url(path=`atom.xml`) }}"
-  />
-  {% endif %} {% if "rss.xml" in config.feed_filenames %}
-  <link
-    rel="alternate"
-    type="application/rss+xml"
-    title="RSS"
-    href="{{ get_url(path=`rss.xml`) }}"
-  />
-  {% endif %}
-  <!---->
+    {% if "atom.xml" in config.feed_filenames %}
+      <link rel="alternate" type="application/atom+xml" title="Atom" href="{{ get_url(path='atom.xml') }}" />
+    {% endif %}
+    {% if "rss.xml" in config.feed_filenames %}
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml') }}" />
+    {% endif %}
   {% endif %}
 
   <!-- Canonical -->

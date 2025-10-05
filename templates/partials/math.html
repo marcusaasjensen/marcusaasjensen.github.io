@@ -1,8 +1,18 @@
 <link
-  rel="stylesheet"
+  rel="preload"
   href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
   crossorigin="anonymous"
 />
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css"
+    crossorigin="anonymous"
+  />
+</noscript>
+
 <script
   defer
   src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js"
@@ -15,16 +25,13 @@
 ></script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () =>
+  document.addEventListener("DOMContentLoaded", () => {
     renderMathInElement(document.body, {
-      // customised options
-      // • auto-render specific keys, e.g.:
       delimiters: [
         { left: "$$", right: "$$", display: true },
         { left: "$", right: "$", display: false },
       ],
-      // • rendering keys, e.g.:
       throwOnError: false,
-    }),
-  );
+    });
+  });
 </script>
