@@ -3,7 +3,7 @@ title = "🧠 Alzheimer Quiz Website"
 date = "2023-10-03"
 description = "A web-based quiz platform designed to provide cognitive stimulation for individuals with Alzheimer's disease."
 [taxonomies]
-tags = ["Angular", "TypeScript", "HTML", "CSS", "Web Development", "Accessibility", "Academic"]
+tags = ["Angular", "TypeScript", "HTML", "CSS", "Web", "Accessibility", "Academic", "Serious Game", "Game"]
 [extra]
 cover.image = "images/alzheimer-quiz-website-cover.png"
 cover.alt = "Alzheimer Quiz Website Interface"

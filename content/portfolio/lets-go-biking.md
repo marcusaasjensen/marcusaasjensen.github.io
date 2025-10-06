@@ -3,7 +3,7 @@ title = "🚴 Let's Go Biking — JCDecaux Bike Route Planner"
 date = "2023-12-17"
 description = "Windows app providing convenient itinerary for cyclists traveling between two addresses."
 [taxonomies]
-tags = ["C#", "Java", "SOAP", "REST", "WCF", "Academic", "JCDecaux"]
+tags = ["C#", "Java", "SOAP", "REST", "WCF", "Academic", "JCDecaux", "Software"]
 [extra]
 cover.image = "images/lets-go-biking-cover.png"
 cover.alt = "Let's Go Biking App Interface"

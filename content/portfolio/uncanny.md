@@ -3,7 +3,7 @@ title = "🎶 Uncanny — Action Rhythm Boss Game"
 date = "2023-04-18"
 description = "A fever-dream action rhythm game where you dodge and dash through boss attacks."
 [taxonomies]
-tags = ["Action", "Rhythm", "Bullet Hell", "Indie","Atmospheric", "Unity", "CSharp", "2D"]
+tags = ["Action", "Rhythm", "Bullet Hell", "Indie","Atmospheric", "Unity", "CSharp", "2D", "Game"]
 [extra]
 cover.image = "images/uncanny-cover.png"
 cover.alt = "Uncanny cover art"

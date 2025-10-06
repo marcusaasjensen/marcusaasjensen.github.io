@@ -3,7 +3,7 @@ title = "🌱 Growing Minds Game — Serious Game for Children on Biodiversity"
 date = "2025-02-27"
 description = "Group project digitalizing a board game to teach children about biodiversity through serious play."
 [taxonomies]
-tags = ["Research", "Academic", "Unity", "CSharp", "Serious Game", "Android", "iOS", "2D"]
+tags = ["Research", "Academic", "Unity", "CSharp", "Serious Game", "Game", "Android", "iOS", "2D"]
 [extra]
 cover.image = "images/growing-minds-cover.png"
 cover.alt = "Growing Minds game cover"

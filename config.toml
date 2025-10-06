@@ -28,7 +28,7 @@ feed_filenames = ["atom.xml"]
 #       {name = "authors"}, # Basic definition: no feed or pagination
 #     ]
 #
-taxonomies = [{ name = "tags", rss = true, paginate_by = 5 }]
+taxonomies = [{ name = "tags", rss = true }]
 
 # Configuration of the Markdown rendering
 [markdown]
