@@ -15,4 +15,7 @@ jobs:
     - name: Build and deploy
       uses: shalzz/zola-deploy-action@v0.19.1
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+        PAGES_BRANCH: gh-pages
+        PAGES_CNAME: marcusaasjensen.com
+        KEEP_HISTORY: true
