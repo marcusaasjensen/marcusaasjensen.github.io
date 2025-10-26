@@ -1,9 +1,18 @@
 [[experience]]
+name = "Unity Software Engineer"
+desc = "Starting December 2025."
+start_date = "Dec 2025"
+end_date = "Now"
+location = "Outsight | Paris, France"
+logo = "/images/outsight.png"
+links = [{ name = "Outsight", url = "https://www.outsight.ai" }]
+
+[[experience]]
 name = "Cloud UI Engineer Intern"
 desc = "Collaborated with a team of four engineers to build a JavaScript library in SAPUI5, enabling Joule AI (LLM) to convert user prompts into metric visualizations (graphs, tables, charts) for automated dashboard generation in SAP Cloud ALM solution."
 start_date = "Mar 2025"
 end_date = "Aug 2025"
-location = "SAP Labs, France"
+location = "SAP Labs France | Mougins, France"
 logo = "/images/sap.png"
 links = [{ name = "SAP Labs France", url = "https://www.sap.com" }]
 
@@ -21,7 +30,7 @@ name = "Mobile Developer Intern"
 desc = "Implemented the frontend of an emergency messaging mobile app with React Native (JavaScript) for iOS and Android in a team of four students."
 start_date = "May 2022"
 end_date = "Jul 2022"
-location = "DNIIT, Vietnam"
+location = "DNIIT | Danang, Vietnam"
 logo = "/images/dniit.png"
 links = [
     { name = "Da Nang International Institute of Technology", url = "https://www.udn.vn/" },
@@ -32,7 +41,7 @@ name = "Computer Science Engineering Degree"
 desc = "Specialization in software engineering and user interactions."
 start_date = "Sep 2022"
 end_date = "Sep 2025"
-location = "Polytech Nice Sophia, France"
+location = "Polytech Nice Sophia | Biot, France"
 logo = "/images/polytech.png"
 links = [
     { name = "Polytech Nice Sophia", url = "https://www.polytech.unice.fr/" },
@@ -43,7 +52,7 @@ name = "Semester Abroad in Canada 🍁"
 desc = "Courses in game development, Unreal Engine, C++ and mathematics."
 start_date = "Jan 2022"
 end_date = "Apr 2022"
-location = "UQAC, Canada"
+location = "UQAC | Saguenay, Canada"
 logo = "/images/uqac.png"
 links = [
     { name = "Université du Québec à Chicoutimi", url = "https://www.uqac.ca/" },
@@ -54,7 +63,7 @@ name = "Associate Degree in Computer Science"
 desc = "Fundamentals of computer science, programming, algorithms and web development."
 start_date = "Sep 2020"
 end_date = "Jul 2022"
-location = "IUT Nice Côte d'Azur, France"
+location = "IUT Nice Côte d'Azur | Nice, France"
 logo = "/images/iut.png"
 links = [
     { name = "IUT Nice Côte d'Azur", url = "https://iut.univ-cotedazur.fr/" },
