@@ -21,7 +21,7 @@ name = "Frontend Engineer Intern"
 desc = "Architected a customizable operations monitoring dashboard using Angular, AmCharts 5, and GridstackJS, centralizing transaction, error, and response-time monitoring with 10 key visualizations."
 start_date = "May 2024"
 end_date = "Aug 2024"
-location = "Amadeus, France"
+location = "Amadeus | Biot, France"
 logo = "/images/amadeus.png"
 links = [{ name = "Amadeus", url = "https://amadeus.com" }]
 
