@@ -1,5 +1,5 @@
 +++
 title = "Blog"
-path = "blog"
 template = "blog.html"
+sort_by = "date"
 +++

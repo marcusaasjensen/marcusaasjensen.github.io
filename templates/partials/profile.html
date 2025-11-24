@@ -1,8 +1,8 @@
 {% if config.extra.profile.avatar_url or config.extra.profile.name %}
-<div class="mb-12 flex items-start">
+<div class="mb-12 flex items-center">
   {% if config.extra.profile.avatar_url %}
   <div
-    class="not-prose mr-5 shrink-0 rounded-full"
+    class="not-prose mr-5 rounded-full shrink-0"
   >
     <img
       class="{% if config.extra.profile.avatar_invert %}dark:invert{% endif %} aspect-square w-32 rounded-full"

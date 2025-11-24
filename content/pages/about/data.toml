@@ -84,7 +84,7 @@ items = [
 [[skills]]
 title = "3D Tools & Techniques"
 items = [
-    { name = "Unity 3D", url = "https://en.wikipedia.org/wiki/Unity_(game_engine)" },
+    { name = "Unity", url = "https://en.wikipedia.org/wiki/Unity_(game_engine)" },
     { name = "Blender", url = "https://en.wikipedia.org/wiki/Blender_(software)" },
     { name = "Scriptable Objects", url = "https://docs.unity3d.com/Manual/class-ScriptableObject.html" },
     { name = "3D Rendering", url = "https://en.wikipedia.org/wiki/3D_computer_graphics#Rendering" },
