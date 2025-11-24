@@ -1967,14 +1967,18 @@ audio {
 }
 
 html.dark {
-  --bg-dark: #10161c;
+  --bg-dark: #10151c;
   --header-dark: #070a0d;
-  --block-bg-dark: rgba(35, 48, 56, 0.6);
+  --block-bg-dark: rgba(31, 44, 54, 0.6);
   --block-bg-gray: rgba(60, 85, 100, 0.6);
 }
 
 .block:hover {
   outline: #24be8d solid 2px;
-  background-color: var(--bg-dark);
   transition: outline .1s;
+}
+
+.icon-link:hover {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
 }

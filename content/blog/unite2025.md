@@ -1,6 +1,6 @@
 +++
 title = "Unite 2025 Gallery"
-date = "2025-11-19"
+date = "2025-11-23"
 description = "My experience at Unite 2025 in Barcelona (November 19 - 20)."
 [taxonomies]
 tags = ["Unity", "Unite 2025", "Blog"]

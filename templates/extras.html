@@ -33,7 +33,7 @@
         <div class="flex flex-col gap-6">
           {% for t in track.tracks %}
             <div class="rounded-lg p-6 flex-1 min-w-[250px]">
-              <span class="font-medium text-base mb-3 block">{{ t.name }}</span>
+              <span class="font-medium text-base mb-3">{{ t.name }}</span>
               <audio controls class="mt-2 w-full mb-3">
                 <source src="/audio/{{ t.file }}" type="audio/{{ t.ext }}">
               </audio>
@@ -53,7 +53,7 @@
       </div>
     {% else %}
       <div class="block-bg rounded-lg p-6 flex-1 min-w-[250px] mb-4">
-        <span class="font-medium text-base mb-3 block">{{ track.name }}</span>
+        <span class="font-medium text-base mb-3">{{ track.name }}</span>
         <audio controls class="mt-2 w-full mb-3">
           <source src="/audio/{{ track.file }}" type="audio/{{ track.ext }}">
         </audio>
