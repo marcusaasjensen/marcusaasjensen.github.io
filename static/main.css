@@ -1967,9 +1967,9 @@ audio {
 }
 
 html.dark {
-  --bg-dark: #10151c;
+  --bg-dark: #141a24;
   --header-dark: #070a0d;
-  --block-bg-dark: rgba(31, 44, 54, 0.6);
+  --block-bg-dark: rgba(36, 50, 63, 0.6);
   --block-bg-gray: rgba(60, 85, 100, 0.6);
 }
 
