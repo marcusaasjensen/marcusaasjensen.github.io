@@ -1,0 +1,37 @@
+# Standalone music tracks
+[[music]]
+name = "Awake"
+file = "awake.wav"
+ext = "wav"
+keywords = ["Ambiant", "Awe", "Pessimistic"]
+description = "Track initially made for a game idea called Nightcap about a character's struggle with insomnia.  The idea was soon abandoned because of a lack of direction in the project, but the music remains."
+
+[[music]]
+name = "Gambler"
+file = "gambler.mp3"
+ext = "mpeg"
+keywords = ["Energetic", "Jazzy", "Fast"]
+description = "Fast-paced jazzy track inspired by Deltarune's Chapter 3 battle themes. I wanted to try a different style than my usual relaxing and slow compositions, and this was the result."
+
+[[music]]
+theme = "Robot Toy's Themes"
+theme_description = "Theme made for a game story called \"Shy\" still in progress. It is directly inspired by the Love theme from Mother 3 game. This theme represents the character's robot toy he had while meeting her past friend. Shy's main theme character can be heard in the second half of \"That Robot\" track."
+tracks = [
+    { name = "Remember", file = "remember.mp3", ext = "mp3", keywords = [
+        "Gentle",
+        "Nostalgic",
+        "Classical",
+    ], description = "" },
+    { name = "That Robot", file = "that robot.mp3", ext = "mp3", keywords = [
+        "Soft",
+        "Retro",
+        "Nostalgic",
+    ], description = "" },
+]
+
+[[music]]
+name = "Good Times (with Shy)"
+file = "good times.wav"
+ext = "wav"
+keywords = ["Chill", "Heartwarming", "Nostalgic"]
+description = "Track made for a game story called \"Shy\" still in progress. This track expresses the way a childhood friendship was built between the two main characters in the playground. Shy's main theme character can be heard in the second half of the track."
